@@ -14,6 +14,7 @@
 <!ENTITY RFC6986 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6986.xml">
 <!ENTITY RFC7344 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7344.xml">
 <!ENTITY RFC7583 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7583.xml">
+<!ENTITY RFC8032 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8032.xml">
 <!ENTITY RFC8078 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8078.xml">
 <!ENTITY RFC8080 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8080.xml">
 ]>
@@ -33,12 +34,20 @@
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
       <organization>Red Hat</organization>
       <address>
+	<postal>
+	  <street/>
+	  <country>CA</country>
+	</postal>
         <email>pwouters@redhat.com</email>
       </address>
     </author>
     <author fullname="Ondrej Sury" initials="O." surname="Sury">
       <organization>Internet Systems Consortium</organization>
       <address>
+	<postal>
+	  <street/>
+	  <country>CZ</country>
+	</postal>
         <email>ondrej@isc.org</email>
       </address>
     </author>
@@ -280,10 +289,10 @@
 	  truncation issues as with ECDSA, and it is more resilient to
 	  side-channel attacks.  Furthermore, EdDSA cryptography is
 	  less prone to implementation errors (<xref
-	  target="RFC8080"/>).  It is expected that ED25519 will
-	  become the future RECOMMENDED default algorithm once there's
-	  enough support for this algorithm in the deployed DNSSEC
-	  validators.
+	  target="RFC8032"/>, <xref target="RFC8080"/>).  It is
+	  expected that ED25519 will become the future RECOMMENDED
+	  default algorithm once there's enough support for this
+	  algorithm in the deployed DNSSEC validators.
 	</t>
 
       </section>
@@ -444,6 +453,7 @@
       &RFC6986;
       &RFC7344;
       &RFC7583;
+      &RFC8032;
       &RFC8078;
       &RFC8080;
       <reference anchor="DNSKEY-IANA" target="http://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml">

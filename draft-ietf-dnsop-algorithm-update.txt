@@ -262,10 +262,10 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
    does not require the use of a unique random number for each
    signature, there are no padding or truncation issues as with ECDSA,
    and it is more resilient to side-channel attacks.  Furthermore, EdDSA
-   cryptography is less prone to implementation errors ([RFC8080]).  It
-   is expected that ED25519 will become the future RECOMMENDED default
-   algorithm once there's enough support for this algorithm in the
-   deployed DNSSEC validators.
+   cryptography is less prone to implementation errors ([RFC8032],
+   [RFC8080]).  It is expected that ED25519 will become the future
+   RECOMMENDED default algorithm once there's enough support for this
+   algorithm in the deployed DNSSEC validators.
 
 3.2.  DNSKEY Algorithm Recommendation
 
@@ -460,6 +460,11 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
               DOI 10.17487/RFC7583, October 2015,
               <https://www.rfc-editor.org/info/rfc7583>.
 
+   [RFC8032]  Josefsson, S. and I. Liusvaara, "Edwards-Curve Digital
+              Signature Algorithm (EdDSA)", RFC 8032,
+              DOI 10.17487/RFC8032, January 2017,
+              <https://www.rfc-editor.org/info/rfc8032>.
+
    [RFC8078]  Gudmundsson, O. and P. Wouters, "Managing DS Records from
               the Parent via CDS/CDNSKEY", RFC 8078,
               DOI 10.17487/RFC8078, March 2017,
@@ -482,21 +487,16 @@ Authors' Addresses
 
    Paul Wouters
    Red Hat
+   CA
 
    EMail: pwouters@redhat.com
 
 
    Ondrej Sury
    Internet Systems Consortium
+   CZ
 
    EMail: ondrej@isc.org
-
-
-
-
-
-
-
 
 
 
