@@ -284,7 +284,7 @@
           <ttcol align="left">DNSSEC Validation</ttcol>
 
           <c>0</c><c>NULL (CDS only)</c><c>MUST NOT [*]</c><c>MUST NOT [*]</c>
-          <c>1</c><c>SHA-1</c><c>NOT RECOMMENDED</c><c>MUST-</c>
+          <c>1</c><c>SHA-1</c><c>NOT RECOMMENDED</c><c>MUST</c>
           <c>2</c><c>SHA-256</c><c>MUST</c><c>MUST</c>
           <c>3</c><c>GOST R 34.11-94</c><c>MUST NOT</c><c>MAY</c>
           <c>4</c><c>SHA-384</c><c>MAY</c><c>RECOMMENDED</c>
@@ -334,15 +334,15 @@
       <t>
 	This document concerns itself with the selection of
 	cryptographic algorithms for the use of DNSSEC, specifically
-	with the selection of "mandatory-to-implement" algorithms.  The
-	algorithms identified in this document as "MUST implement" or
-	"SHOULD implement" are not known to be broken at the current
-	time, and cryptographic research so far leads us to believe
-	that they will likely remain secure into the foreseeable
-	future.  However, this isn't necessarily forever and it is
-	expected that new revisions of this document will be issued
-	from time to time to reflect the current best practice in this
-	area.
+	with the selection of "mandatory-to-implement" algorithms.
+	The algorithms identified in this document as MUST or
+	RECOMMENDED to implement are not known to be broken at the
+	current time, and cryptographic research so far leads us to
+	believe that they will likely remain secure into the
+	foreseeable future.  However, this isn't necessarily forever
+	and it is expected that new revisions of this document will be
+	issued from time to time to reflect the current best practice
+	in this area.
       </t>
 
       <t>

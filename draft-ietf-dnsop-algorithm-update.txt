@@ -264,7 +264,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
    | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
    +--------+-----------------+-------------------+-------------------+
    | 0      | NULL (CDS only) | MUST NOT [*]      | MUST NOT [*]      |
-   | 1      | SHA-1           | NOT RECOMMENDED   | MUST-             |
+   | 1      | SHA-1           | NOT RECOMMENDED   | MUST              |
    | 2      | SHA-256         | MUST              | MUST              |
    | 3      | GOST R 34.11-94 | MUST NOT          | MAY               |
    | 4      | SHA-384         | MAY               | RECOMMENDED       |
@@ -304,9 +304,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
    This document concerns itself with the selection of cryptographic
    algorithms for the use of DNSSEC, specifically with the selection of
    "mandatory-to-implement" algorithms.  The algorithms identified in
-   this document as "MUST implement" or "SHOULD implement" are not known
-   to be broken at the current time, and cryptographic research so far
-   leads us to believe that they will likely remain secure into the
+   this document as MUST or RECOMMENDED to implement are not known to be
+   broken at the current time, and cryptographic research so far leads
+   us to believe that they will likely remain secure into the
    foreseeable future.  However, this isn't necessarily forever and it
    is expected that new revisions of this document will be issued from
    time to time to reflect the current best practice in this area.
