@@ -249,12 +249,8 @@
 
         <t>
 	  ECC-GOST (GOST R 34.11-94) has been superseded by GOST R
-	  34.11-2012 in <xref target="RFC6986"/>.  The GOST R 34.11-94
-	  algorithm has been deprecated from 1st January 2013 and all
-	  new systems MUST use GOST R 34.11-2012 and MAY use GOST R
-	  34.11-94 also for maintaining compatibility with existing
-	  systems.  Usage of GOST R 34.11-94 in current systems is
-	  allowed at least for a 5-year period.
+	  34.11-2012 in <xref target="RFC6986"/>.  The GOST R
+	  34.11-2012 hasn't been standardized for use in DNSSEC.
 	</t>
 
         <t>

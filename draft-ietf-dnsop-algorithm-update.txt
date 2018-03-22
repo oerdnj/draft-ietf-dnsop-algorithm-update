@@ -81,7 +81,7 @@ Table of Contents
    7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .   8
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .   7
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction
@@ -242,11 +242,8 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
    should switch to elliptic curve cryptography algorithms.
 
    ECC-GOST (GOST R 34.11-94) has been superseded by GOST R 34.11-2012
-   in [RFC6986].  The GOST R 34.11-94 algorithm has been deprecated from
-   1st January 2013 and all new systems MUST use GOST R 34.11-2012 and
-   MAY use GOST R 34.11-94 also for maintaining compatibility with
-   existing systems.  Usage of GOST R 34.11-94 in current systems is
-   allowed at least for a 5-year period.
+   in [RFC6986].  The GOST R 34.11-2012 hasn't been standardized for use
+   in DNSSEC.
 
    ECDSAP256SHA256 provide more strength for signature size than
    RSASHA256 and RSASHA512 variants.  ECDSAP256SHA256 has been widely
@@ -274,6 +271,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
    Due to industry-wide trend to move to elliptic curve cryptography,
    the ECDSAP256SHA256 is RECOMMENDED to be used by new DNSSEC
+   deployments, and users of RSA based algorithms SHOULD upgrade to
+   ECDSAP256SHA256.
+
 
 
 
@@ -281,9 +281,6 @@ Wouters & Sury         Expires September 23, 2018               [Page 5]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
-
-   deployments, and users of RSA based algorithms SHOULD upgrade to
-   ECDSAP256SHA256.
 
 3.3.  DS and CDS Algorithms
 
@@ -330,6 +327,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
    this document as MUST or RECOMMENDED to implement are not known to be
    broken at the current time, and cryptographic research so far leads
    us to believe that they will likely remain secure into the
+   foreseeable future.  However, this isn't necessarily forever and it
+   is expected that new revisions of this document will be issued from
+   time to time to reflect the current best practice in this area.
 
 
 
@@ -337,10 +337,6 @@ Wouters & Sury         Expires September 23, 2018               [Page 6]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
-
-   foreseeable future.  However, this isn't necessarily forever and it
-   is expected that new revisions of this document will be issued from
-   time to time to reflect the current best practice in this area.
 
    Retiring an algorithm too soon would result in a signed zone with
    such an algorithm to be downgraded to the equivalent of an unsigned
@@ -383,8 +379,12 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
+8.2.  Informative References
 
-
+   [RFC4034]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
+              Rose, "Resource Records for the DNS Security Extensions",
+              RFC 4034, DOI 10.17487/RFC4034, March 2005,
+              <https://www.rfc-editor.org/info/rfc4034>.
 
 
 
@@ -393,13 +393,6 @@ Wouters & Sury         Expires September 23, 2018               [Page 7]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
-
-8.2.  Informative References
-
-   [RFC4034]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
-              Rose, "Resource Records for the DNS Security Extensions",
-              RFC 4034, DOI 10.17487/RFC4034, March 2005,
-              <https://www.rfc-editor.org/info/rfc4034>.
 
    [RFC5155]  Laurie, B., Sisson, G., Arends, R., and D. Blacka, "DNS
               Security (DNSSEC) Hashed Authenticated Denial of
@@ -440,16 +433,6 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
               DOI 10.17487/RFC7344, September 2014,
               <https://www.rfc-editor.org/info/rfc7344>.
 
-
-
-
-
-
-Wouters & Sury         Expires September 23, 2018               [Page 8]
-
-Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
-
-
    [RFC7583]  Morris, S., Ihren, J., Dickinson, J., and W. Mekking,
               "DNSSEC Key Rollover Timing Considerations", RFC 7583,
               DOI 10.17487/RFC7583, October 2015,
@@ -459,6 +442,13 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
               the Parent via CDS/CDNSKEY", RFC 8078,
               DOI 10.17487/RFC8078, March 2017,
               <https://www.rfc-editor.org/info/rfc8078>.
+
+
+
+Wouters & Sury         Expires September 23, 2018               [Page 8]
+
+Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
+
 
    [RFC8080]  Sury, O. and R. Edmonds, "Edwards-Curve Digital Security
               Algorithm (EdDSA) for DNSSEC", RFC 8080,
@@ -485,6 +475,16 @@ Authors' Addresses
    Internet Systems Consortium
 
    EMail: ondrej@isc.org
+
+
+
+
+
+
+
+
+
+
 
 
 
