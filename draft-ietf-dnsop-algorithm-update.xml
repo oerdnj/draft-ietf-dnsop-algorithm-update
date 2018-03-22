@@ -187,7 +187,7 @@
       <section anchor="algs_dnskey" title="DNSKEY Algorithms">
 
 	<t>
-	  Recommendations for DNSKEY algorithms <xref target="DNSKEY-IANA"/>
+	  Implemenation recommendations for DNSKEY algorithms <xref target="DNSKEY-IANA"/>.
 	</t>
 
 	<texttable anchor="tbl_dnskey" suppress-title="true">
@@ -204,7 +204,7 @@
           <c>8</c><c>RSASHA256</c><c>MUST</c><c>MUST</c>
           <c>10</c><c>RSASHA512</c><c>NOT RECOMMENDED</c><c>MUST</c>
           <c>12</c><c>ECC-GOST</c><c>MUST NOT</c><c>MAY</c>
-          <c>13</c><c>ECDSAP256SHA256</c><c>RECOMMENDED</c><c>MUST</c>
+          <c>13</c><c>ECDSAP256SHA256</c><c>MUST</c><c>MUST</c>
           <c>14</c><c>ECDSAP384SHA384</c><c>NOT RECOMMENDED</c><c>RECOMMENDED</c>
 	  <c>15</c><c>ED25519</c><c>RECOMMENDED</c><c>RECOMMENDED</c>
 	  <c>16</c><c>ED448</c><c>MAY</c><c>RECOMMENDED</c>
@@ -232,38 +232,36 @@
 	</t>
 
 	<t>
-	  RSASHA256 is in wide use and considered strong.  However,
-	  the overall industry-wide trend is to move to elliptic curve
-	  cryptography.  Therefore it is recommended that new
-	  deployments use ECDSAP256SHA256 directly.
+	  RSASHA256 is in wide use and considered strong.
 	</t>
 
         <t>
 	  RSASHA512 is NOT RECOMMENDED for DNSSEC Signing because it
 	  has not seen wide deployment, but there are some deployments
 	  hence DNSSEC Validation MUST implement RSASHA512 to ensure
-	  interoperability.
+	  interoperability.  There's isn't significant difference in
+	  cryptographics strength between RSASHA512 and RSASHA256,
+	  therefore it is discouraged to use RSASHA512, as it will
+	  only make deprecation of older algorithms harder.  People
+	  that want to use cryptographically stronger algorithm should
+	  switch to elliptic curve cryptography algorithms.
 	</t>
 
         <t>
-	  ECC-GOST has been superseded by GOST R 34.11-2012 in <xref
-	  target="RFC6986"/>.  The GOST R 34.11-94 algorithm has been
-	  deprecated from 1st January 2013 and all new systems MUST
-	  use GOST R 34.11-2012 and MAY use GOST R 34.11-94 also for
-	  maintaining compatibility with existing systems.  Usage of
-	  GOST R 34.11-94 in current systems is allowed at least for a
-	  5-year period.
+	  ECC-GOST (GOST R 34.11-94) has been superseded by GOST R
+	  34.11-2012 in <xref target="RFC6986"/>.  The GOST R 34.11-94
+	  algorithm has been deprecated from 1st January 2013 and all
+	  new systems MUST use GOST R 34.11-2012 and MAY use GOST R
+	  34.11-94 also for maintaining compatibility with existing
+	  systems.  Usage of GOST R 34.11-94 in current systems is
+	  allowed at least for a 5-year period.
 	</t>
 
         <t>
 	  ECDSAP256SHA256 provide more strength for signature size
 	  than RSASHA256 and RSASHA512 variants.  ECDSAP256SHA256 has
 	  been widely deployed and therefore it is now at MUST level
-	  for validation and it is RECOMMENDED for signing.  Due to
-	  industry-wide trend to move to elliptic curve cryptography,
-	  the ECDSAP256SHA256 is RECOMMENDED to be used by new DNSSEC
-	  deployments, and users of RSA based algorithms SHOULD
-	  upgrade to ECDSAP256SHA256.
+	  for both validation and signing.
 	</t>
 
 	<t>
@@ -286,6 +284,21 @@
 	  become the future RECOMMENDED default algorithm once there's
 	  enough support for this algorithm in the deployed DNSSEC
 	  validators.
+	</t>
+
+      </section>
+
+      <section anchor="algs_dnskey_recommendation" title="DNSKEY Algorithm Recommendation">
+
+	<t>
+	  Operation recommendation for new and existing deployments.
+	</t>
+
+	<t>
+	  Due to industry-wide trend to move to elliptic curve
+	  cryptography, the ECDSAP256SHA256 is RECOMMENDED to be used
+	  by new DNSSEC deployments, and users of RSA based algorithms
+	  SHOULD upgrade to ECDSAP256SHA256.
 	</t>
 
       </section>
