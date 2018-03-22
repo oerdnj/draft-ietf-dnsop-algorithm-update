@@ -248,7 +248,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
    ECDSAP256SHA256 provide more strength for signature size than
    RSASHA256 and RSASHA512 variants.  ECDSAP256SHA256 has been widely
    deployed and therefore it is now at MUST level for both validation
-   and signing.
+   and signing.  It is RECOMMENDED to use deterministic digital
+   signature generation procedure of the ECDSA ([RFC6979]) when
+   implementing ECDSAP256SHA256 (and ECDSAP384SHA384).
 
    ECDSAP384SHA384 share the same properties as ECDSAP256SHA256, but
    offers only a little advantage over ECDSAP256SHA256 and has not seen
@@ -271,8 +273,6 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
    Due to industry-wide trend to move to elliptic curve cryptography,
    the ECDSAP256SHA256 is RECOMMENDED to be used by new DNSSEC
-   deployments, and users of RSA based algorithms SHOULD upgrade to
-   ECDSAP256SHA256.
 
 
 
@@ -281,6 +281,9 @@ Wouters & Sury         Expires September 23, 2018               [Page 5]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
+
+   deployments, and users of RSA based algorithms SHOULD upgrade to
+   ECDSAP256SHA256.
 
 3.3.  DS and CDS Algorithms
 
@@ -327,9 +330,6 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
    algorithms for the use of DNSSEC, specifically with the selection of
    "mandatory-to-implement" algorithms.  The algorithms identified in
    this document as MUST or RECOMMENDED to implement are not known to be
-   broken at the current time, and cryptographic research so far leads
-   us to believe that they will likely remain secure into the
-   foreseeable future.  However, this isn't necessarily forever and it
 
 
 
@@ -338,6 +338,9 @@ Wouters & Sury         Expires September 23, 2018               [Page 6]
 Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
 
+   broken at the current time, and cryptographic research so far leads
+   us to believe that they will likely remain secure into the
+   foreseeable future.  However, this isn't necessarily forever and it
    is expected that new revisions of this document will be issued from
    time to time to reflect the current best practice in this area.
 
@@ -386,9 +389,6 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
 
 
-
-
-
 Wouters & Sury         Expires September 23, 2018               [Page 7]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
@@ -431,14 +431,14 @@ Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
               DOI 10.17487/RFC6944, April 2013,
               <https://www.rfc-editor.org/info/rfc6944>.
 
+   [RFC6979]  Pornin, T., "Deterministic Usage of the Digital Signature
+              Algorithm (DSA) and Elliptic Curve Digital Signature
+              Algorithm (ECDSA)", RFC 6979, DOI 10.17487/RFC6979, August
+              2013, <https://www.rfc-editor.org/info/rfc6979>.
+
    [RFC6986]  Dolmatov, V., Ed. and A. Degtyarev, "GOST R 34.11-2012:
               Hash Function", RFC 6986, DOI 10.17487/RFC6986, August
               2013, <https://www.rfc-editor.org/info/rfc6986>.
-
-   [RFC7344]  Kumari, W., Gudmundsson, O., and G. Barwood, "Automating
-              DNSSEC Delegation Trust Maintenance", RFC 7344,
-              DOI 10.17487/RFC7344, September 2014,
-              <https://www.rfc-editor.org/info/rfc7344>.
 
 
 
@@ -449,6 +449,11 @@ Wouters & Sury         Expires September 23, 2018               [Page 8]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms          March 2018
 
+
+   [RFC7344]  Kumari, W., Gudmundsson, O., and G. Barwood, "Automating
+              DNSSEC Delegation Trust Maintenance", RFC 7344,
+              DOI 10.17487/RFC7344, September 2014,
+              <https://www.rfc-editor.org/info/rfc7344>.
 
    [RFC7583]  Morris, S., Ihren, J., Dickinson, J., and W. Mekking,
               "DNSSEC Key Rollover Timing Considerations", RFC 7583,
@@ -485,11 +490,6 @@ Authors' Addresses
    Internet Systems Consortium
 
    EMail: ondrej@isc.org
-
-
-
-
-
 
 
 
