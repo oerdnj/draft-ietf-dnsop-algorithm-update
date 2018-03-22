@@ -314,7 +314,7 @@
           <ttcol align="left">DNSSEC Validation</ttcol>
 
           <c>0</c><c>NULL (CDS only)</c><c>MUST NOT [*]</c><c>MUST NOT [*]</c>
-          <c>1</c><c>SHA-1</c><c>NOT RECOMMENDED</c><c>MUST</c>
+          <c>1</c><c>SHA-1</c><c>MUST NOT</c><c>MUST</c>
           <c>2</c><c>SHA-256</c><c>MUST</c><c>MUST</c>
           <c>3</c><c>GOST R 34.11-94</c><c>MUST NOT</c><c>MAY</c>
           <c>4</c><c>SHA-384</c><c>MAY</c><c>RECOMMENDED</c>
@@ -329,9 +329,11 @@
 	</t>
 
 	<t>
-	  SHA-1 is in wide use for DS records, but its use is
-	  discouraged as it is an aging algorithm. Users of SHA-1
-	  SHOULD upgrade to SHA-256.
+	  SHA-1 is still in wide use for DS records, so validators
+	  MUST implement the validation, but it is disallowed to use
+	  SHA-1 to generate new DS records.  (See Operational
+	  Considerations for caveats when upgrading from SHA-1 to
+	  SHA-256 DS Algorithm.)
 	</t>
 
         <t>
@@ -405,17 +407,18 @@
 
     <section anchor="ack" title="Acknowledgements">
       <t>
-	This document borrows text from RFC 4307 by Jeffrey
-	I.  Schiller of the Massachusetts Institute of Technology (MIT)
+	This document borrows text from RFC 4307 by Jeffrey I.
+	Schiller of the Massachusetts Institute of Technology (MIT)
 	and the 4307bis document by Yoav Nir, Tero Kivinen, Paul
-	Wouters and Daniel Migault.  Much of the original text has been
-	copied verbatim.
+	Wouters and Daniel Migault.  Much of the original text has
+	been copied verbatim.
       </t>
       <t>
-	We wish to thank Olafur Gudmundsson and Paul Hoffman for their imminent feedback.
+	We wish to thank Roland van Rijswijk-Deij, Olafur Gudmundsson
+	and Paul Hoffman for their imminent feedback.
       </t>
       <t>
-	Kudos to Roy Arends for bringing the DS rollover issue to daylight.
+	Kudos to Roy Arends for bringing the DS rollover issue to the daylight.
       </t>
     </section>
 
