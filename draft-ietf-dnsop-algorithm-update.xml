@@ -219,9 +219,9 @@
 	  RSASHA1 and RSASHA1-NSEC3-SHA1 are widely deployed, although
 	  zones deploying it are recommended to switch to
 	  ECDSAP256SHA256 as there is an industry-wide trend to move
-	  to elliptic curve based cryptography.  RSASHA1 does not
-	  support NSEC3.  RSASHA1-NSEC3-SHA1 can be used with or
-	  without NSEC3.
+	  to elliptic curve cryptography.  RSASHA1 does not support
+	  NSEC3.  RSASHA1-NSEC3-SHA1 can be used with or without
+	  NSEC3.
 	</t>
 
         <t>
@@ -231,11 +231,18 @@
 	  generator.
 	</t>
 
+	<t>
+	  RSASHA256 is in wide use and considered strong.  However,
+	  the overall industry-wide trend is to move to elliptic curve
+	  cryptography.  Therefore it is recommended that new
+	  deployments use ECDSAP256SHA256 directly.
+	</t>
+
         <t>
-	  RSASHA512 is NOT RECOMMENDED for DNSSEC Signing because
-	  it has not seen wide deployment, but there are some
-	  deployments hence DNSSEC Validation MUST implement RSASHA512
-	  to ensure interoperability.
+	  RSASHA512 is NOT RECOMMENDED for DNSSEC Signing because it
+	  has not seen wide deployment, but there are some deployments
+	  hence DNSSEC Validation MUST implement RSASHA512 to ensure
+	  interoperability.
 	</t>
 
         <t>
@@ -249,13 +256,22 @@
 	</t>
 
         <t>
-	  ECDSAP256SHA256 and ECDSAP384SHA384 provide more strength
-	  for signature size than RSASHA256 and RSASHA512 variants.
-	  ECDSAP256SHA256 has seen increased deployment and has been
-	  raised to MUST level for validation and it is RECOMMENDED
-	  for signing.  ECDSAP384SHA384 offers little over
-	  ECDSAP256SHA256 and has not seen wide deployment, so the use
-	  is discouraged, especially for signing.
+	  ECDSAP256SHA256 provide more strength for signature size
+	  than RSASHA256 and RSASHA512 variants.  ECDSAP256SHA256 has
+	  been widely deployed and therefore it is now at MUST level
+	  for validation and it is RECOMMENDED for signing.  Due to
+	  industry-wide trend to move to elliptic curve cryptography,
+	  the ECDSAP256SHA256 is RECOMMENDED to be used by new DNSSEC
+	  deployments, and users of RSA based algorithms SHOULD
+	  upgrade to ECDSAP256SHA256.
+	</t>
+
+	<t>
+	  ECDSAP384SHA384 share the same properties as
+	  ECDSAP256SHA256, but offers only a little advantage over
+	  ECDSAP256SHA256 and has not seen wide deployment, so the
+	  usage of this algorithm is discouraged, especially for
+	  signing.
 	</t>
 
 	<t>
@@ -265,7 +281,11 @@
 	  random number for each signature, there are no padding or
 	  truncation issues as with ECDSA, and it is more resilient to
 	  side-channel attacks.  Furthermore, EdDSA cryptography is
-	  less prone to implementation errors (<xref target="RFC8080"/>).
+	  less prone to implementation errors (<xref
+	  target="RFC8080"/>).  It is expected that ED25519 will
+	  become the future RECOMMENDED default algorithm once there's
+	  enough support for this algorithm in the deployed DNSSEC
+	  validators.
 	</t>
 
       </section>
@@ -273,8 +293,9 @@
       <section anchor="algs_ds" title="DS and CDS Algorithms">
 
 	<t>
-	  Recommendations for Delegation Signer Digest Algorithms <xref target="DNSKEY-IANA"/>
-	  These also apply to the CDS RRTYPE as specified in <xref target="RFC7344"/>
+	  Recommendations for Delegation Signer Digest Algorithms
+	  <xref target="DNSKEY-IANA"/> These also apply to the CDS
+	  RRTYPE as specified in <xref target="RFC7344"/>
 	</t>
 
 	<texttable anchor="tbl_ds" suppress-title="true">
