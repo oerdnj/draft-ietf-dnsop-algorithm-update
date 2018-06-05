@@ -28,7 +28,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc rfcedstyle="yes"?>
 
-<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-00" category="std" obsoletes="6944">
+<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-01" category="std" obsoletes="6944">
   <front>
     <title abbrev="DNSSEC Cryptographic Algorithms">Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
@@ -215,7 +215,7 @@
           <c>10</c><c>RSASHA512</c><c>NOT RECOMMENDED</c><c>MUST</c>
           <c>12</c><c>ECC-GOST</c><c>MUST NOT</c><c>MAY</c>
           <c>13</c><c>ECDSAP256SHA256</c><c>MUST</c><c>MUST</c>
-          <c>14</c><c>ECDSAP384SHA384</c><c>NOT RECOMMENDED</c><c>RECOMMENDED</c>
+          <c>14</c><c>ECDSAP384SHA384</c><c>MAY</c><c>RECOMMENDED</c>
 	  <c>15</c><c>ED25519</c><c>RECOMMENDED</c><c>RECOMMENDED</c>
 	  <c>16</c><c>ED448</c><c>MAY</c><c>RECOMMENDED</c>
 	</texttable>
@@ -275,10 +275,14 @@
 
 	<t>
 	  ECDSAP384SHA384 share the same properties as
-	  ECDSAP256SHA256, but offers only a little advantage over
-	  ECDSAP256SHA256 and has not seen wide deployment, so the
-	  usage of this algorithm is discouraged, especially for
-	  signing.
+	  ECDSAP256SHA256, but offers a modest security advantage over
+	  ECDSAP256SHA256 (192-bits of strength versus 128-bits).  For
+	  most applications of DNSSEC, ECDSAP256SHA256 should be
+	  satisfactory and robust for the foreseeable future, and is
+	  therefore recommended for signing.  While it is unlikely for
+	  a DNSSEC use case which requires 192-bit security strength
+	  to arise, ECDSA384SHA384 is provided for such applications
+	  and it MAY be used for signing in these cases.
 	</t>
 
 	<t>
@@ -358,8 +362,15 @@
 	</t>
 
 	<t>
-	  SHA-384 is not in wide use. It is still recommended to be
-	  supported in validators so that adoption can increase.
+	  SHA-384 share the same properties as SHA-256, but offers a
+	  modest security advantage over SHA-384 (384-bits of strength
+	  versus 256-bits).  For most applications of DNSSEC, SHA-256
+	  should be satisfactory and robust for the foreseeable
+	  future, and is therefore recommended for DS/CDS records.
+	  While it is unlikely for a DNSSEC use case which requires
+	  384-bit security strength to arise, SHA-384 is provided for
+	  such applications and it MAY be used for generating DS/CDS
+	  records in these cases.
 	</t>
 
       </section>
@@ -427,8 +438,9 @@
 	been copied verbatim.
       </t>
       <t>
-	We wish to thank Roland van Rijswijk-Deij, Olafur Gudmundsson
-	and Paul Hoffman for their imminent feedback.
+	We wish to thank Michael Sinatra, Roland van Rijswijk-Deij,
+	Olafur Gudmundsson and Paul Hoffman for their imminent
+	feedback.
       </t>
       <t>
 	Kudos to Roy Arends for bringing the DS rollover issue to the daylight.
