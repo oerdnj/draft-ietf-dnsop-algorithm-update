@@ -197,7 +197,7 @@
       <section anchor="algs_dnskey" title="DNSKEY Algorithms">
 
 	<t>
-	  Implemenation recommendations for DNSKEY algorithms <xref target="DNSKEY-IANA"/>.
+	  Implementation recommendations for DNSKEY algorithms <xref target="DNSKEY-IANA"/>.
 	</t>
 
 	<texttable anchor="tbl_dnskey" suppress-title="true">

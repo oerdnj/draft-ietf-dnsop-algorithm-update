@@ -6,7 +6,7 @@ dnsop                                                         P. Wouters
 Internet-Draft                                                   Red Hat
 Obsoletes: 6944 (if approved)                                    O. Sury
 Intended status: Standards Track             Internet Systems Consortium
-Expires: December 7, 2018                                   June 5, 2018
+Expires: December 9, 2018                                   June 7, 2018
 
 
   Algorithm Implementation Requirements and Usage Guidance for DNSSEC
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on December 7, 2018.
+   This Internet-Draft will expire on December 9, 2018.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 1]
+Wouters & Sury          Expires December 9, 2018                [Page 1]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 2]
+Wouters & Sury          Expires December 9, 2018                [Page 2]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -165,7 +165,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 3]
+Wouters & Sury          Expires December 9, 2018                [Page 3]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -191,7 +191,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 3.1.  DNSKEY Algorithms
 
-   Implemenation recommendations for DNSKEY algorithms [DNSKEY-IANA].
+   Implementation recommendations for DNSKEY algorithms [DNSKEY-IANA].
 
    +--------+--------------------+-----------------+-------------------+
    | Number | Mnemonics          | DNSSEC Signing  | DNSSEC Validation |
@@ -221,7 +221,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 4]
+Wouters & Sury          Expires December 9, 2018                [Page 4]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -277,7 +277,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 5]
+Wouters & Sury          Expires December 9, 2018                [Page 5]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -333,7 +333,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 6]
+Wouters & Sury          Expires December 9, 2018                [Page 6]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -389,7 +389,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 7]
+Wouters & Sury          Expires December 9, 2018                [Page 7]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -445,7 +445,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 8]
+Wouters & Sury          Expires December 9, 2018                [Page 8]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -501,7 +501,7 @@ Authors' Addresses
 
 
 
-Wouters & Sury          Expires December 7, 2018                [Page 9]
+Wouters & Sury          Expires December 9, 2018                [Page 9]
 
 Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
@@ -557,4 +557,4 @@ Internet-Draft       DNSSEC Cryptographic Algorithms           June 2018
 
 
 
-Wouters & Sury          Expires December 7, 2018               [Page 10]
+Wouters & Sury          Expires December 9, 2018               [Page 10]
