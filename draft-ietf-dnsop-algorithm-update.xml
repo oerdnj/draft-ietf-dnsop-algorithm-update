@@ -127,7 +127,7 @@
 	</t>
 
 	<t>
-	  While <xref target="RFC2119"/> consider term SHOULD
+	  While <xref target="RFC2119"/> considers the term SHOULD
 	  equivalent to RECOMMENDED, and term SHOULD NOT to NOT
 	  RECOMMENDED, the authors of this document has chosen to use
 	  terms RECOMMENDED and NOT RECOMMENDED, as it better reflects
