@@ -296,7 +296,10 @@
 	  target="RFC8032"/>, <xref target="RFC8080"/>).  It is
 	  expected that ED25519 will become the future RECOMMENDED
 	  default algorithm once there's enough support for this
-	  algorithm in the deployed DNSSEC validators.
+	  algorithm in the deployed DNSSEC validators. However, relying on
+	  a single Edwards-curve is not a proper strategy. Hence,
+	  it is recommended to support both ED25519 and ED448 in case
+	  of an unforseen security flaw with ED25519 in the future.
 	</t>
 
       </section>
