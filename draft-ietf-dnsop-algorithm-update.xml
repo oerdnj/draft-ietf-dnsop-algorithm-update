@@ -28,7 +28,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc rfcedstyle="yes"?>
 
-<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-01" category="std" obsoletes="6944">
+<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-02" category="std" obsoletes="6944">
   <front>
     <title abbrev="DNSSEC Cryptographic Algorithms">Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
