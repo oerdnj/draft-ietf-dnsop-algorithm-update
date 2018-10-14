@@ -438,7 +438,6 @@
 	</t>
 
 	<texttable anchor="tbl_implementations" suppress-title="true">
-	  <ttcol align="left">Number</ttcol>
 	  <ttcol align="left">Mnemonics</ttcol>
 	  <ttcol align="left">BIND</ttcol>
 	  <ttcol align="left">Knot DNS</ttcol>
@@ -447,18 +446,18 @@
 	  <ttcol align="left">Unbound</ttcol>
 
 	  <!--    Algorithm                 BIND     Knot DNS ODNSSEC  PDNS     Unbound -->
-          <c>1</c><c>RSAMD5</c>             <c>Y</c> <c>N</c> <c>Y</c> <c>N</c> <c>N</c>
-          <c>3</c><c>DSA</c>                <c>Y</c> <c>N</c> <c>Y</c> <c>N</c> <c>Y</c>
-          <c>5</c><c>RSASHA1</c>            <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
-          <c>6</c><c>DSA-NSEC3-SHA1</c>     <c>Y</c> <c>N</c> <c>Y</c> <c>N</c> <c>Y</c>
-          <c>7</c><c>RSASHA1-NSEC3-SHA1</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
-          <c>8</c><c>RSASHA256</c>          <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
-          <c>10</c><c>RSASHA512</c>         <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
-          <c>12</c><c>ECC-GOST</c>          <c>N</c> <c>N</c> <c>Y</c> <c>Y</c> <c>Y</c>
-          <c>13</c><c>ECDSAP256SHA256</c>   <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
-          <c>14</c><c>ECDSAP384SHA384</c>   <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
-	  <c>15</c><c>ED25519</c>           <c>Y</c> <c>Y</c> <c>N</c> <c>Y</c> <c>Y</c>
-	  <c>16</c><c>ED448</c>             <c>N</c> <c>N</c> <c>N</c> <c>Y</c> <c>Y</c>
+          <c>RSAMD5</c>             <c>Y</c> <c>N</c> <c>Y</c> <c>N</c> <c>N</c>
+          <c>DSA</c>                <c>Y</c> <c>N</c> <c>Y</c> <c>N</c> <c>Y</c>
+          <c>RSASHA1</c>            <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
+          <c>DSA-NSEC3-SHA1</c>     <c>Y</c> <c>N</c> <c>Y</c> <c>N</c> <c>Y</c>
+          <c>RSASHA1-NSEC3-SHA1</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
+          <c>RSASHA256</c>          <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
+          <c>RSASHA512</c>          <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
+          <c>ECC-GOST</c>           <c>N</c> <c>N</c> <c>Y</c> <c>Y</c> <c>Y</c>
+          <c>ECDSAP256SHA256</c>    <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
+          <c>ECDSAP384SHA384</c>    <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c> <c>Y</c>
+	  <c>ED25519</c>            <c>Y</c> <c>Y</c> <c>N</c> <c>Y</c> <c>Y</c>
+	  <c>ED448</c>              <c>N</c> <c>N</c> <c>N</c> <c>Y</c> <c>Y</c>
 	</texttable>
       </section>
     </section>
