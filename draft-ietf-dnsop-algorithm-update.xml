@@ -62,7 +62,7 @@
 	proof of non-existence.  To ensure interoperability between
 	DNS resolvers and DNS authoritative servers, it is necessary
 	to specify a set of algorithm implementation requirements and
-	usage guidance to ensure that there is at least one algorithm
+	usage guidelines to ensure that there is at least one algorithm
 	that all implementations support.  This document defines the
 	current algorithm implementation requirements and usage
 	guidance for DNSSEC. This document obsoletes <xref target="RFC6944"/>.
@@ -78,9 +78,10 @@
 	including <xref target="RFC4034"/>, <xref target="RFC5155"/>,
 	<xref target="RFC5702"/>, <xref target="RFC5933"/>, <xref
 	target="RFC6605"/>, <xref target="RFC8080"/>.
-	 DNSSEC is used to provide authentication of data. To ensure interoperability,
-	a set of "mandatory-to-implement" DNSKEY algorithms are defined.
-	This document obsoletes <xref target="RFC6944"/>.
+        DNSSEC is used to provide authentication of data. To ensure
+	interoperability, a set of "mandatory-to-implement" DNSKEY
+	algorithms are defined.  This document obsoletes
+	<xref target="RFC6944"/>.
       </t>
 
       <section title="Updating Algorithm Implementation Requirements and Usage Guidance">
@@ -102,65 +103,66 @@
 	  time it is made mandatory.  This document attempts to
 	  identify and introduce those algorithms for future
 	  mandatory-to-implement status.  There is no guarantee that
-	  the algorithms in use today may become mandatory in the
+	  algorithms in use today will become mandatory in the
 	  future.  Published algorithms are continuously subjected to
-	  cryptographic attack and may become too weak or could become
-	  completely broken before this document is updated.
+	  cryptographic attack and may become too weak, or even be
+	  completely broken, before this document is updated.
 	</t>
 
 	<t>
-	  This document only provides recommendations for the
-	  mandatory-to-implement algorithms or algorithms too weak that
-	  are recommended not to be implemented.  As a result, any
-	  algorithm listed at the <xref target="DNSKEY-IANA"/> and
-	  <xref target="DS-IANA"/> registries not mentioned in this
-	  document MAY be implemented.  For clarification and consistency,
-	  an algorithm will be set to MAY only when it has been downgraded.
+	  This document only provides recommendations with respect to
+	  mandatory-to-implement algorithms or algorithms so weak that
+	  recommendation cannot be recommended.  Any
+	  algorithm listed in the <xref target="DNSKEY-IANA"/> and
+	  <xref target="DS-IANA"/> registries, but not mentioned in this
+	  document, MAY be implemented.  For clarification and consistency,
+	  an algorithm will be specified as MAY in this document only when
+	  it has been downgraded.
 	</t>
 
 	<t>
-	  Although this document updates the algorithms to keep the
-	  DNSSEC authentication secure over time, it also aims at
-	  providing recommendations so that DNSSEC implementations
-	  remain interoperable.  DNSSEC interoperability is addressed
-	  by an incremental introduction or deprecation of algorithms.
+	  Although this document's primary purpose is to update
+	  algorithm recommendations to keep DNSSEC authentication secure
+	  over time, it also aims to do so in such a way that DNSSEC
+	  implementations remain interoperable.  DNSSEC interoperability
+	  is addressed by an incremental introduction or deprecation of
+	  algorithms.
 	</t>
 
 	<t>
-	  While <xref target="RFC2119"/> considers the term SHOULD
-	  equivalent to RECOMMENDED, and term SHOULD NOT to NOT
-	  RECOMMENDED, the authors of this document has chosen to use
-	  terms RECOMMENDED and NOT RECOMMENDED, as it better reflects
-	  the recommendations for implementations.
+	  <xref target="RFC2119"/> considers the term SHOULD
+	  equivalent to RECOMMENDED, and SHOULD NOT equivalent to NOT
+	  RECOMMENDED. The authors of this document have chosen to use the
+	  terms RECOMMENDED and NOT RECOMMENDED, as this more clearly
+	  expresses the recommendations to implementers.
 	</t>
 	
 	<t>
-	  It is expected that deprecation of an algorithm is performed
-	  gradually.  This provides time for various implementations
-	  to update their implemented algorithms while remaining
-	  interoperable.  Unless there are strong security reasons, an
-	  algorithm is expected to be downgraded from MUST to NOT
-	  RECOMMENDED or MAY, instead of MUST NOT.  Similarly, an
-	  algorithm that has not been mentioned as
+	  It is expected that deprecation of an algorithm will be
+	  performed gradually.  This provides time for various
+	  implementations to update their implemented algorithms while
+	  remaining interoperable.  Unless there are strong security
+	  reasons, an algorithm is expected to be downgraded from MUST
+	  to NOT RECOMMENDED or MAY, instead of to MUST NOT.  Similarly,
+	  an algorithm that has not been mentioned as
 	  mandatory-to-implement is expected to be introduced with a
 	  RECOMMENDED instead of a MUST.
 	</t>
 
 	<t>
-	  Since the effects of using an unknown DNSKEY algorithm is
-	  for the zone to be treated as insecure, it is recommended
-	  that algorithms downgraded to NOT RECOMMENDED or below are
-	  no longer used by authoritative nameservers and DNSSEC
+	  Since the effect of using an unknown DNSKEY algorithm is
+	  that the zone is treated as insecure, it is recommended
+	  that algorithms downgraded to NOT RECOMMENDED or lower
+	  not be used by authoritative nameservers and DNSSEC
 	  signers to create new DNSKEY's.  This will allow for
-	  algorithms to slowly become more unused over time.  Once
-	  deployment has reached a sufficiently low point these
-	  algorithms can finally be marked as MUST NOT so that
-	  recursive nameservers can remove support for these
-	  algorithms.
+	  deprecated algorithms to become less and less common over
+	  time.  Once an algorithm has reached a sufficiently low
+	  level of deployment, it can be marked as MUST NOT, so that
+	  recursive resolvers can remove support for validating it.
 	</t>
 
 	<t>
-	  Recursive nameservers are encouraged to keep support for all
+	  Recursive nameservers are encouraged to retain support for all
 	  algorithms not marked as MUST NOT.
 	</t>
       </section>
@@ -168,15 +170,15 @@
       <section title="Document Audience">
 	<t>
 	  The recommendations of this document mostly target DNSSEC
-	  implementers as implementations need to meet both high
+	  implementers, as implementations need to meet both high
 	  security expectations as well as high interoperability
 	  between various vendors and with different versions.
-	  Interoperability requires a smooth move to more secure
-	  algorithms.  This may differ from a user point of view that
-	  may deploy and configure DNSSEC with only the safest
-	  algorithm.  On the other hand, comments and recommendations
-	  from this document are also expected to be useful for such
-	  users.
+	  Interoperability requires a smooth transition to more secure
+	  algorithms.  This perspective may differ from from that of
+	  a user who wishes to deploy and configure DNSSEC with only the
+	  safest algorithm.  On the other hand, the comments and
+	  recommendations in this document are also expected to be
+	  useful for such users.
 	</t>
       </section>
 
@@ -249,12 +251,12 @@
 	  RSASHA512 is NOT RECOMMENDED for DNSSEC Signing because it
 	  has not seen wide deployment, but there are some deployments
 	  hence DNSSEC Validation MUST implement RSASHA512 to ensure
-	  interoperability.  There's isn't significant difference in
+	  interoperability.  There is no significant difference in
 	  cryptographics strength between RSASHA512 and RSASHA256,
 	  therefore it is discouraged to use RSASHA512, as it will
 	  only make deprecation of older algorithms harder.  People
-	  that want to use cryptographically stronger algorithm should
-	  switch to elliptic curve cryptography algorithms.
+	  that wish to use a cryptographically stronger algorithm
+	  should switch to elliptic curve cryptography algorithms.
 	</t>
 
         <t>
@@ -264,29 +266,29 @@
 	</t>
 
         <t>
-	  ECDSAP256SHA256 provide more strength for signature size
-	  than RSASHA256 and RSASHA512 variants.  ECDSAP256SHA256 has
-	  been widely deployed and therefore it is now at MUST level
-	  for both validation and signing.  It is RECOMMENDED to use
-	  deterministic digital signature generation procedure of the
-	  ECDSA (<xref target="RFC6979"/>) when implementing
-	  ECDSAP256SHA256 (and ECDSAP384SHA384).
+	  ECDSAP256SHA256 provides more cryptographic strength
+	  with a shorter signature length than either RSASHA256 or
+	  RSASHA512.  ECDSAP256SHA256 has been widely deployed and
+	  therefore it is now at MUST level for both validation and
+	  signing.  It is RECOMMENDED to use deterministic digital signature
+	  generation procedure of the ECDSA (<xref target="RFC6979"/>)
+	  when implementing ECDSAP256SHA256 (and ECDSAP384SHA384).
 	</t>
 
 	<t>
-	  ECDSAP384SHA384 share the same properties as
+	  ECDSAP384SHA384 shares the same properties as
 	  ECDSAP256SHA256, but offers a modest security advantage over
-	  ECDSAP256SHA256 (192-bits of strength versus 128-bits).  For
-	  most applications of DNSSEC, ECDSAP256SHA256 should be
+	  ECDSAP256SHA256 (192 bits of strength versus 128 bits).  For
+	  most DNSSEC applications, ECDSAP256SHA256 should be
 	  satisfactory and robust for the foreseeable future, and is
 	  therefore recommended for signing.  While it is unlikely for
-	  a DNSSEC use case which requires 192-bit security strength
+	  a DNSSEC use case requiring 192-bit security strength
 	  to arise, ECDSA384SHA384 is provided for such applications
 	  and it MAY be used for signing in these cases.
 	</t>
 
 	<t>
-	  ED25519 and ED448 uses Edwards-curve Digital Security
+	  ED25519 and ED448 use Edwards-curve Digital Security
 	  Algorithm (EdDSA).  There are three main advantages of the
 	  EdDSA algorithm: It does not require the use of a unique
 	  random number for each signature, there are no padding or
@@ -309,7 +311,7 @@
 
 	<t>
 	  Due to industry-wide trend to move to elliptic curve
-	  cryptography, the ECDSAP256SHA256 is RECOMMENDED to be used
+	  cryptography, the ECDSAP256SHA256 is RECOMMENDED for use
 	  by new DNSSEC deployments, and users of RSA based algorithms
 	  SHOULD upgrade to ECDSAP256SHA256.
 	</t>
@@ -347,8 +349,8 @@
 
 	<t>
 	  SHA-1 is still in wide use for DS records, so validators
-	  MUST implement the validation, but it is disallowed to use
-	  SHA-1 to generate new DS records.  (See Operational
+	  MUST implement validation, but it is NOT RECOMMENDED for
+	  use in generating new DS and CDS records.  (See Operational
 	  Considerations for caveats when upgrading from SHA-1 to
 	  SHA-256 DS Algorithm.)
 	</t>
@@ -362,15 +364,15 @@
 	</t>
 
 	<t>
-	  SHA-384 share the same properties as SHA-256, but offers a
+	  SHA-384 shares the same properties as SHA-256, but offers a
 	  modest security advantage over SHA-384 (384-bits of strength
 	  versus 256-bits).  For most applications of DNSSEC, SHA-256
 	  should be satisfactory and robust for the foreseeable
-	  future, and is therefore recommended for DS/CDS records.
-	  While it is unlikely for a DNSSEC use case which requires
+	  future, and is therefore recommended for DS and CDS records.
+	  While it is unlikely for a DNSSEC use case requiring
 	  384-bit security strength to arise, SHA-384 is provided for
-	  such applications and it MAY be used for generating DS/CDS
-	  records in these cases.
+	  such applications and it MAY be used for generating DS and
+	  CDS records in these cases.
 	</t>
 
       </section>
@@ -379,7 +381,7 @@
     <section anchor="security" title="Security Considerations">
 
       <t>
-	The security of cryptographic-based systems depends on both
+	The security of cryptographic systems depends on both
 	the strength of the cryptographic algorithms chosen and the
 	strength of the keys used with those algorithms.  The security
 	also depends on the engineering of the protocol used by the
@@ -394,19 +396,19 @@
 	The algorithms identified in this document as MUST or
 	RECOMMENDED to implement are not known to be broken at the
 	current time, and cryptographic research so far leads us to
-	believe that they will likely remain secure into the
-	foreseeable future.  However, this isn't necessarily forever
+	believe that they are likely to remain secure into the
+	foreseeable future.  However, this isn't necessarily forever,
 	and it is expected that new revisions of this document will be
-	issued from time to time to reflect the current best practice
+	issued from time to time to reflect the current best practices
 	in this area.
       </t>
 
       <t>
-	Retiring an algorithm too soon would result in a signed zone
-	with such an algorithm to be downgraded to the equivalent of
+	Retiring an algorithm too soon would result in a zone signed
+	with the retired algorithm being downgraded to the equivalent of
 	an unsigned zone.  Therefore, algorithm deprecation must be
 	done very slowly and only after careful consideration and
-	measurements of its use.
+	measurement of its use.
       </t>
     </section>
 
