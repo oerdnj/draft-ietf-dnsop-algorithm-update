@@ -431,10 +431,11 @@
 
       <section anchor="implementations_dnskey" title="DNSKEY Algorithms">
 	<t>
-	  The following table contains minimal version of the software that
-	  implements the required functionality.  Usually, the support for
-	  specific algorithm has to be also included in the cryptographic
-	  libraries that the DNS servers use.
+	  The following table contains the status of support in the open-source
+	  DNS signers and validators in the current released versions as of the
+	  time writing this document.  Usually, the support for specific
+	  algorithm has to be also included in the cryptographic libraries that
+	  the software use.
 	</t>
 
 	<texttable anchor="tbl_implementations" suppress-title="true">
