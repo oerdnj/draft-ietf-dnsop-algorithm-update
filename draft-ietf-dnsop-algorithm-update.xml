@@ -12,6 +12,7 @@
 <!ENTITY RFC6944 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6944.xml">
 <!ENTITY RFC6979 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6979.xml">
 <!ENTITY RFC6986 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6986.xml">
+<!ENTITY RFC7091 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7091.xml">
 <!ENTITY RFC7344 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7344.xml">
 <!ENTITY RFC7583 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7583.xml">
 <!ENTITY RFC8032 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8032.xml">
@@ -28,7 +29,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc rfcedstyle="yes"?>
 
-<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-03" category="std" obsoletes="6944">
+<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-04" category="std" obsoletes="6944">
   <front>
     <title abbrev="DNSSEC Cryptographic Algorithms">Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
@@ -260,9 +261,9 @@
 	</t>
 
         <t>
-	  ECC-GOST (GOST R 34.11-94) has been superseded by GOST R
-	  34.11-2012 in <xref target="RFC6986"/>.  The GOST R
-	  34.11-2012 hasn't been standardized for use in DNSSEC.
+	  ECC-GOST (GOST R 34.10-2001) has been superseded by GOST R
+	  34.10-2012 in <xref target="RFC7091"/>.  The GOST R
+	  34.10-2012 hasn't been standardized for use in DNSSEC.
 	</t>
 
         <t>
@@ -360,7 +361,9 @@
 	</t>
 
         <t>
-	  GOST R 34.11-94 has been deprecated by <xref target="RFC6986"/>.
+	  GOST R 34.11-94 has been superseded by GOST R 34.11-2012 in
+	  <xref target="RFC6986"/>.  The GOST R 34.11-2012 hasn't been
+	  standardized for use in DNSSEC.
 	</t>
 
 	<t>
@@ -514,6 +517,7 @@
       &RFC6944;
       &RFC6979;
       &RFC6986;
+      &RFC7091;
       &RFC7344;
       &RFC7583;
       &RFC8032;
