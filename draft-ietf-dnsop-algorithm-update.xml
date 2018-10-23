@@ -28,7 +28,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc rfcedstyle="yes"?>
 
-<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-02" category="std" obsoletes="6944">
+<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-03" category="std" obsoletes="6944">
   <front>
     <title abbrev="DNSSEC Cryptographic Algorithms">Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
@@ -310,10 +310,10 @@
 	</t>
 
 	<t>
-	  Due to industry-wide trend to move to elliptic curve
-	  cryptography, the ECDSAP256SHA256 is RECOMMENDED for use
-	  by new DNSSEC deployments, and users of RSA based algorithms
-	  SHOULD upgrade to ECDSAP256SHA256.
+	  Due to industry-wide trend to move to elliptic curve cryptography, the
+	  ECDSAP256SHA256 is RECOMMENDED DNSKEY algorithm for use by new DNSSEC
+	  deployments, and users of RSA based algorithms SHOULD upgrade to
+	  ECDSAP256SHA256.
 	</t>
 
       </section>
@@ -376,6 +376,19 @@
 	</t>
 
       </section>
+
+      <section anchor="algs_ds_recommendation" title="DS and CDS Algorithm Recommendation">
+
+	<t>
+	  Operation recommendation for new and existing deployments.
+	</t>
+
+	<t>
+	  The SHA-256 is RECOMMENDED DS and CDS algorithm.
+	</t>
+
+      </section>
+
     </section>
 
     <section anchor="security" title="Security Considerations">
