@@ -18,6 +18,8 @@
 <!ENTITY RFC8032 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8032.xml">
 <!ENTITY RFC8078 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8078.xml">
 <!ENTITY RFC8080 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8080.xml">
+<!ENTITY RFC8174 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml">
+<!ENTITY RFC8624 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8624.xml">
 ]>
 
 <?rfc toc="yes"?>
@@ -76,7 +78,7 @@
 	usage guidelines to ensure that there is at least one algorithm
 	that all implementations support.  This document defines the
 	current algorithm implementation requirements and usage
-	guidance for DNSSEC. This document obsoletes <xref target="RFC6944"/>.
+	guidance for DNSSEC. This document obsoletes RFC8624.
       </t>
     </abstract>
   </front>
@@ -92,7 +94,7 @@
         DNSSEC is used to provide authentication of data. To ensure
 	interoperability, a set of "mandatory-to-implement" DNSKEY
 	algorithms are defined.  This document obsoletes
-	<xref target="RFC6944"/>.
+	<xref target="RFC8624"/>.
       </t>
 
       <section title="Updating Algorithm Implementation Requirements and Usage Guidance">
@@ -202,7 +204,9 @@
 	The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 	NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 	"OPTIONAL" in this document are to be interpreted as described
-	in <xref target="RFC2119"/>.
+	in <xref target="RFC2119"/> <xref target="RFC2119"/>
+	<xref target="RFC8174"/> when, and only when, they appear in all
+	capitals, as shown here.
       </t>
 
     </section>
@@ -274,8 +278,9 @@
 
         <t>
 	  ECC-GOST (GOST R 34.10-2001) has been superseded by GOST R
-	  34.10-2012 in <xref target="RFC7091"/>.  The GOST R
-	  34.10-2012 hasn't been standardized for use in DNSSEC.
+	  34.10-2012 in <xref target="RFC7091"/>. GOST R 34.10-2012
+	  has been standardized for use in DNSSEC in 
+	  draft-ietf-dnsop-rfc5933-bis.
 	</t>
 
         <t>
@@ -399,7 +404,7 @@
 	</t>
 
 	<t>
-	  The SHA-256 is RECOMMENDED DS and CDS algorithm.
+	  The SHA-256 is RECOMMENDED for the DS and CDS algorithms.
 	</t>
 
       </section>
@@ -521,6 +526,8 @@
   <back>
     <references title="Normative References">
       &RFC2119;
+      &RFC8174;
+      &RFC8624;
     </references>
     <references title="Informative References">
       &RFC4034;
