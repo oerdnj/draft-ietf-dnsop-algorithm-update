@@ -29,7 +29,7 @@
 <?rfc sortrefs="no" ?>
 <?rfc rfcedstyle="yes"?>
 
-<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-04" category="std" obsoletes="6944">
+<rfc ipr="trust200902" docName="draft-hardaker-dnsop-rfc8624-bis-00" category="std" obsoletes="8624">
   <front>
     <title abbrev="DNSSEC Cryptographic Algorithms">Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
     <author fullname="Wes Hardaker" initials="W." surname="Hardaker">
