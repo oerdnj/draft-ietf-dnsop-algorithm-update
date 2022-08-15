@@ -211,12 +211,12 @@
 
           <c>1</c><c>RSAMD5</c><c>MUST NOT</c><c>MUST NOT</c>
           <c>3</c><c>DSA</c><c>MUST NOT</c><c>MUST NOT</c>
-          <c>5</c><c>RSASHA1</c><c>NOT RECOMMENDED</c><c>MUST</c>
+          <c>5</c><c>RSASHA1</c><c>MUST NOT</c><c>NOT RECOMMENDED</c>
           <c>6</c><c>DSA-NSEC3-SHA1</c><c>MUST NOT</c><c>MUST NOT</c>
-          <c>7</c><c>RSASHA1-NSEC3-SHA1</c><c>NOT RECOMMENDED</c><c>MUST</c>
+          <c>7</c><c>RSASHA1-NSEC3-SHA1</c><c>MUST NOT</c><c>NOT RECOMMENDED</c>
           <c>8</c><c>RSASHA256</c><c>MUST</c><c>MUST</c>
           <c>10</c><c>RSASHA512</c><c>NOT RECOMMENDED</c><c>MUST</c>
-          <c>12</c><c>ECC-GOST</c><c>MUST NOT</c><c>MAY</c>
+          <c>12</c><c>ECC-GOST</c><c>MUST NOT</c><c>NOT RECOMMENDED</c>
           <c>13</c><c>ECDSAP256SHA256</c><c>MUST</c><c>MUST</c>
           <c>14</c><c>ECDSAP384SHA384</c><c>MAY</c><c>RECOMMENDED</c>
 	  <c>15</c><c>ED25519</c><c>RECOMMENDED</c><c>RECOMMENDED</c>
@@ -334,9 +334,9 @@
           <ttcol align="left">DNSSEC Validation</ttcol>
 
           <c>0</c><c>NULL (CDS only)</c><c>MUST NOT [*]</c><c>MUST NOT [*]</c>
-          <c>1</c><c>SHA-1</c><c>MUST NOT</c><c>MUST</c>
+          <c>1</c><c>SHA-1</c><c>MUST NOT</c><c>NOT RECOMMENDED</c>
           <c>2</c><c>SHA-256</c><c>MUST</c><c>MUST</c>
-          <c>3</c><c>GOST R 34.11-94</c><c>MUST NOT</c><c>MAY</c>
+          <c>3</c><c>GOST R 34.11-94</c><c>MUST NOT</c><c>NOT RECOMMENDED</c>
           <c>4</c><c>SHA-384</c><c>MAY</c><c>RECOMMENDED</c>
          <postamble>
           [*] - This is a special type of CDS record signaling removal of
@@ -349,11 +349,11 @@
 	</t>
 
 	<t>
-	  SHA-1 is still in wide use for DS records, so validators
-	  MUST implement validation, but it is NOT RECOMMENDED for
-	  use in generating new DS and CDS records.  (See Operational
-	  Considerations for caveats when upgrading from SHA-1 to
-	  SHA-256 DS Algorithm.)
+	  SHA-1 is in declining use for DS records, so it is NOT
+	  RECOMMENDED for validators to implement SHA-1 validation.
+	  SHA-1 MUST NOT be used in generating new DS and CDS records.
+	  (See Operational Considerations for caveats when upgrading
+	  from SHA-1 to SHA-256 DS Algorithm.)
 	</t>
 
         <t>
