@@ -519,18 +519,6 @@
   </middle>
   <!-- ====================================================================== -->
   <back>
-    <section anchor="changes" title="Changes since RFC8624">
-      <t>The following changes were made since RFC8624:</t>
-      <t>
-	<list style="symbols">
-	  <t>Deprecated validation of all SHA-1 algorithms to SHOULD NOT.</t>
-	  <t>Deprecated  validation all listed GOST algorithms to MUST
-	  NOT.</t>
-	  <t>Merged in RFC9157 updates.</t>
-	  <t>Added Wes Hardaker as an author</t>
-	</list>
-      </t>
-    </section>
     <references title="Normative References">
       &RFC2119;
     </references>
@@ -570,5 +558,17 @@
       </reference>
     </references>
     <!-- ====================================================================== -->
+    <section anchor="changes" title="Changes since RFC8624">
+      <t>The following changes were made since RFC8624:</t>
+      <t>
+	<list style="symbols">
+	  <t>Deprecated validation of all SHA-1 algorithms to SHOULD NOT.</t>
+	  <t>Deprecated  validation all listed GOST algorithms to MUST
+	  NOT.</t>
+	  <t>Merged in RFC9157 updates.</t>
+	  <t>Added Wes Hardaker as an author</t>
+	</list>
+      </t>
+    </section>
   </back>
 </rfc>
