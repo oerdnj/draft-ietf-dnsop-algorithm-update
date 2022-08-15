@@ -32,6 +32,16 @@
 <rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-04" category="std" obsoletes="6944">
   <front>
     <title abbrev="DNSSEC Cryptographic Algorithms">Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
+    <author fullname="Wes Hardaker" initials="W." surname="Hardaker">
+      <organization>USC/ISI</organization>
+      <address>
+	<postal>
+	  <street/>
+	  <country>US</country>
+	</postal>
+        <email>ietf@hardakers.net</email>
+      </address>
+    </author>
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
       <organization>Red Hat</organization>
       <address>
