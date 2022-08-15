@@ -121,14 +121,16 @@
 	</t>
 
 	<t>
-	  This document only provides recommendations with respect to
-	  mandatory-to-implement algorithms or algorithms so weak that
-	  recommendation cannot be recommended.  Any
-	  algorithm listed in the <xref target="DNSKEY-IANA"/> and
-	  <xref target="DS-IANA"/> registries, but not mentioned in this
-	  document, MAY be implemented.  For clarification and consistency,
-	  an algorithm will be specified as MAY in this document only when
-	  it has been downgraded.
+          This document provides recommendations with respect to
+          mandatory-to-implement algorithms, algorithms so weak that
+          they cannot be recommended, and algorithms defined in RFCs
+          that are not on the standards track. Any algorithm listed in
+          the <xref target="DNSKEY-IANA"/> and <xref
+          target="DS-IANA"/> registries that are not mentioned in this
+          document MAY be implemented. For clarification and
+          consistency, an algorithm will be specified as MAY in this
+          document only when it has been downgraded from a MUST or a
+          RECOMMENDED to a MAY.
 	</t>
 
 	<t>
