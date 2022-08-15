@@ -458,6 +458,9 @@
     <section anchor="implementations" title="Implementation Report">
 
       <section anchor="implementations_dnskey" title="DNSKEY Algorithms">
+	<t>TODO: this needs updating, and current practice is to have
+	this deleted at publication too.</t>
+
 	<t>
 	  The following table contains the status of support in the open-source
 	  DNS signers and validators in the current released versions as of the
