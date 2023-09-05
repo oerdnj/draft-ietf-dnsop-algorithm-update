@@ -18,6 +18,8 @@
 <!ENTITY RFC8032 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8032.xml">
 <!ENTITY RFC8078 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8078.xml">
 <!ENTITY RFC8080 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8080.xml">
+<!ENTITY RFC8174 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml">
+<!ENTITY RFC8624 PUBLIC "" "http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8624.xml">
 ]>
 
 <?rfc toc="yes"?>
@@ -29,9 +31,31 @@
 <?rfc sortrefs="no" ?>
 <?rfc rfcedstyle="yes"?>
 
-<rfc ipr="trust200902" docName="draft-ietf-dnsop-algorithm-update-04" category="std" obsoletes="6944">
+<rfc ipr="trust200902" docName="draft-hardaker-dnsop-rfc8624-bis-00" category="std" obsoletes="8624">
   <front>
     <title abbrev="DNSSEC Cryptographic Algorithms">Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
+    <author fullname="Wes Hardaker" initials="W." surname="Hardaker">
+      <organization>USC/ISI</organization>
+      <address>
+	<postal>
+	  <street/>
+	  <country>US</country>
+	</postal>
+        <email>ietf@hardakers.net</email>
+      </address>
+    </author>
+    <author fullname="Warren Kumari" initials="W." surname="Kumari">
+      <organization>Google</organization>
+      <address>
+        <postal>
+          <street>1600 Amphitheatre Parkway</street>
+          <city>Mountain View, CA</city>
+          <code>94043</code>
+          <country>US</country>
+        </postal>
+        <email>warren@kumari.net</email>
+      </address>
+    </author>
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
       <organization>Red Hat</organization>
       <address>
@@ -52,21 +76,28 @@
         <email>ondrej@isc.org</email>
       </address>
     </author>
-    <date year="2018"/>
+    <date year="2022"/>
     <area>Security</area>
     <workgroup>dnsop</workgroup>
     <keyword>Internet-Draft</keyword>
     <abstract>
       <t>
+  [EDITOR NOTE: This document does not change the status (MUST, MAY,
+  RECOMMENDED, etc) of any of the algorithsm listed in RFC8624; that is the
+  work of future documents. Instead, this document simply moves the canonical
+  list of algorithms from RFC8624 to an IANA registry. This is done for two
+  reasons: 1) to allow the list to be updated more easily, and, much more
+  importantly, 2) to allow the list to be more easily referenced.]
+
 	The DNSSEC protocol makes use of various cryptographic
 	algorithms in order to provide authentication of DNS data and
 	proof of non-existence.  To ensure interoperability between
 	DNS resolvers and DNS authoritative servers, it is necessary
 	to specify a set of algorithm implementation requirements and
 	usage guidelines to ensure that there is at least one algorithm
-	that all implementations support.  This document defines the
-	current algorithm implementation requirements and usage
-	guidance for DNSSEC. This document obsoletes <xref target="RFC6944"/>.
+	that all implementations support. This document updates RFC8624 by moving
+  the canonical source of algorithm implementation requirements and usage
+  guidance for DNSSEC from RFC8624 to an IANA registry.
       </t>
     </abstract>
   </front>
@@ -75,25 +106,32 @@
 
     <section anchor="introduction" title="Introduction">
       <t>
-	The DNSSEC signing algorithms are defined by various RFCs,
-	including <xref target="RFC4034"/>, <xref target="RFC5155"/>,
+  DNS Security Extensions (DNSSEC) <xref target="RFC4034"/> is used to provide
+  authentication of DNS data. The DNSSEC signing algorithms are defined by
+  various RFCs, including <xref target="RFC4034"/>, <xref target="RFC5155"/>,
 	<xref target="RFC5702"/>, <xref target="RFC5933"/>, <xref
 	target="RFC6605"/>, <xref target="RFC8080"/>.
-        DNSSEC is used to provide authentication of data. To ensure
-	interoperability, a set of "mandatory-to-implement" DNSKEY
-	algorithms are defined.  This document obsoletes
-	<xref target="RFC6944"/>.
+  To ensure interoperability, a set of "mandatory-to-implement" DNSKEY
+	algorithms are defined in <xref target="RFC8624"/>. In order to make the
+  current status of the algorithms more easily accessible and understandable,
+  this document moves the canonical status of the algorithms from RFC8624 to
+  the IANA DNSSEC algorithm registries.
+  [ Editor: This is similar to the process used for the TLS ciphersuites -
+  https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4 ]
       </t>
+
+      <section title="Terminology">
+  </t>
 
       <section title="Updating Algorithm Implementation Requirements and Usage Guidance">
 	<t>
-	  The field of cryptography evolves continuously.  New stronger
-	  algorithms appear and existing algorithms are found to be
-	  less secure then originally thought.  Therefore, algorithm
-	  implementation requirements and usage guidance need to be
-	  updated from time to time to reflect the new reality.  The
-	  choices for algorithms must be conservative to minimize the
-	  risk of algorithm compromise.
+	The field of cryptography evolves continuously.  New stronger
+	algorithms appear and existing algorithms are found to be
+	less secure then originally thought.  Therefore, algorithm
+	implementation requirements and usage guidance need to be
+	updated from time to time to reflect the new reality.  The
+	choices for algorithms must be conservative to minimize the
+	risk of algorithm compromise.
 	</t>
       </section>
 
@@ -111,17 +149,21 @@
 	</t>
 
 	<t>
-	  This document only provides recommendations with respect to
-	  mandatory-to-implement algorithms or algorithms so weak that
-	  recommendation cannot be recommended.  Any
-	  algorithm listed in the <xref target="DNSKEY-IANA"/> and
-	  <xref target="DS-IANA"/> registries, but not mentioned in this
-	  document, MAY be implemented.  For clarification and consistency,
-	  an algorithm will be specified as MAY in this document only when
-	  it has been downgraded.
+  [ [TODO (WK): This section needs to be updated. ]]
+          This document provides recommendations with respect to
+          mandatory-to-implement algorithms, algorithms so weak that
+          they cannot be recommended, and algorithms defined in RFCs
+          that are not on the standards track. Any algorithm listed in
+          the <xref target="DNSKEY-IANA"/> and <xref
+          target="DS-IANA"/> registries that are not mentioned in this
+          document MAY be implemented. For clarification and
+          consistency, an algorithm will be specified as MAY in this
+          document only when it has been downgraded from a MUST or a
+          RECOMMENDED to a MAY.
 	</t>
 
 	<t>
+  [TODO (WK): Ditto! ]
 	  Although this document's primary purpose is to update
 	  algorithm recommendations to keep DNSSEC authentication secure
 	  over time, it also aims to do so in such a way that DNSSEC
@@ -137,7 +179,7 @@
 	  terms RECOMMENDED and NOT RECOMMENDED, as this more clearly
 	  expresses the recommendations to implementers.
 	</t>
-	
+
 	<t>
 	  It is expected that deprecation of an algorithm will be
 	  performed gradually.  This provides time for various
@@ -190,7 +232,9 @@
 	The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 	NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 	"OPTIONAL" in this document are to be interpreted as described
-	in <xref target="RFC2119"/>.
+	in <xref target="RFC2119"/> <xref target="RFC2119"/>
+	<xref target="RFC8174"/> when, and only when, they appear in all
+	capitals, as shown here.
       </t>
 
     </section>
@@ -203,6 +247,8 @@
 	  Implementation recommendations for DNSKEY algorithms <xref target="DNSKEY-IANA"/>.
 	</t>
 
+  <t>[TODO (WK): Here is were we move things to a registry... ]</t>
+
 	<texttable anchor="tbl_dnskey" suppress-title="true">
           <ttcol align="left">Number</ttcol>
           <ttcol align="left">Mnemonics</ttcol>
@@ -211,12 +257,12 @@
 
           <c>1</c><c>RSAMD5</c><c>MUST NOT</c><c>MUST NOT</c>
           <c>3</c><c>DSA</c><c>MUST NOT</c><c>MUST NOT</c>
-          <c>5</c><c>RSASHA1</c><c>NOT RECOMMENDED</c><c>MUST</c>
+          <c>5</c><c>RSASHA1</c><c>MUST NOT</c><c>SHOULD NOT</c>
           <c>6</c><c>DSA-NSEC3-SHA1</c><c>MUST NOT</c><c>MUST NOT</c>
-          <c>7</c><c>RSASHA1-NSEC3-SHA1</c><c>NOT RECOMMENDED</c><c>MUST</c>
+          <c>7</c><c>RSASHA1-NSEC3-SHA1</c><c>MUST NOT</c><c>SHOULD NOT</c>
           <c>8</c><c>RSASHA256</c><c>MUST</c><c>MUST</c>
           <c>10</c><c>RSASHA512</c><c>NOT RECOMMENDED</c><c>MUST</c>
-          <c>12</c><c>ECC-GOST</c><c>MUST NOT</c><c>MAY</c>
+          <c>12</c><c>ECC-GOST</c><c>MUST NOT</c><c>MUST NOT</c>
           <c>13</c><c>ECDSAP256SHA256</c><c>MUST</c><c>MUST</c>
           <c>14</c><c>ECDSAP384SHA384</c><c>MAY</c><c>RECOMMENDED</c>
 	  <c>15</c><c>ED25519</c><c>RECOMMENDED</c><c>RECOMMENDED</c>
@@ -262,8 +308,9 @@
 
         <t>
 	  ECC-GOST (GOST R 34.10-2001) has been superseded by GOST R
-	  34.10-2012 in <xref target="RFC7091"/>.  The GOST R
-	  34.10-2012 hasn't been standardized for use in DNSSEC.
+	  34.10-2012 in <xref target="RFC7091"/>. GOST R 34.10-2012
+	  has been standardized for use in DNSSEC in
+	  draft-ietf-dnsop-rfc5933-bis.
 	</t>
 
         <t>
@@ -334,9 +381,9 @@
           <ttcol align="left">DNSSEC Validation</ttcol>
 
           <c>0</c><c>NULL (CDS only)</c><c>MUST NOT [*]</c><c>MUST NOT [*]</c>
-          <c>1</c><c>SHA-1</c><c>MUST NOT</c><c>MUST</c>
+          <c>1</c><c>SHA-1</c><c>MUST NOT</c><c>SHOULD NOT</c>
           <c>2</c><c>SHA-256</c><c>MUST</c><c>MUST</c>
-          <c>3</c><c>GOST R 34.11-94</c><c>MUST NOT</c><c>MAY</c>
+          <c>3</c><c>GOST R 34.11-94</c><c>MUST NOT</c><c>MUST NOT</c>
           <c>4</c><c>SHA-384</c><c>MAY</c><c>RECOMMENDED</c>
          <postamble>
           [*] - This is a special type of CDS record signaling removal of
@@ -349,11 +396,11 @@
 	</t>
 
 	<t>
-	  SHA-1 is still in wide use for DS records, so validators
-	  MUST implement validation, but it is NOT RECOMMENDED for
-	  use in generating new DS and CDS records.  (See Operational
-	  Considerations for caveats when upgrading from SHA-1 to
-	  SHA-256 DS Algorithm.)
+	  SHA-1 is in declining use for DS records, so it is NOT
+	  RECOMMENDED for validators to implement SHA-1 validation.
+	  SHA-1 MUST NOT be used in generating new DS and CDS records.
+	  (See Operational Considerations for caveats when upgrading
+	  from SHA-1 to SHA-256 DS Algorithm.)
 	</t>
 
         <t>
@@ -387,7 +434,7 @@
 	</t>
 
 	<t>
-	  The SHA-256 is RECOMMENDED DS and CDS algorithm.
+	  The SHA-256 is RECOMMENDED for the DS and CDS algorithms.
 	</t>
 
       </section>
@@ -446,6 +493,9 @@
     <section anchor="implementations" title="Implementation Report">
 
       <section anchor="implementations_dnskey" title="DNSKEY Algorithms">
+	<t>TODO: this needs updating, and current practice is to have
+	this deleted at publication too.</t>
+
 	<t>
 	  The following table contains the status of support in the open-source
 	  DNS signers and validators in the current released versions as of the
@@ -506,6 +556,8 @@
   <back>
     <references title="Normative References">
       &RFC2119;
+      &RFC8174;
+      &RFC8624;
     </references>
     <references title="Informative References">
       &RFC4034;
@@ -543,5 +595,17 @@
       </reference>
     </references>
     <!-- ====================================================================== -->
+    <section anchor="changes" title="Changes since RFC8624">
+      <t>The following changes were made since RFC8624:</t>
+      <t>
+	<list style="symbols">
+	  <t>Deprecated validation of all SHA-1 algorithms to SHOULD NOT.</t>
+	  <t>Deprecated  validation all listed GOST algorithms to MUST
+	  NOT.</t>
+	  <t>Merged in RFC9157 updates.</t>
+	  <t>Added Wes Hardaker as an author</t>
+	</list>
+      </t>
+    </section>
   </back>
 </rfc>
