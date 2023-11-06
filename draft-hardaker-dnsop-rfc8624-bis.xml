@@ -44,6 +44,18 @@
         <email>ietf@hardakers.net</email>
       </address>
     </author>
+    <author fullname="Warren Kumari" initials="W." surname="Kumari">
+      <organization>Google</organization>
+      <address>
+        <postal>
+          <street>1600 Amphitheatre Parkway</street>
+          <city>Mountain View, CA</city>
+          <code>94043</code>
+          <country>US</country>
+        </postal>
+        <email>warren@kumari.net</email>
+      </address>
+    </author>
     <author fullname="Paul Wouters" initials="P." surname="Wouters">
       <organization>Red Hat</organization>
       <address>
@@ -70,15 +82,22 @@
     <keyword>Internet-Draft</keyword>
     <abstract>
       <t>
+  [EDITOR NOTE: This document does not change the status (MUST, MAY,
+  RECOMMENDED, etc) of any of the algorithsm listed in RFC8624; that is the
+  work of future documents. Instead, this document simply moves the canonical
+  list of algorithms from RFC8624 to an IANA registry. This is done for two
+  reasons: 1) to allow the list to be updated more easily, and, much more
+  importantly, 2) to allow the list to be more easily referenced.]
+
 	The DNSSEC protocol makes use of various cryptographic
 	algorithms in order to provide authentication of DNS data and
 	proof of non-existence.  To ensure interoperability between
 	DNS resolvers and DNS authoritative servers, it is necessary
 	to specify a set of algorithm implementation requirements and
 	usage guidelines to ensure that there is at least one algorithm
-	that all implementations support.  This document defines the
-	current algorithm implementation requirements and usage
-	guidance for DNSSEC. This document obsoletes RFC8624.
+	that all implementations support. This document updates RFC8624 by moving
+  the canonical source of algorithm implementation requirements and usage
+  guidance for DNSSEC from RFC8624 to an IANA registry.
       </t>
     </abstract>
   </front>
@@ -87,25 +106,32 @@
 
     <section anchor="introduction" title="Introduction">
       <t>
-	The DNSSEC signing algorithms are defined by various RFCs,
-	including <xref target="RFC4034"/>, <xref target="RFC5155"/>,
+  DNS Security Extensions (DNSSEC) <xref target="RFC4034"/> is used to provide
+  authentication of DNS data. The DNSSEC signing algorithms are defined by
+  various RFCs, including <xref target="RFC4034"/>, <xref target="RFC5155"/>,
 	<xref target="RFC5702"/>, <xref target="RFC5933"/>, <xref
 	target="RFC6605"/>, <xref target="RFC8080"/>.
-        DNSSEC is used to provide authentication of data. To ensure
-	interoperability, a set of "mandatory-to-implement" DNSKEY
-	algorithms are defined.  This document obsoletes
-	<xref target="RFC8624"/>.
+  To ensure interoperability, a set of "mandatory-to-implement" DNSKEY
+	algorithms are defined in <xref target="RFC8624"/>. In order to make the
+  current status of the algorithms more easily accessible and understandable,
+  this document moves the canonical status of the algorithms from RFC8624 to
+  the IANA DNSSEC algorithm registries.
+  [ Editor: This is similar to the process used for the TLS ciphersuites -
+  https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4 ]
       </t>
+
+      <section title="Terminology">
+  </t>
 
       <section title="Updating Algorithm Implementation Requirements and Usage Guidance">
 	<t>
-	  The field of cryptography evolves continuously.  New stronger
-	  algorithms appear and existing algorithms are found to be
-	  less secure then originally thought.  Therefore, algorithm
-	  implementation requirements and usage guidance need to be
-	  updated from time to time to reflect the new reality.  The
-	  choices for algorithms must be conservative to minimize the
-	  risk of algorithm compromise.
+	The field of cryptography evolves continuously.  New stronger
+	algorithms appear and existing algorithms are found to be
+	less secure then originally thought.  Therefore, algorithm
+	implementation requirements and usage guidance need to be
+	updated from time to time to reflect the new reality.  The
+	choices for algorithms must be conservative to minimize the
+	risk of algorithm compromise.
 	</t>
       </section>
 
@@ -123,6 +149,7 @@
 	</t>
 
 	<t>
+  [ [TODO (WK): This section needs to be updated. ]]
           This document provides recommendations with respect to
           mandatory-to-implement algorithms, algorithms so weak that
           they cannot be recommended, and algorithms defined in RFCs
@@ -136,6 +163,7 @@
 	</t>
 
 	<t>
+  [TODO (WK): Ditto! ]
 	  Although this document's primary purpose is to update
 	  algorithm recommendations to keep DNSSEC authentication secure
 	  over time, it also aims to do so in such a way that DNSSEC
@@ -151,7 +179,7 @@
 	  terms RECOMMENDED and NOT RECOMMENDED, as this more clearly
 	  expresses the recommendations to implementers.
 	</t>
-	
+
 	<t>
 	  It is expected that deprecation of an algorithm will be
 	  performed gradually.  This provides time for various
@@ -219,6 +247,8 @@
 	  Implementation recommendations for DNSKEY algorithms <xref target="DNSKEY-IANA"/>.
 	</t>
 
+  <t>[TODO (WK): Here is were we move things to a registry... ]</t>
+
 	<texttable anchor="tbl_dnskey" suppress-title="true">
           <ttcol align="left">Number</ttcol>
           <ttcol align="left">Mnemonics</ttcol>
@@ -279,7 +309,7 @@
         <t>
 	  ECC-GOST (GOST R 34.10-2001) has been superseded by GOST R
 	  34.10-2012 in <xref target="RFC7091"/>. GOST R 34.10-2012
-	  has been standardized for use in DNSSEC in 
+	  has been standardized for use in DNSSEC in
 	  draft-ietf-dnsop-rfc5933-bis.
 	</t>
 
