@@ -2,28 +2,33 @@
 
 
 
-dnsop                                                        W. Hardaker
+Network Working Group                                        W. Hardaker
 Internet-Draft                                                   USC/ISI
-Obsoletes: 8624 (if approved)                                 P. Wouters
-Intended status: Standards Track                                 Red Hat
-Expires: 16 February 2023                                        O. Sury
-                                             Internet Systems Consortium
-                                                          15 August 2022
+Intended status: Informational                                 W. Kumari
+Expires: 1 June 2024                                              Google
+                                                        29 November 2023
 
 
-  Algorithm Implementation Requirements and Usage Guidance for DNSSEC
-                  draft-hardaker-dnsop-rfc8624-bis-00
+                    DNSSEC Cryptographic Algorithms
+                  draft-hardaker-dnsop-rfc8624-bis-01
 
 Abstract
 
-   The DNSSEC protocol makes use of various cryptographic algorithms in
-   order to provide authentication of DNS data and proof of non-
-   existence.  To ensure interoperability between DNS resolvers and DNS
-   authoritative servers, it is necessary to specify a set of algorithm
-   implementation requirements and usage guidelines to ensure that there
-   is at least one algorithm that all implementations support.  This
-   document defines the current algorithm implementation requirements
-   and usage guidance for DNSSEC.  This document obsoletes RFC8624.
+   [EDITOR NOTE: This document does not change the status (MUST, MAY,
+   RECOMMENDED, etc) of any of the algorithsm listed in RFC8624; that is
+   the work of future documents.  Instead, this document simply moves
+   the canonical list of algorithms from RFC8624 to an IANA registry.
+   This is done for two reasons: 1) to allow the list to be updated more
+   easily, and, much more importantly, 2) to allow the list to be more
+   easily referenced.]  The DNSSEC protocol makes use of various
+   cryptographic algorithms in order to provide authentication of DNS
+   data and proof of non-existence.  To ensure interoperability between
+   DNS resolvers and DNS authoritative servers, it is necessary to
+   specify a set of algorithm implementation requirements and usage
+   guidelines to ensure that there is at least one algorithm that all
+   implementations support.  This document updates RFC8624 by moving the
+   canonical source of algorithm implementation requirements and usage
+   guidance for DNSSEC from RFC8624 to an IANA registry.
 
 Status of This Memo
 
@@ -40,64 +45,84 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 February 2023.
+   This Internet-Draft will expire on 1 June 2024.
+
+
+
+
+
+
+
+Hardaker & Kumari          Expires 1 June 2024                  [Page 1]
+
+Internet-Draft                    title                    November 2023
+
 
 Copyright Notice
 
-   Copyright (c) 2022 IETF Trust and the persons identified as the
+   Copyright (c) 2023 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
    Provisions Relating to IETF Documents (https://trustee.ietf.org/
    license-info) in effect on the date of publication of this document.
-
-
-
-Hardaker, et al.        Expires 16 February 2023                [Page 1]
-
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
-
-
    Please review these documents carefully, as they describe your rights
    and restrictions with respect to this document.  Code Components
-   extracted from this document must include Simplified BSD License text
-   as described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Simplified BSD License.
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
 
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-     1.1.  Updating Algorithm Implementation Requirements and Usage
-           Guidance  . . . . . . . . . . . . . . . . . . . . . . . .   2
-     1.2.  Updating Algorithm Requirement Levels . . . . . . . . . .   3
-     1.3.  Document Audience . . . . . . . . . . . . . . . . . . . .   4
-   2.  Conventions Used in This Document . . . . . . . . . . . . . .   4
-   3.  Algorithm Selection . . . . . . . . . . . . . . . . . . . . .   4
-     3.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   4
-     3.2.  DNSKEY Algorithm Recommendation . . . . . . . . . . . . .   6
-     3.3.  DS and CDS Algorithms . . . . . . . . . . . . . . . . . .   7
-     3.4.  DS and CDS Algorithm Recommendation . . . . . . . . . . .   8
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
-   5.  Operational Considerations  . . . . . . . . . . . . . . . . .   8
-   6.  Implementation Report . . . . . . . . . . . . . . . . . . . .   8
-     6.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   8
-   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  10
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  10
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .  10
-   Appendix A.  Changes since RFC8624  . . . . . . . . . . . . . . .  12
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  12
+     1.1.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   3
+     1.2.  Updating Algorithm Implementation Requirements and Usage
+           Guidance  . . . . . . . . . . . . . . . . . . . . . . . .   3
+     1.3.  Updating Algorithm Requirement Levels . . . . . . . . . .   3
+     1.4.  Document Audience . . . . . . . . . . . . . . . . . . . .   4
+     1.5.  Conventions Used in This Document . . . . . . . . . . . .   4
+   2.  Algorithm Selection . . . . . . . . . . . . . . . . . . . . .   5
+     2.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   5
+     2.2.  DNSKEY Algorithm Recommendation . . . . . . . . . . . . .   6
+     2.3.  DS and CDS Algorithms . . . . . . . . . . . . . . . . . .   7
+     2.4.  DS and CDS Algorithm Recommendation . . . . . . . . . . .   8
+   3.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   4.  Operational Considerations  . . . . . . . . . . . . . . . . .   8
+   5.  Implementation Report . . . . . . . . . . . . . . . . . . . .   8
+     5.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   8
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
+   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
+   Appendix A.  ChangeLog  . . . . . . . . . . . . . . . . . . . . .  10
+     A.1.  Changes since RFC8624 . . . . . . . . . . . . . . . . . .  10
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  10
 
 1.  Introduction
 
-   The DNSSEC signing algorithms are defined by various RFCs, including
-   [RFC4034], [RFC5155], [RFC5702], [RFC5933], [RFC6605], [RFC8080].
-   DNSSEC is used to provide authentication of data.  To ensure
-   interoperability, a set of "mandatory-to-implement" DNSKEY algorithms
-   are defined.  This document obsoletes [RFC8624].
+   DNS Security Extensions (DNSSEC) [RFC4034] is used to provide
+   authentication of DNS data.  The DNSSEC signing algorithms are
+   defined by various RFCs, including [RFC4034], [RFC5155], [RFC5702],
+   [RFC5933], [RFC6605], [RFC8080].  To ensure interoperability, a set
+   of "mandatory-to-implement" DNSKEY algorithms are defined in
+   [RFC8624].  In order to make the current status of the algorithms
+   more easily accessible and understandable, this document moves the
+   canonical status of the algorithms from RFC8624 to the IANA DNSSEC
 
-1.1.  Updating Algorithm Implementation Requirements and Usage Guidance
+
+
+Hardaker & Kumari          Expires 1 June 2024                  [Page 2]
+
+Internet-Draft                    title                    November 2023
+
+
+   algorithm registries.  [ Editor: This is similar to the process used
+   for the TLS ciphersuites - https://www.iana.org/assignments/tls-
+   parameters/tls-parameters.xhtml#tls-parameters-4 ]
+
+1.1.  Terminology
+
+   TBD
+
+1.2.  Updating Algorithm Implementation Requirements and Usage Guidance
 
    The field of cryptography evolves continuously.  New stronger
    algorithms appear and existing algorithms are found to be less secure
@@ -106,15 +131,7 @@ Table of Contents
    to reflect the new reality.  The choices for algorithms must be
    conservative to minimize the risk of algorithm compromise.
 
-
-
-
-Hardaker, et al.        Expires 16 February 2023                [Page 2]
-
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
-
-
-1.2.  Updating Algorithm Requirement Levels
+1.3.  Updating Algorithm Requirement Levels
 
    The mandatory-to-implement algorithm of tomorrow should already be
    available in most implementations of DNSSEC by the time it is made
@@ -125,20 +142,33 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    cryptographic attack and may become too weak, or even be completely
    broken, before this document is updated.
 
-   This document provides recommendations with respect to mandatory-to-
-   implement algorithms, algorithms so weak that they cannot be
-   recommended, and algorithms defined in RFCs that are not on the
-   standards track.  Any algorithm listed in the [DNSKEY-IANA] and
-   [DS-IANA] registries that are not mentioned in this document MAY be
-   implemented.  For clarification and consistency, an algorithm will be
-   specified as MAY in this document only when it has been downgraded
-   from a MUST or a RECOMMENDED to a MAY.
+   [ [TODO (WK): This section needs to be updated. ]] This document
+   provides recommendations with respect to mandatory-to-implement
+   algorithms, algorithms so weak that they cannot be recommended, and
+   algorithms defined in RFCs that are not on the standards track.  Any
+   algorithm listed in the [DNSKEY-IANA] and [DS-IANA] registries that
+   are not mentioned in this document MAY be implemented.  For
+   clarification and consistency, an algorithm will be specified as MAY
+   in this document only when it has been downgraded from a MUST or a
+   RECOMMENDED to a MAY.
 
-   Although this document's primary purpose is to update algorithm
-   recommendations to keep DNSSEC authentication secure over time, it
-   also aims to do so in such a way that DNSSEC implementations remain
-   interoperable.  DNSSEC interoperability is addressed by an
-   incremental introduction or deprecation of algorithms.
+   [TODO (WK): Ditto! ] Although this document's primary purpose is to
+   update algorithm recommendations to keep DNSSEC authentication secure
+   over time, it also aims to do so in such a way that DNSSEC
+   implementations remain interoperable.  DNSSEC interoperability is
+   addressed by an incremental introduction or deprecation of
+   algorithms.
+
+
+
+
+
+
+
+Hardaker & Kumari          Expires 1 June 2024                  [Page 3]
+
+Internet-Draft                    title                    November 2023
+
 
    [RFC2119] considers the term SHOULD equivalent to RECOMMENDED, and
    SHOULD NOT equivalent to NOT RECOMMENDED.  The authors of this
@@ -155,21 +185,6 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    mandatory-to-implement is expected to be introduced with a
    RECOMMENDED instead of a MUST.
 
-
-
-
-
-
-
-
-
-
-
-Hardaker, et al.        Expires 16 February 2023                [Page 3]
-
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
-
-
    Since the effect of using an unknown DNSKEY algorithm is that the
    zone is treated as insecure, it is recommended that algorithms
    downgraded to NOT RECOMMENDED or lower not be used by authoritative
@@ -182,7 +197,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    Recursive nameservers are encouraged to retain support for all
    algorithms not marked as MUST NOT.
 
-1.3.  Document Audience
+1.4.  Document Audience
 
    The recommendations of this document mostly target DNSSEC
    implementers, as implementations need to meet both high security
@@ -194,7 +209,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    recommendations in this document are also expected to be useful for
    such users.
 
-2.  Conventions Used in This Document
+1.5.  Conventions Used in This Document
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
@@ -202,60 +217,48 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    [RFC8174] when, and only when, they appear in all capitals, as shown
    here.
 
-3.  Algorithm Selection
 
-3.1.  DNSKEY Algorithms
+
+
+
+Hardaker & Kumari          Expires 1 June 2024                  [Page 4]
+
+Internet-Draft                    title                    November 2023
+
+
+2.  Algorithm Selection
+
+2.1.  DNSKEY Algorithms
 
    Implementation recommendations for DNSKEY algorithms [DNSKEY-IANA].
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Hardaker, et al.        Expires 16 February 2023                [Page 4]
-
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
-
+   [TODO (WK): Here is were we move things to a registry... ]
 
    +========+====================+=================+===================+
-   | Number | Mnemonics          | DNSSEC Signing  | DNSSEC Validation |
-   +========+====================+=================+===================+
-   | 1      | RSAMD5             | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
-   | 3      | DSA                | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
-   | 5      | RSASHA1            | MUST NOT        | SHOULD NOT        |
-   +--------+--------------------+-----------------+-------------------+
-   | 6      | DSA-NSEC3-SHA1     | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
-   | 7      | RSASHA1-NSEC3-SHA1 | MUST NOT        | SHOULD NOT        |
-   +--------+--------------------+-----------------+-------------------+
-   | 8      | RSASHA256          | MUST            | MUST              |
-   +--------+--------------------+-----------------+-------------------+
-   | 10     | RSASHA512          | NOT             | MUST              |
-   |        |                    | RECOMMENDED     |                   |
-   +--------+--------------------+-----------------+-------------------+
-   | 12     | ECC-GOST           | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
-   | 13     | ECDSAP256SHA256    | MUST            | MUST              |
-   +--------+--------------------+-----------------+-------------------+
-   | 14     | ECDSAP384SHA384    | MAY             | RECOMMENDED       |
-   +--------+--------------------+-----------------+-------------------+
-   | 15     | ED25519            | RECOMMENDED     | RECOMMENDED       |
-   +--------+--------------------+-----------------+-------------------+
-   | 16     | ED448              | MAY             | RECOMMENDED       |
+    | Number | Mnemonics | DNSSEC Signing | DNSSEC Validation | +=======
+   =+====================+=================+===================+ | 1 |
+   RSAMD5 | MUST NOT | MUST NOT | +--------+--------------------+-------
+   ----------+-------------------+ | 3 | DSA | MUST NOT | MUST NOT | +--
+   ------+--------------------+-----------------+-------------------+ |
+   5 | RSASHA1 | MUST NOT | SHOULD NOT | +--------+--------------------
+   +-----------------+-------------------+ | 6 | DSA-NSEC3-SHA1 | MUST
+   NOT | MUST NOT | +--------+--------------------+-----------------+---
+   ----------------+ | 7 | RSASHA1-NSEC3-SHA1 | MUST NOT | SHOULD NOT | 
+   +--------+--------------------+-----------------+-------------------
+   + | 8 | RSASHA256 | MUST | MUST | +--------+--------------------+----
+   -------------+-------------------+ | 10 | RSASHA512 | NOT |
+   MUST | | | | RECOMMENDED | | +--------+--------------------+---------
+   --------+-------------------+ | 12 | ECC-GOST | MUST NOT | MUST NOT |
+   +--------+--------------------+-----------------+-------------------
+   + | 13 | ECDSAP256SHA256 | MUST | MUST | +--------+------------------
+   --+-----------------+-------------------+ | 14 | ECDSAP384SHA384 |
+   MAY | RECOMMENDED | +--------+--------------------+-----------------
+   +-------------------+ | 15 | ED25519 | RECOMMENDED | RECOMMENDED | +-
+   -------+--------------------+-----------------+-------------------+ |
+   16 | ED448 | MAY | RECOMMENDED |
    +--------+--------------------+-----------------+-------------------+
 
-                                  Table 1
+                                 Table 1
 
    RSAMD5 is not widely deployed and there is an industry-wide trend to
    deprecate MD5 usage.
@@ -274,12 +277,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
 
 
 
-
-
-
-Hardaker, et al.        Expires 16 February 2023                [Page 5]
+Hardaker & Kumari          Expires 1 June 2024                  [Page 5]
 
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
+Internet-Draft                    title                    November 2023
 
 
    RSASHA512 is NOT RECOMMENDED for DNSSEC Signing because it has not
@@ -321,7 +321,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    RECOMMENDED default algorithm once there's enough support for this
    algorithm in the deployed DNSSEC validators.
 
-3.2.  DNSKEY Algorithm Recommendation
+2.2.  DNSKEY Algorithm Recommendation
 
    Operation recommendation for new and existing deployments.
 
@@ -333,31 +333,29 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
 
 
 
-Hardaker, et al.        Expires 16 February 2023                [Page 6]
+Hardaker & Kumari          Expires 1 June 2024                  [Page 6]
 
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
+Internet-Draft                    title                    November 2023
 
 
-3.3.  DS and CDS Algorithms
+2.3.  DS and CDS Algorithms
 
    Recommendations for Delegation Signer Digest Algorithms [DNSKEY-IANA]
    These also apply to the CDS RRTYPE as specified in [RFC7344]
 
-   +========+=================+===================+===================+
-   | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
-   +========+=================+===================+===================+
-   | 0      | NULL (CDS only) | MUST NOT [*]      | MUST NOT [*]      |
-   +--------+-----------------+-------------------+-------------------+
-   | 1      | SHA-1           | MUST NOT          | SHOULD NOT        |
-   +--------+-----------------+-------------------+-------------------+
-   | 2      | SHA-256         | MUST              | MUST              |
-   +--------+-----------------+-------------------+-------------------+
-   | 3      | GOST R 34.11-94 | MUST NOT          | MUST NOT          |
-   +--------+-----------------+-------------------+-------------------+
-   | 4      | SHA-384         | MAY               | RECOMMENDED       |
+   +========+=================+===================+===================+ 
+   | Number | Mnemonics | DNSSEC Delegation | DNSSEC Validation | +=====
+   ===+=================+===================+===================+ | 0 |
+   NULL (CDS only) | MUST NOT [_] | MUST NOT [_] | +--------+-----------
+   ------+-------------------+-------------------+ | 1 | SHA-1 | MUST
+   NOT | SHOULD NOT | +--------+-----------------+-------------------+--
+   -----------------+ | 2 | SHA-256 | MUST | MUST | +--------+----------
+   -------+-------------------+-------------------+ | 3 | GOST R
+   34.11-94 | MUST NOT | MUST NOT | +--------+-----------------+--------
+   -----------+-------------------+ | 4 | SHA-384 | MAY | RECOMMENDED |
    +--------+-----------------+-------------------+-------------------+
 
-                                 Table 2
+                                Table 2
 
    [*] - This is a special type of CDS record signaling removal of DS at
    the parent in [RFC8078]
@@ -389,18 +387,20 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
 
 
 
-Hardaker, et al.        Expires 16 February 2023                [Page 7]
+
+
+Hardaker & Kumari          Expires 1 June 2024                  [Page 7]
 
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
+Internet-Draft                    title                    November 2023
 
 
-3.4.  DS and CDS Algorithm Recommendation
+2.4.  DS and CDS Algorithm Recommendation
 
    Operation recommendation for new and existing deployments.
 
    The SHA-256 is RECOMMENDED for the DS and CDS algorithms.
 
-4.  Security Considerations
+3.  Security Considerations
 
    The security of cryptographic systems depends on both the strength of
    the cryptographic algorithms chosen and the strength of the keys used
@@ -423,7 +423,7 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    zone.  Therefore, algorithm deprecation must be done very slowly and
    only after careful consideration and measurement of its use.
 
-5.  Operational Considerations
+4.  Operational Considerations
 
    DNSKEY algorithm rollover in a live zone is a complex process.  See
    [RFC6781] and [RFC7583] for guidelines on how to perform algorithm
@@ -434,9 +434,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    lead to DNSSEC validation failures, and users MUST upgrade the DS
    algorithm first before rolling the Key Signing Key.
 
-6.  Implementation Report
+5.  Implementation Report
 
-6.1.  DNSKEY Algorithms
+5.1.  DNSKEY Algorithms
 
    TODO: this needs updating, and current practice is to have this
    deleted at publication too.
@@ -445,9 +445,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
 
 
 
-Hardaker, et al.        Expires 16 February 2023                [Page 8]
+Hardaker & Kumari          Expires 1 June 2024                  [Page 8]
 
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
+Internet-Draft                    title                    November 2023
 
 
    The following table contains the status of support in the open-source
@@ -456,42 +456,42 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    algorithm has to be also included in the cryptographic libraries that
    the software use.
 
-    +====================+======+======+=========+==========+=========+
-    | Mnemonics          | BIND | Knot | OpenDNS | PowerDNS | Unbound |
-    |                    |      | DNS  |         |          |         |
-    +====================+======+======+=========+==========+=========+
-    | RSAMD5             | Y    | N    | Y       | N        | N       |
-    +--------------------+------+------+---------+----------+---------+
-    | DSA                | Y    | N    | Y       | N        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | RSASHA1            | Y    | Y    | Y       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | DSA-NSEC3-SHA1     | Y    | N    | Y       | N        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | RSASHA1-NSEC3-SHA1 | Y    | Y    | Y       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | RSASHA256          | Y    | Y    | Y       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | RSASHA512          | Y    | Y    | Y       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | ECC-GOST           | N    | N    | Y       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | ECDSAP256SHA256    | Y    | Y    | Y       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | ECDSAP384SHA384    | Y    | Y    | Y       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | ED25519            | Y    | Y    | N       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
-    | ED448              | N    | N    | N       | Y        | Y       |
-    +--------------------+------+------+---------+----------+---------+
+   +====================+======+======+=========+==========+=========+
+   | Mnemonics          | BIND | Knot | OpenDNS | PowerDNS | Unbound |
+   |                    |      | DNS  |         |          |         |
+   +====================+======+======+=========+==========+=========+
+   | RSAMD5             | Y    | N    | Y       | N        | N       |
+   +--------------------+------+------+---------+----------+---------+
+   | DSA                | Y    | N    | Y       | N        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | RSASHA1            | Y    | Y    | Y       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | DSA-NSEC3-SHA1     | Y    | N    | Y       | N        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | RSASHA1-NSEC3-SHA1 | Y    | Y    | Y       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | RSASHA256          | Y    | Y    | Y       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | RSASHA512          | Y    | Y    | Y       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | ECC-GOST           | N    | N    | Y       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | ECDSAP256SHA256    | Y    | Y    | Y       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | ECDSAP384SHA384    | Y    | Y    | Y       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | ED25519            | Y    | Y    | N       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
+   | ED448              | N    | N    | N       | Y        | Y       |
+   +--------------------+------+------+---------+----------+---------+
 
-                                  Table 3
+                                 Table 3
 
-7.  IANA Considerations
+6.  IANA Considerations
 
    This document makes no requests of IANA.
 
-8.  Acknowledgements
+7.  Acknowledgements
 
    This document borrows text from RFC 4307 by Jeffrey I.  Schiller of
    the Massachusetts Institute of Technology (MIT) and the 4307bis
@@ -501,9 +501,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
 
 
 
-Hardaker, et al.        Expires 16 February 2023                [Page 9]
+Hardaker & Kumari          Expires 1 June 2024                  [Page 9]
 
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
+Internet-Draft                    title                    November 2023
 
 
    We wish to thank Michael Sinatra, Roland van Rijswijk-Deij, Olafur
@@ -512,126 +512,9 @@ Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
    Kudos to Roy Arends for bringing the DS rollover issue to the
    daylight.
 
-9.  References
+Appendix A.  ChangeLog
 
-9.1.  Normative References
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
-
-   [RFC8624]  Wouters, P. and O. Sury, "Algorithm Implementation
-              Requirements and Usage Guidance for DNSSEC", RFC 8624,
-              DOI 10.17487/RFC8624, June 2019,
-              <https://www.rfc-editor.org/info/rfc8624>.
-
-9.2.  Informative References
-
-   [RFC4034]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
-              Rose, "Resource Records for the DNS Security Extensions",
-              RFC 4034, DOI 10.17487/RFC4034, March 2005,
-              <https://www.rfc-editor.org/info/rfc4034>.
-
-   [RFC5155]  Laurie, B., Sisson, G., Arends, R., and D. Blacka, "DNS
-              Security (DNSSEC) Hashed Authenticated Denial of
-              Existence", RFC 5155, DOI 10.17487/RFC5155, March 2008,
-              <https://www.rfc-editor.org/info/rfc5155>.
-
-   [RFC5702]  Jansen, J., "Use of SHA-2 Algorithms with RSA in DNSKEY
-              and RRSIG Resource Records for DNSSEC", RFC 5702,
-              DOI 10.17487/RFC5702, October 2009,
-              <https://www.rfc-editor.org/info/rfc5702>.
-
-   [RFC5933]  Dolmatov, V., Ed., Chuprina, A., and I. Ustinov, "Use of
-              GOST Signature Algorithms in DNSKEY and RRSIG Resource
-              Records for DNSSEC", RFC 5933, DOI 10.17487/RFC5933, July
-              2010, <https://www.rfc-editor.org/info/rfc5933>.
-
-
-
-
-
-
-Hardaker, et al.        Expires 16 February 2023               [Page 10]
-
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
-
-
-   [RFC6605]  Hoffman, P. and W C A. Wijngaards, "Elliptic Curve Digital
-              Signature Algorithm (DSA) for DNSSEC", RFC 6605,
-              DOI 10.17487/RFC6605, April 2012,
-              <https://www.rfc-editor.org/info/rfc6605>.
-
-   [RFC6781]  Kolkman, O., Mekking, W., and R. Gieben, "DNSSEC
-              Operational Practices, Version 2", RFC 6781,
-              DOI 10.17487/RFC6781, December 2012,
-              <https://www.rfc-editor.org/info/rfc6781>.
-
-   [RFC6944]  Rose, S., "Applicability Statement: DNS Security (DNSSEC)
-              DNSKEY Algorithm Implementation Status", RFC 6944,
-              DOI 10.17487/RFC6944, April 2013,
-              <https://www.rfc-editor.org/info/rfc6944>.
-
-   [RFC6979]  Pornin, T., "Deterministic Usage of the Digital Signature
-              Algorithm (DSA) and Elliptic Curve Digital Signature
-              Algorithm (ECDSA)", RFC 6979, DOI 10.17487/RFC6979, August
-              2013, <https://www.rfc-editor.org/info/rfc6979>.
-
-   [RFC6986]  Dolmatov, V., Ed. and A. Degtyarev, "GOST R 34.11-2012:
-              Hash Function", RFC 6986, DOI 10.17487/RFC6986, August
-              2013, <https://www.rfc-editor.org/info/rfc6986>.
-
-   [RFC7091]  Dolmatov, V., Ed. and A. Degtyarev, "GOST R 34.10-2012:
-              Digital Signature Algorithm", RFC 7091,
-              DOI 10.17487/RFC7091, December 2013,
-              <https://www.rfc-editor.org/info/rfc7091>.
-
-   [RFC7344]  Kumari, W., Gudmundsson, O., and G. Barwood, "Automating
-              DNSSEC Delegation Trust Maintenance", RFC 7344,
-              DOI 10.17487/RFC7344, September 2014,
-              <https://www.rfc-editor.org/info/rfc7344>.
-
-   [RFC7583]  Morris, S., Ihren, J., Dickinson, J., and W. Mekking,
-              "DNSSEC Key Rollover Timing Considerations", RFC 7583,
-              DOI 10.17487/RFC7583, October 2015,
-              <https://www.rfc-editor.org/info/rfc7583>.
-
-   [RFC8032]  Josefsson, S. and I. Liusvaara, "Edwards-Curve Digital
-              Signature Algorithm (EdDSA)", RFC 8032,
-              DOI 10.17487/RFC8032, January 2017,
-              <https://www.rfc-editor.org/info/rfc8032>.
-
-   [RFC8078]  Gudmundsson, O. and P. Wouters, "Managing DS Records from
-              the Parent via CDS/CDNSKEY", RFC 8078,
-              DOI 10.17487/RFC8078, March 2017,
-              <https://www.rfc-editor.org/info/rfc8078>.
-
-
-
-Hardaker, et al.        Expires 16 February 2023               [Page 11]
-
-Internet-Draft       DNSSEC Cryptographic Algorithms         August 2022
-
-
-   [RFC8080]  Sury, O. and R. Edmonds, "Edwards-Curve Digital Security
-              Algorithm (EdDSA) for DNSSEC", RFC 8080,
-              DOI 10.17487/RFC8080, February 2017,
-              <https://www.rfc-editor.org/info/rfc8080>.
-
-   [DNSKEY-IANA]
-              "DNSKEY Algorithms", <http://www.iana.org/assignments/dns-
-              sec-alg-numbers/dns-sec-alg-numbers.xhtml>.
-
-   [DS-IANA]  "Delegation Signer Digest Algorithms",
-              <http://www.iana.org/assignments/ds-rr-types/ds-rr-
-              types.xhtml>.
-
-Appendix A.  Changes since RFC8624
+A.1.  Changes since RFC8624
 
    The following changes were made since RFC8624:
 
@@ -643,30 +526,35 @@ Appendix A.  Changes since RFC8624
 
    *  Added Wes Hardaker as an author
 
+   Hardaker, et al.  Expires 1 June 2024 [Page 13]
+
 Authors' Addresses
 
    Wes Hardaker
    USC/ISI
-   United States of America
-
    Email: ietf@hardakers.net
 
 
-   Paul Wouters
-   Red Hat
-   Canada
-
-   Email: pwouters@redhat.com
-
-
-   Ondrej Sury
-   Internet Systems Consortium
-   Czechia
-
-   Email: ondrej@isc.org
+   Warren Kumari
+   Google
+   Email: warren@kumari.net
 
 
 
 
 
-Hardaker, et al.        Expires 16 February 2023               [Page 12]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hardaker & Kumari          Expires 1 June 2024                 [Page 10]
