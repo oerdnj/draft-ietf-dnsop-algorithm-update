@@ -39,7 +39,7 @@
     <abstract>
 
 
-<?line 27?>
+<?line 44?>
 
 <t>[EDITOR NOTE: This document does not change the status (MUST, MAY,
    RECOMMENDED, etc) of any of the algorithsm listed in RFC8624; that is
@@ -68,16 +68,16 @@
   <middle>
 
 
-<?line 45?>
+<?line 62?>
 
 <section anchor="introduction"><name>Introduction</name>
 
-<t>DNS Security Extensions (DNSSEC) [RFC4034] is used to provide
+<t>DNS Security Extensions (DNSSEC) <xref target="RFC4034"></xref> is used to provide
    authentication of DNS data.  The DNSSEC signing algorithms are
-   defined by various RFCs, including [RFC4034], [RFC5155], [RFC5702],
-   [RFC5933], [RFC6605], [RFC8080].  To ensure interoperability, a set
+   defined by various RFCs, including <xref target="RFC4034"></xref>, <xref target="RFC5155"></xref>, <xref target="RFC5702"></xref>,
+   <xref target="RFC5933"></xref>, <xref target="RFC6605"></xref>, <xref target="RFC8080"></xref>.  To ensure interoperability, a set
    of "mandatory-to-implement" DNSKEY algorithms are defined in
-   [RFC8624].  In order to make the current status of the algorithms
+   <xref target="RFC8624"></xref>.  In order to make the current status of the algorithms
    more easily accessible and understandable, this document moves the
    canonical status of the algorithms from RFC8624 to the IANA DNSSEC
    algorithm registries.  [ Editor: This is similar to the process used
@@ -127,7 +127,7 @@
    addressed by an incremental introduction or deprecation of
    algorithms.</t>
 
-<t>[RFC2119] considers the term SHOULD equivalent to RECOMMENDED, and
+<t><xref target="RFC2119"></xref> considers the term SHOULD equivalent to RECOMMENDED, and
    SHOULD NOT equivalent to NOT RECOMMENDED.  The authors of this
    document have chosen to use the terms RECOMMENDED and NOT
    RECOMMENDED, as this more clearly expresses the recommendations to
@@ -172,8 +172,8 @@
 
 <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in [RFC2119] [RFC2119]
-   [RFC8174] when, and only when, they appear in all capitals, as shown
+   document are to be interpreted as described in <xref target="RFC2119"></xref>
+   <xref target="RFC8174"></xref> when, and only when, they appear in all capitals, as shown
    here.</t>
 
 </section>
@@ -244,14 +244,14 @@
    algorithm should switch to elliptic curve cryptography algorithms.</t>
 
 <t>ECC-GOST (GOST R 34.10-2001) has been superseded by GOST R 34.10-2012
-   in [RFC7091].  GOST R 34.10-2012 has been standardized for use in
+   in <xref target="RFC7091"></xref>.  GOST R 34.10-2012 has been standardized for use in
    DNSSEC in draft-ietf-dnsop-rfc5933-bis.</t>
 
 <t>ECDSAP256SHA256 provides more cryptographic strength with a shorter
    signature length than either RSASHA256 or RSASHA512.  ECDSAP256SHA256
    has been widely deployed and therefore it is now at MUST level for
    both validation and signing.  It is RECOMMENDED to use deterministic
-   digital signature generation procedure of the ECDSA ([RFC6979]) when
+   digital signature generation procedure of the ECDSA (<xref target="RFC6979"></xref>) when
    implementing ECDSAP256SHA256 (and ECDSAP384SHA384).</t>
 
 <t>ECDSAP384SHA384 shares the same properties as ECDSAP256SHA256, but
@@ -268,8 +268,8 @@
    does not require the use of a unique random number for each
    signature, there are no padding or truncation issues as with ECDSA,
    and it is more resilient to side-channel attacks.  Furthermore, EdDSA
-   cryptography is less prone to implementation errors ([RFC8032],
-   [RFC8080]).  It is expected that ED25519 will become the future
+   cryptography is less prone to implementation errors (<xref target="RFC8032"></xref>,
+   <xref target="RFC8080"></xref>).  It is expected that ED25519 will become the future
    RECOMMENDED default algorithm once there's enough support for this
    algorithm in the deployed DNSSEC validators.</t>
 
@@ -287,7 +287,7 @@
 <section anchor="ds-and-cds-algorithms"><name>DS and CDS Algorithms</name>
 
 <t>Recommendations for Delegation Signer Digest Algorithms [DNSKEY-IANA]
-   These also apply to the CDS RRTYPE as specified in [RFC7344]</t>
+   These also apply to the CDS RRTYPE as specified in <xref target="RFC7344"></xref></t>
 
 <t>+========+=================+===================+===================+
    | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
@@ -308,9 +308,9 @@
 ]]></artwork></figure>
 
 <t>[*] - This is a special type of CDS record signaling removal of DS at
-   the parent in [RFC8078]</t>
+   the parent in <xref target="RFC8078"></xref></t>
 
-<t>NULL is a special case, see [RFC8078]</t>
+<t>NULL is a special case, see <xref target="RFC8078"></xref></t>
 
 <t>SHA-1 is in declining use for DS records, so it is NOT RECOMMENDED
    for validators to implement SHA-1 validation.  SHA-1 MUST NOT be used
@@ -321,7 +321,7 @@
 <t>SHA-256 is in wide use and considered strong.</t>
 
 <t>GOST R 34.11-94 has been superseded by GOST R 34.11-2012 in
-   [RFC6986].  The GOST R 34.11-2012 hasn't been standardized for use in
+   <xref target="RFC6986"></xref>.  The GOST R 34.11-2012 hasn't been standardized for use in
    DNSSEC.</t>
 
 <t>SHA-384 shares the same properties as SHA-256, but offers a modest
@@ -369,7 +369,7 @@
 <section anchor="operational-considerations"><name>Operational Considerations</name>
 
 <t>DNSKEY algorithm rollover in a live zone is a complex process.  See
-   [RFC6781] and [RFC7583] for guidelines on how to perform algorithm
+   <xref target="RFC6781"></xref> and <xref target="RFC7583"></xref> for guidelines on how to perform algorithm
    rollovers.</t>
 
 <t>DS algorithm rollover in a live zone is also a complex process.
@@ -452,10 +452,278 @@
   <back>
 
 
+    <references title='Normative References' anchor="sec-normative-references">
 
 
 
-<?line 399?>
+<reference anchor="RFC2119">
+  <front>
+    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
+    <author fullname="S. Bradner" initials="S." surname="Bradner"/>
+    <date month="March" year="1997"/>
+    <abstract>
+      <t>In many standards track documents several words are used to signify the requirements in the specification. These words are often capitalized. This document defines these words as they should be interpreted in IETF documents. This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="BCP" value="14"/>
+  <seriesInfo name="RFC" value="2119"/>
+  <seriesInfo name="DOI" value="10.17487/RFC2119"/>
+</reference>
+
+<reference anchor="RFC8174">
+  <front>
+    <title>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</title>
+    <author fullname="B. Leiba" initials="B." surname="Leiba"/>
+    <date month="May" year="2017"/>
+    <abstract>
+      <t>RFC 2119 specifies common key words that may be used in protocol specifications. This document aims to reduce the ambiguity by clarifying that only UPPERCASE usage of the key words have the defined special meanings.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="BCP" value="14"/>
+  <seriesInfo name="RFC" value="8174"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8174"/>
+</reference>
+
+<reference anchor="RFC8624">
+  <front>
+    <title>Algorithm Implementation Requirements and Usage Guidance for DNSSEC</title>
+    <author fullname="P. Wouters" initials="P." surname="Wouters"/>
+    <author fullname="O. Sury" initials="O." surname="Sury"/>
+    <date month="June" year="2019"/>
+    <abstract>
+      <t>The DNSSEC protocol makes use of various cryptographic algorithms in order to provide authentication of DNS data and proof of nonexistence. To ensure interoperability between DNS resolvers and DNS authoritative servers, it is necessary to specify a set of algorithm implementation requirements and usage guidelines to ensure that there is at least one algorithm that all implementations support. This document defines the current algorithm implementation requirements and usage guidance for DNSSEC. This document obsoletes RFC 6944.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8624"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8624"/>
+</reference>
+
+
+
+
+    </references>
+
+    <references title='Informative References' anchor="sec-informative-references">
+
+
+
+<reference anchor="RFC4034">
+  <front>
+    <title>Resource Records for the DNS Security Extensions</title>
+    <author fullname="R. Arends" initials="R." surname="Arends"/>
+    <author fullname="R. Austein" initials="R." surname="Austein"/>
+    <author fullname="M. Larson" initials="M." surname="Larson"/>
+    <author fullname="D. Massey" initials="D." surname="Massey"/>
+    <author fullname="S. Rose" initials="S." surname="Rose"/>
+    <date month="March" year="2005"/>
+    <abstract>
+      <t>This document is part of a family of documents that describe the DNS Security Extensions (DNSSEC). The DNS Security Extensions are a collection of resource records and protocol modifications that provide source authentication for the DNS. This document defines the public key (DNSKEY), delegation signer (DS), resource record digital signature (RRSIG), and authenticated denial of existence (NSEC) resource records. The purpose and format of each resource record is described in detail, and an example of each resource record is given.</t>
+      <t>This document obsoletes RFC 2535 and incorporates changes from all updates to RFC 2535. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="4034"/>
+  <seriesInfo name="DOI" value="10.17487/RFC4034"/>
+</reference>
+
+<reference anchor="RFC5155">
+  <front>
+    <title>DNS Security (DNSSEC) Hashed Authenticated Denial of Existence</title>
+    <author fullname="B. Laurie" initials="B." surname="Laurie"/>
+    <author fullname="G. Sisson" initials="G." surname="Sisson"/>
+    <author fullname="R. Arends" initials="R." surname="Arends"/>
+    <author fullname="D. Blacka" initials="D." surname="Blacka"/>
+    <date month="March" year="2008"/>
+    <abstract>
+      <t>The Domain Name System Security (DNSSEC) Extensions introduced the NSEC resource record (RR) for authenticated denial of existence. This document introduces an alternative resource record, NSEC3, which similarly provides authenticated denial of existence. However, it also provides measures against zone enumeration and permits gradual expansion of delegation-centric zones. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="5155"/>
+  <seriesInfo name="DOI" value="10.17487/RFC5155"/>
+</reference>
+
+<reference anchor="RFC5702">
+  <front>
+    <title>Use of SHA-2 Algorithms with RSA in DNSKEY and RRSIG Resource Records for DNSSEC</title>
+    <author fullname="J. Jansen" initials="J." surname="Jansen"/>
+    <date month="October" year="2009"/>
+    <abstract>
+      <t>This document describes how to produce RSA/SHA-256 and RSA/SHA-512 DNSKEY and RRSIG resource records for use in the Domain Name System Security Extensions (RFC 4033, RFC 4034, and RFC 4035). [STANDARDS TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="5702"/>
+  <seriesInfo name="DOI" value="10.17487/RFC5702"/>
+</reference>
+
+<reference anchor="RFC5933">
+  <front>
+    <title>Use of GOST Signature Algorithms in DNSKEY and RRSIG Resource Records for DNSSEC</title>
+    <author fullname="V. Dolmatov" initials="V." role="editor" surname="Dolmatov"/>
+    <author fullname="A. Chuprina" initials="A." surname="Chuprina"/>
+    <author fullname="I. Ustinov" initials="I." surname="Ustinov"/>
+    <date month="July" year="2010"/>
+    <abstract>
+      <t>This document describes how to produce digital signatures and hash functions using the GOST R 34.10-2001 and GOST R 34.11-94 algorithms for DNSKEY, RRSIG, and DS resource records, for use in the Domain Name System Security Extensions (DNSSEC). [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="5933"/>
+  <seriesInfo name="DOI" value="10.17487/RFC5933"/>
+</reference>
+
+<reference anchor="RFC6605">
+  <front>
+    <title>Elliptic Curve Digital Signature Algorithm (DSA) for DNSSEC</title>
+    <author fullname="P. Hoffman" initials="P." surname="Hoffman"/>
+    <author fullname="W.C.A. Wijngaards" initials="W.C.A." surname="Wijngaards"/>
+    <date month="April" year="2012"/>
+    <abstract>
+      <t>This document describes how to specify Elliptic Curve Digital Signature Algorithm (DSA) keys and signatures in DNS Security (DNSSEC). It lists curves of different sizes and uses the SHA-2 family of hashes for signatures. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="6605"/>
+  <seriesInfo name="DOI" value="10.17487/RFC6605"/>
+</reference>
+
+<reference anchor="RFC6781">
+  <front>
+    <title>DNSSEC Operational Practices, Version 2</title>
+    <author fullname="O. Kolkman" initials="O." surname="Kolkman"/>
+    <author fullname="W. Mekking" initials="W." surname="Mekking"/>
+    <author fullname="R. Gieben" initials="R." surname="Gieben"/>
+    <date month="December" year="2012"/>
+    <abstract>
+      <t>This document describes a set of practices for operating the DNS with security extensions (DNSSEC). The target audience is zone administrators deploying DNSSEC.</t>
+      <t>The document discusses operational aspects of using keys and signatures in the DNS. It discusses issues of key generation, key storage, signature generation, key rollover, and related policies.</t>
+      <t>This document obsoletes RFC 4641, as it covers more operational ground and gives more up-to-date requirements with respect to key sizes and the DNSSEC operations.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="6781"/>
+  <seriesInfo name="DOI" value="10.17487/RFC6781"/>
+</reference>
+
+<reference anchor="RFC6979">
+  <front>
+    <title>Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA)</title>
+    <author fullname="T. Pornin" initials="T." surname="Pornin"/>
+    <date month="August" year="2013"/>
+    <abstract>
+      <t>This document defines a deterministic digital signature generation procedure. Such signatures are compatible with standard Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA) digital signatures and can be processed with unmodified verifiers, which need not be aware of the procedure described therein. Deterministic signatures retain the cryptographic security features associated with digital signatures but can be more easily implemented in various environments, since they do not need access to a source of high-quality randomness.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="6979"/>
+  <seriesInfo name="DOI" value="10.17487/RFC6979"/>
+</reference>
+
+<reference anchor="RFC6986">
+  <front>
+    <title>GOST R 34.11-2012: Hash Function</title>
+    <author fullname="V. Dolmatov" initials="V." role="editor" surname="Dolmatov"/>
+    <author fullname="A. Degtyarev" initials="A." surname="Degtyarev"/>
+    <date month="August" year="2013"/>
+    <abstract>
+      <t>This document is intended to be a source of information about the Russian Federal standard hash function (GOST R 34.11-2012), which is one of the Russian cryptographic standard algorithms (called GOST algorithms). This document updates RFC 5831.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="6986"/>
+  <seriesInfo name="DOI" value="10.17487/RFC6986"/>
+</reference>
+
+<reference anchor="RFC7091">
+  <front>
+    <title>GOST R 34.10-2012: Digital Signature Algorithm</title>
+    <author fullname="V. Dolmatov" initials="V." role="editor" surname="Dolmatov"/>
+    <author fullname="A. Degtyarev" initials="A." surname="Degtyarev"/>
+    <date month="December" year="2013"/>
+    <abstract>
+      <t>This document provides information about the Russian Federal standard for digital signatures (GOST R 34.10-2012), which is one of the Russian cryptographic standard algorithms (called GOST algorithms). Recently, Russian cryptography is being used in Internet applications, and this document provides information for developers and users of GOST R 34.10-2012 regarding digital signature generation and verification. This document updates RFC 5832.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="7091"/>
+  <seriesInfo name="DOI" value="10.17487/RFC7091"/>
+</reference>
+
+<reference anchor="RFC7344">
+  <front>
+    <title>Automating DNSSEC Delegation Trust Maintenance</title>
+    <author fullname="W. Kumari" initials="W." surname="Kumari"/>
+    <author fullname="O. Gudmundsson" initials="O." surname="Gudmundsson"/>
+    <author fullname="G. Barwood" initials="G." surname="Barwood"/>
+    <date month="September" year="2014"/>
+    <abstract>
+      <t>This document describes a method to allow DNS Operators to more easily update DNSSEC Key Signing Keys using the DNS as a communication channel. The technique described is aimed at delegations in which it is currently hard to move information from the Child to Parent.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="7344"/>
+  <seriesInfo name="DOI" value="10.17487/RFC7344"/>
+</reference>
+
+<reference anchor="RFC7583">
+  <front>
+    <title>DNSSEC Key Rollover Timing Considerations</title>
+    <author fullname="S. Morris" initials="S." surname="Morris"/>
+    <author fullname="J. Ihren" initials="J." surname="Ihren"/>
+    <author fullname="J. Dickinson" initials="J." surname="Dickinson"/>
+    <author fullname="W. Mekking" initials="W." surname="Mekking"/>
+    <date month="October" year="2015"/>
+    <abstract>
+      <t>This document describes the issues surrounding the timing of events in the rolling of a key in a DNSSEC-secured zone. It presents timelines for the key rollover and explicitly identifies the relationships between the various parameters affecting the process.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="7583"/>
+  <seriesInfo name="DOI" value="10.17487/RFC7583"/>
+</reference>
+
+<reference anchor="RFC8032">
+  <front>
+    <title>Edwards-Curve Digital Signature Algorithm (EdDSA)</title>
+    <author fullname="S. Josefsson" initials="S." surname="Josefsson"/>
+    <author fullname="I. Liusvaara" initials="I." surname="Liusvaara"/>
+    <date month="January" year="2017"/>
+    <abstract>
+      <t>This document describes elliptic curve signature scheme Edwards-curve Digital Signature Algorithm (EdDSA). The algorithm is instantiated with recommended parameters for the edwards25519 and edwards448 curves. An example implementation and test vectors are provided.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8032"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8032"/>
+</reference>
+
+<reference anchor="RFC8078">
+  <front>
+    <title>Managing DS Records from the Parent via CDS/CDNSKEY</title>
+    <author fullname="O. Gudmundsson" initials="O." surname="Gudmundsson"/>
+    <author fullname="P. Wouters" initials="P." surname="Wouters"/>
+    <date month="March" year="2017"/>
+    <abstract>
+      <t>RFC 7344 specifies how DNS trust can be maintained across key rollovers in-band between parent and child. This document elevates RFC 7344 from Informational to Standards Track. It also adds a method for initial trust setup and removal of a secure entry point.</t>
+      <t>Changing a domain's DNSSEC status can be a complicated matter involving multiple unrelated parties. Some of these parties, such as the DNS operator, might not even be known by all the organizations involved. The inability to disable DNSSEC via in-band signaling is seen as a problem or liability that prevents some DNSSEC adoption at a large scale. This document adds a method for in-band signaling of these DNSSEC status changes.</t>
+      <t>This document describes reasonable policies to ease deployment of the initial acceptance of new secure entry points (DS records).</t>
+      <t>It is preferable that operators collaborate on the transfer or move of a domain. The best method is to perform a Key Signing Key (KSK) plus Zone Signing Key (ZSK) rollover. If that is not possible, the method using an unsigned intermediate state described in this document can be used to move the domain between two parties. This leaves the domain temporarily unsigned and vulnerable to DNS spoofing, but that is preferred over the alternative of validation failures due to a mismatched DS and DNSKEY record.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8078"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8078"/>
+</reference>
+
+<reference anchor="RFC8080">
+  <front>
+    <title>Edwards-Curve Digital Security Algorithm (EdDSA) for DNSSEC</title>
+    <author fullname="O. Sury" initials="O." surname="Sury"/>
+    <author fullname="R. Edmonds" initials="R." surname="Edmonds"/>
+    <date month="February" year="2017"/>
+    <abstract>
+      <t>This document describes how to specify Edwards-curve Digital Security Algorithm (EdDSA) keys and signatures in DNS Security (DNSSEC). It uses EdDSA with the choice of two curves: Ed25519 and Ed448.</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="8080"/>
+  <seriesInfo name="DOI" value="10.17487/RFC8080"/>
+</reference>
+
+
+
+
+    </references>
+
+
+<?line 416?>
 
 <section anchor="changelog"><name>ChangeLog</name>
 
@@ -470,8 +738,6 @@
   <t>Added Wes Hardaker as an author</t>
 </list></t>
 
-<t>Hardaker, et al.           Expires 1 June 2024                 [Page 13]</t>
-
 </section>
 </section>
 
@@ -479,142 +745,142 @@
   </back>
 
 <!-- ##markdown-source:
-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
-tF8f3yK8Pdy/2/o/iZJVBnlNAAA=
+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
 
 -->
 

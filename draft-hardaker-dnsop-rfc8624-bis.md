@@ -21,8 +21,25 @@ author:
     email: warren@kumari.net
 
 normative:
+  RFC2119:
+  RFC8174:
+  RFC8624:
 
 informative:
+  RFC4034:
+  RFC5155:
+  RFC5702:
+  RFC5933:
+  RFC6605:
+  RFC6781:
+  RFC6979:
+  RFC6986:
+  RFC7091:
+  RFC7344:
+  RFC7583:
+  RFC8032:
+  RFC8078:
+  RFC8080:
 
 --- abstract
 
@@ -411,43 +428,3 @@ informative:
    *  Merged in RFC9157 updates.
 
    *  Added Wes Hardaker as an author
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Hardaker, et al.           Expires 1 June 2024                 [Page 13]
