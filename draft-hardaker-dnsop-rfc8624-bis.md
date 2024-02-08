@@ -45,12 +45,12 @@ informative:
 
    [EDITOR NOTE: This document does not change the status (MUST, MAY,
    RECOMMENDED, etc) of any of the algorithms listed in RFC8624; that is
-   the work of future documents.  Instead, this document simply moves
+   the work of future documents.  Instead, this document moves
    the canonical list of algorithms from RFC8624 to an IANA registry.
    This is done for two reasons: 1) to allow the list to be updated more
    easily, and, much more importantly, 2) to allow the list to be more
    easily referenced.]  The DNSSEC protocol makes use of various
-   cryptographic algorithms in order to provide authentication of DNS
+   cryptographic algorithms to provide authentication of DNS
    data and proof of non-existence.  To ensure interoperability between
    DNS resolvers and DNS authoritative servers, it is necessary to
    specify a set of algorithm implementation requirements and usage
@@ -68,7 +68,7 @@ informative:
    defined by various RFCs, including [RFC4034], [RFC5155], [RFC5702],
    [RFC5933], [RFC6605], [RFC8080].  To ensure interoperability, a set
    of "mandatory-to-implement" DNSKEY algorithms are defined in
-   [RFC8624].  In order to make the current status of the algorithms
+   [RFC8624].  To make the current status of the algorithms
    more easily accessible and understandable, this document moves the
    canonical status of the algorithms from RFC8624 to the IANA DNSSEC
    algorithm registries.  [ Editor: This is similar to the process used
@@ -81,11 +81,11 @@ informative:
 
 ##  Updating Algorithm Implementation Requirements and Usage Guidance
 
-   The field of cryptography evolves continuously.  New stronger
-   algorithms appear and existing algorithms are found to be less secure
+   The field of cryptography evolves continuously.  New, stronger
+   algorithms appear, and existing algorithms are found to be less secure
    then originally thought.  Therefore, algorithm implementation
    requirements and usage guidance need to be updated from time to time
-   to reflect the new reality.  The choices for algorithms must be
+   to reflect the new reality.  The algorithm choices must be
    conservative to minimize the risk of algorithm compromise.
 
 ##  Updating Algorithm Requirement Levels
@@ -94,8 +94,8 @@ informative:
    available in most implementations of DNSSEC by the time it is made
    mandatory.  This document attempts to identify and introduce those
    algorithms for future mandatory-to-implement status.  There is no
-   guarantee that algorithms in use today will become mandatory in the
-   future.  Published algorithms are continuously subjected to
+   guarantee that algorithms in use today will become mandatory to implement
+   in the future.  Published algorithms are continuously subjected to
    cryptographic attack and may become too weak, or even be completely
    broken, before this document is updated.
 
@@ -122,7 +122,7 @@ informative:
    RECOMMENDED, as this more clearly expresses the recommendations to
    implementers.
 
-   It is expected that deprecation of an algorithm will be performed
+   It is expected that the deprecation of an algorithm will be performed
    gradually.  This provides time for various implementations to update
    their implemented algorithms while remaining interoperable.  Unless
    there are strong security reasons, an algorithm is expected to be
@@ -150,7 +150,7 @@ informative:
    expectations as well as high interoperability between various vendors
    and with different versions.  Interoperability requires a smooth
    transition to more secure algorithms.  This perspective may differ
-   from from that of a user who wishes to deploy and configure DNSSEC
+   from that of a user who wishes to deploy and configure DNSSEC
    with only the safest algorithm.  On the other hand, the comments and
    recommendations in this document are also expected to be useful for
    such users.
