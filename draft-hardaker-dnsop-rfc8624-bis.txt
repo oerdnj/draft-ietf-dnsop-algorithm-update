@@ -86,14 +86,14 @@ Table of Contents
    4.  DS and CDS Algorithms . . . . . . . . . . . . . . . . . . . .   6
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
    6.  Operational Considerations  . . . . . . . . . . . . . . . . .   7
-   7.  Implementation Report . . . . . . . . . . . . . . . . . . . .   8
-     7.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   8
-   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   9
-   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   9
+   7.  Implementation Report . . . . . . . . . . . . . . . . . . . .   7
+     7.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   7
+   8.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
+   9.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   8
    10. References  . . . . . . . . . . . . . . . . . . . . . . . . .   9
      10.1.  Normative References . . . . . . . . . . . . . . . . . .   9
      10.2.  Informative References . . . . . . . . . . . . . . . . .   9
-   Appendix A.  ChangeLog  . . . . . . . . . . . . . . . . . . . . .  11
+   Appendix A.  ChangeLog  . . . . . . . . . . . . . . . . . . . . .  10
      A.1.  Changes since RFC8624 . . . . . . . . . . . . . . . . . .  11
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  11
 
@@ -231,18 +231,13 @@ Internet-Draft                    title                    February 2024
    Per this document, "Recommended" columns have been added to the
    following DNSSEC algorithm tables registered with IANA:
 
-        +===================+====================================+
-        | Table             | Column added                       |
-        +===================+====================================+
-        | DNSKEY algorithms | Recommended for DNSSSEC Signing    |
-        +-------------------+------------------------------------+
-        | DNSKEY algorithms | Recommended for DNSSSEC Validation |
-        +-------------------+------------------------------------+
-        | Delegation Signer | Recommended                        |
-        | Digest Algorithms |                                    |
-        +-------------------+------------------------------------+
-
-                                 Table 1
+|-------------------------------------------------------------------------|
+| Table                               | Column added                      |
+|-------------------------------------------------------------------------|
+| DNSKEY algorithms                   | Recommended for DNSSSEC Signing   |
+| DNSKEY algorithms                   | Recommended for DNSSSEC Validation|
+| Delegation Signer Digest Algorithms | Recommended                       |
+|-------------------------------------------------------------------------|
 
    Adding a Recommended parameter of "Y" to a registry or updating a
    parameter to "Recommended" status requires Standards Action.  Not all
@@ -277,59 +272,64 @@ Internet-Draft                    title                    February 2024
 
 
 
+
+
+
+
+
 Hardaker & Kumari        Expires 11 August 2024                 [Page 5]
 
 Internet-Draft                    title                    February 2024
 
 
-   +========+====================+=================+===================+
+   |--------|--------------------|-----------------|-------------------|
    |        |                    | Recommended for | Recommended for   |
-   +========+====================+=================+===================+
-   | Number | Mnemonics          | DNSSEC Signing  | DNSSEC            |
-   |        |                    |                 | Validation        |
-   +--------+--------------------+-----------------+-------------------+
+   | Number | Mnemonics          | DNSSEC Signing  | DNSSEC Validation |
+   |--------|--------------------|-----------------|-------------------|
    | 1      | RSAMD5             | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 3      | DSA                | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 5      | RSASHA1            | MUST NOT        | SHOULD NOT        |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 6      | DSA-NSEC3-SHA1     | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 7      | RSASHA1-NSEC3-SHA1 | MUST NOT        | SHOULD NOT        |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 8      | RSASHA256          | MUST            | MUST              |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 10     | RSASHA512          | NOT             | MUST              |
-   +--------+--------------------+-----------------+-------------------+
    |        |                    | RECOMMENDED     |                   |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 12     | ECC-GOST           | MUST NOT        | MUST NOT          |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 13     | ECDSAP256SHA256    | MUST            | MUST              |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 14     | ECDSAP384SHA384    | MAY             | RECOMMENDED       |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 15     | ED25519            | RECOMMENDED     | RECOMMENDED       |
-   +--------+--------------------+-----------------+-------------------+
+   |--------|--------------------|-----------------|-------------------|
    | 16     | ED448              | MAY             | RECOMMENDED       |
-   +--------+--------------------+-----------------+-------------------+
-
-                                  Table 2
+   |--------|--------------------|-----------------|-------------------|
 
 4.  DS and CDS Algorithms
 
    Initial recommendation columns of implementation recommendations for
    DNSKEY algorithms.
 
-
-
-
-
-
-
-
-
+   |--------|-----------------|-------------------|-------------------|
+   | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
+   |--------|-----------------|-------------------|-------------------|
+   | 0      | NULL (CDS only) | MUST NOT [*]      | MUST NOT [*]      |
+   |--------|-----------------|-------------------|-------------------|
+   | 1      | SHA-1           | MUST NOT          | SHOULD NOT        |
+   |--------|-----------------|-------------------|-------------------|
+   | 2      | SHA-256         | MUST              | MUST              |
+   |--------|-----------------|-------------------|-------------------|
+   | 3      | GOST R 34.11-94 | MUST NOT          | MUST NOT          |
+   |--------|-----------------|-------------------|-------------------|
+   | 4      | SHA-384         | MAY               | RECOMMENDED       |
+   |--------|-----------------|-------------------|-------------------|
 
 
 
@@ -337,22 +337,6 @@ Hardaker & Kumari        Expires 11 August 2024                 [Page 6]
 
 Internet-Draft                    title                    February 2024
 
-
-   +========+=================+===================+===================+
-   | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
-   +========+=================+===================+===================+
-   | 0      | NULL (CDS only) | MUST NOT [*]      | MUST NOT [*]      |
-   +--------+-----------------+-------------------+-------------------+
-   | 1      | SHA-1           | MUST NOT          | SHOULD NOT        |
-   +--------+-----------------+-------------------+-------------------+
-   | 2      | SHA-256         | MUST              | MUST              |
-   +--------+-----------------+-------------------+-------------------+
-   | 3      | GOST R 34.11-94 | MUST NOT          | MUST NOT          |
-   +--------+-----------------+-------------------+-------------------+
-   | 4      | SHA-384         | MAY               | RECOMMENDED       |
-   +--------+-----------------+-------------------+-------------------+
-
-                                 Table 3
 
 5.  Security Considerations
 
@@ -383,17 +367,6 @@ Internet-Draft                    title                    February 2024
    [RFC6781] and [RFC7583] for guidelines on how to perform algorithm
    rollovers.
 
-
-
-
-
-
-
-Hardaker & Kumari        Expires 11 August 2024                 [Page 7]
-
-Internet-Draft                    title                    February 2024
-
-
    DS algorithm rollover in a live zone is also a complex process.
    Upgrading algorithm at the same time as rolling the new KSK key will
    lead to DNSSEC validation failures, and users MUST upgrade the DS
@@ -411,6 +384,15 @@ Internet-Draft                    title                    February 2024
    time writing this document.  Usually, the support for specific
    algorithm has to be also included in the cryptographic libraries that
    the software use.
+
+
+
+
+
+Hardaker & Kumari        Expires 11 August 2024                 [Page 7]
+
+Internet-Draft                    title                    February 2024
+
 
    |--------------------|------|------|---------|----------|---------|
    | Mnemonics          | BIND | Knot | OpenDNS | PowerDNS | Unbound |
@@ -443,13 +425,6 @@ Internet-Draft                    title                    February 2024
 
                                  Table 3
 
-
-
-Hardaker & Kumari        Expires 11 August 2024                 [Page 8]
-
-Internet-Draft                    title                    February 2024
-
-
 8.  IANA Considerations
 
    This document makes no requests of IANA.
@@ -466,6 +441,14 @@ Internet-Draft                    title                    February 2024
 
    Kudos to Roy Arends for bringing the DS rollover issue to the
    daylight.
+
+
+
+
+Hardaker & Kumari        Expires 11 August 2024                 [Page 8]
+
+Internet-Draft                    title                    February 2024
+
 
 10.  References
 
@@ -497,15 +480,6 @@ Internet-Draft                    title                    February 2024
               Existence", RFC 5155, DOI 10.17487/RFC5155, March 2008,
               <https://www.rfc-editor.org/rfc/rfc5155>.
 
-
-
-
-
-Hardaker & Kumari        Expires 11 August 2024                 [Page 9]
-
-Internet-Draft                    title                    February 2024
-
-
    [RFC5702]  Jansen, J., "Use of SHA-2 Algorithms with RSA in DNSKEY
               and RRSIG Resource Records for DNSSEC", RFC 5702,
               DOI 10.17487/RFC5702, October 2009,
@@ -520,6 +494,17 @@ Internet-Draft                    title                    February 2024
               Signature Algorithm (DSA) for DNSSEC", RFC 6605,
               DOI 10.17487/RFC6605, April 2012,
               <https://www.rfc-editor.org/rfc/rfc6605>.
+
+
+
+
+
+
+
+Hardaker & Kumari        Expires 11 August 2024                 [Page 9]
+
+Internet-Draft                    title                    February 2024
+
 
    [RFC6781]  Kolkman, O., Mekking, W., and R. Gieben, "DNSSEC
               Operational Practices, Version 2", RFC 6781,
@@ -555,13 +540,6 @@ Internet-Draft                    title                    February 2024
               DOI 10.17487/RFC8032, January 2017,
               <https://www.rfc-editor.org/rfc/rfc8032>.
 
-
-
-Hardaker & Kumari        Expires 11 August 2024                [Page 10]
-
-Internet-Draft                    title                    February 2024
-
-
    [RFC8078]  Gudmundsson, O. and P. Wouters, "Managing DS Records from
               the Parent via CDS/CDNSKEY", RFC 8078,
               DOI 10.17487/RFC8078, March 2017,
@@ -573,6 +551,16 @@ Internet-Draft                    title                    February 2024
               <https://www.rfc-editor.org/rfc/rfc8080>.
 
 Appendix A.  ChangeLog
+
+
+
+
+
+
+Hardaker & Kumari        Expires 11 August 2024                [Page 10]
+
+Internet-Draft                    title                    February 2024
+
 
 A.1.  Changes since RFC8624
 
@@ -598,6 +586,18 @@ Authors' Addresses
    Google
 
    Email: warren@kumari.net
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
