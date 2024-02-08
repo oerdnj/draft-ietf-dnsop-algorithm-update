@@ -163,15 +163,38 @@ informative:
    [RFC8174] when, and only when, they appear in all capitals, as shown
    here.
 
-#  Algorithm Selection
+# Adding "Recommended" Column to IANA tables
 
-##  DNSKEY Algorithms
+   Per this document, "Recommended" columns have been added to the
+   following DNSSEC algorithm tables registered with IANA:
+   
+   +====================+====================================================+
+   | Table                               | Column added                      |
+   +====================+====================================================+
+   | DNSKEY algorithms                   | Recommended for DNSSSEC Signing   |
+   | DNSKEY algorithms                   | Recommended for DNSSSEC Validation|
+   | Delegation Signer Digest Algorithms | Recommended                       |
+   +====================+====================================================+
 
-   Implementation recommendations for DNSKEY algorithms [DNSKEY-IANA].
+   Adding a Recommended parameter of "Y" to a registry or updating a
+   parameter to "Recommended" status requires Standards Action.  Not
+   all parameters defined in Standards Track documents need to be
+   marked as "Recommended".  If an item is not marked as "Recommended"
+   (i.e., "N"), it does not necessarily mean that it is flawed;
+   rather, it indicates that the item either has not been through the
+   IETF consensus process, has limited applicability, or is intended
+   only for specific use cases.
+   
+   The following sections state the initial values to be populated
+   into these rows, with values transcribed from [RFC8624].
+   
+#  DNSKEY Algorithm Recommendation Column Values
 
-   [TODO (WK): Here is were we move things to a registry... ]
+   Initial recommendation columns of implementation recommendations
+   for DNSKEY algorithms.
 
    +========+====================+=================+===================+
+   |        |                    | Recommended for | Recommended for   |
    | Number | Mnemonics          | DNSSEC Signing  | DNSSEC Validation |
    +========+====================+=================+===================+
    | 1      | RSAMD5             | MUST NOT        | MUST NOT          |
@@ -200,75 +223,10 @@ informative:
    | 16     | ED448              | MAY             | RECOMMENDED       |
    +--------+--------------------+-----------------+-------------------+
 
-                                  Table 1
+#  DS and CDS Algorithms
 
-   RSAMD5 is not widely deployed and there is an industry-wide trend to
-   deprecate MD5 usage.
-
-   RSASHA1 and RSASHA1-NSEC3-SHA1 are widely deployed, although zones
-   deploying it are recommended to switch to ECDSAP256SHA256 as there is
-   an industry-wide trend to move to elliptic curve cryptography.
-   RSASHA1 does not support NSEC3.  RSASHA1-NSEC3-SHA1 can be used with
-   or without NSEC3.
-
-   DSA and DSA-NSEC3-SHA1 are not widely deployed and vulnerable to
-   private key compromise when generating signatures using a weak or
-   compromised random number generator.
-
-   RSASHA256 is in wide use and considered strong.
-
-   RSASHA512 is NOT RECOMMENDED for DNSSEC Signing because it has not
-   seen wide deployment, but there are some deployments hence DNSSEC
-   Validation MUST implement RSASHA512 to ensure interoperability.
-   There is no significant difference in cryptographics strength between
-   RSASHA512 and RSASHA256, therefore it is discouraged to use
-   RSASHA512, as it will only make deprecation of older algorithms
-   harder.  People that wish to use a cryptographically stronger
-   algorithm should switch to elliptic curve cryptography algorithms.
-
-   ECC-GOST (GOST R 34.10-2001) has been superseded by GOST R 34.10-2012
-   in [RFC7091].  GOST R 34.10-2012 has been standardized for use in
-   DNSSEC in draft-ietf-dnsop-rfc5933-bis.
-
-   ECDSAP256SHA256 provides more cryptographic strength with a shorter
-   signature length than either RSASHA256 or RSASHA512.  ECDSAP256SHA256
-   has been widely deployed and therefore it is now at MUST level for
-   both validation and signing.  It is RECOMMENDED to use deterministic
-   digital signature generation procedure of the ECDSA ([RFC6979]) when
-   implementing ECDSAP256SHA256 (and ECDSAP384SHA384).
-
-   ECDSAP384SHA384 shares the same properties as ECDSAP256SHA256, but
-   offers a modest security advantage over ECDSAP256SHA256 (192 bits of
-   strength versus 128 bits).  For most DNSSEC applications,
-   ECDSAP256SHA256 should be satisfactory and robust for the foreseeable
-   future, and is therefore recommended for signing.  While it is
-   unlikely for a DNSSEC use case requiring 192-bit security strength to
-   arise, ECDSA384SHA384 is provided for such applications and it MAY be
-   used for signing in these cases.
-
-   ED25519 and ED448 use Edwards-curve Digital Security Algorithm
-   (EdDSA).  There are three main advantages of the EdDSA algorithm: It
-   does not require the use of a unique random number for each
-   signature, there are no padding or truncation issues as with ECDSA,
-   and it is more resilient to side-channel attacks.  Furthermore, EdDSA
-   cryptography is less prone to implementation errors ([RFC8032],
-   [RFC8080]).  It is expected that ED25519 will become the future
-   RECOMMENDED default algorithm once there's enough support for this
-   algorithm in the deployed DNSSEC validators.
-
-##  DNSKEY Algorithm Recommendation
-
-   Operation recommendation for new and existing deployments.
-
-   Due to industry-wide trend to move to elliptic curve cryptography,
-   the ECDSAP256SHA256 is RECOMMENDED DNSKEY algorithm for use by new
-   DNSSEC deployments, and users of RSA based algorithms SHOULD upgrade
-   to ECDSAP256SHA256.
-
-##  DS and CDS Algorithms
-
-   Recommendations for Delegation Signer Digest Algorithms [DNSKEY-IANA]
-   These also apply to the CDS RRTYPE as specified in [RFC7344]
+   Initial recommendation columns of implementation recommendations
+   for DNSKEY algorithms.
 
    +========+=================+===================+===================+
    | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
@@ -283,57 +241,6 @@ informative:
    +--------+-----------------+-------------------+-------------------+
    | 4      | SHA-384         | MAY               | RECOMMENDED       |
    +--------+-----------------+-------------------+-------------------+
-
-                                 Table 2
-
-   [*] - This is a special type of CDS record signaling removal of DS at
-   the parent in [RFC8078]
-
-   NULL is a special case, see [RFC8078]
-
-   SHA-1 is in declining use for DS records, so it is NOT RECOMMENDED
-   for validators to implement SHA-1 validation.  SHA-1 MUST NOT be used
-   in generating new DS and CDS records.  (See Operational
-   Considerations for caveats when upgrading from SHA-1 to SHA-256 DS
-   Algorithm.)
-
-   SHA-256 is in wide use and considered strong.
-
-   GOST R 34.11-94 has been superseded by GOST R 34.11-2012 in
-   [RFC6986].  The GOST R 34.11-2012 hasn't been standardized for use in
-   DNSSEC.
-
-   SHA-384 shares the same properties as SHA-256, but offers a modest
-   security advantage over SHA-384 (384-bits of strength versus
-   256-bits).  For most applications of DNSSEC, SHA-256 should be
-   satisfactory and robust for the foreseeable future, and is therefore
-   recommended for DS and CDS records.  While it is unlikely for a
-   DNSSEC use case requiring 384-bit security strength to arise, SHA-384
-   is provided for such applications and it MAY be used for generating
-   DS and CDS records in these cases.
-
-##  DS and CDS Algorithm Recommendation
-
-   Operation recommendation for new and existing deployments.
-
-   The SHA-256 is RECOMMENDED for the DS and CDS algorithms.
-
-# Adding "Recommended" Column
-
-   Per this document, a "Recommended" column has been added to 
-   the following DNSSEC algorithm tables registered with IANA:
-   
-   * DNSKEY algorithms [DNSKEY-IANA]
-   * Delegation Signer Digest Algorithms [DS-IANA]
-
-   Adding a "Recommended" parameter (i.e., "Y") to a registry or
-   updating a parameter to "Recommended" status requires Standards
-   Action.  Not all parameters defined in Standards Track documents
-   need to be marked as "Recommended".  If an item is not marked as
-   "Recommended" (i.e., "N"), it does not necessarily mean that it is
-   flawed; rather, it indicates that the item either has not been
-   through the IETF consensus process, has limited applicability, or
-   is intended only for specific use cases.
 
 #  Security Considerations
 
