@@ -5,8 +5,8 @@
 Network Working Group                                        W. Hardaker
 Internet-Draft                                                   USC/ISI
 Intended status: Informational                                 W. Kumari
-Expires: 1 June 2024                                              Google
-                                                        29 November 2023
+Expires: 11 August 2024                                           Google
+                                                         8 February 2024
 
 
                     DNSSEC Cryptographic Algorithms
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 June 2024.
+   This Internet-Draft will expire on 11 August 2024.
 
 
 
@@ -53,14 +53,14 @@ Status of This Memo
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                  [Page 1]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 1]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -68,9 +68,9 @@ Copyright Notice
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
    and restrictions with respect to this document.  Code Components
-   extracted from this document must include Revised BSD License text as
-   described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Revised BSD License.
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Simplified BSD License.
 
 Table of Contents
 
@@ -86,15 +86,16 @@ Table of Contents
      2.2.  DNSKEY Algorithm Recommendation . . . . . . . . . . . . .   7
      2.3.  DS and CDS Algorithms . . . . . . . . . . . . . . . . . .   7
      2.4.  DS and CDS Algorithm Recommendation . . . . . . . . . . .   8
-   3.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
-   4.  Operational Considerations  . . . . . . . . . . . . . . . . .   9
-   5.  Implementation Report . . . . . . . . . . . . . . . . . . . .   9
-     5.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   9
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
-   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
-   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  11
-     8.1.  Normative References  . . . . . . . . . . . . . . . . . .  11
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .  11
+   3.  Adding "Recommended" Column . . . . . . . . . . . . . . . . .   8
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   5.  Operational Considerations  . . . . . . . . . . . . . . . . .   9
+   6.  Implementation Report . . . . . . . . . . . . . . . . . . . .   9
+     6.1.  DNSKEY Algorithms . . . . . . . . . . . . . . . . . . . .   9
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  10
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  11
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  11
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .  11
    Appendix A.  ChangeLog  . . . . . . . . . . . . . . . . . . . . .  12
      A.1.  Changes since RFC8624 . . . . . . . . . . . . . . . . . .  13
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
@@ -108,10 +109,9 @@ Table of Contents
 
 
 
-
-Hardaker & Kumari          Expires 1 June 2024                  [Page 2]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 2]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
 1.  Introduction
@@ -165,9 +165,9 @@ Internet-Draft                    title                    November 2023
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                  [Page 3]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 3]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
    [TODO (WK): Ditto! ] Although this document's primary purpose is to
@@ -221,9 +221,9 @@ Internet-Draft                    title                    November 2023
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                  [Page 4]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 4]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
 1.5.  Conventions Used in This Document
@@ -277,9 +277,9 @@ Internet-Draft                    title                    November 2023
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                  [Page 5]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 5]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
    RSASHA1 and RSASHA1-NSEC3-SHA1 are widely deployed, although zones
@@ -333,9 +333,9 @@ Internet-Draft                    title                    November 2023
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                  [Page 6]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 6]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
    ED25519 and ED448 use Edwards-curve Digital Security Algorithm
@@ -389,9 +389,9 @@ Internet-Draft                    title                    November 2023
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                  [Page 7]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 7]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
    SHA-256 is in wide use and considered strong.
@@ -415,13 +415,40 @@ Internet-Draft                    title                    November 2023
 
    The SHA-256 is RECOMMENDED for the DS and CDS algorithms.
 
-3.  Security Considerations
+3.  Adding "Recommended" Column
+
+   Per this document, a "Recommended" column has been added to the
+   following DNSSEC algorithm tables registered with IANA:
+
+   *  DNSKEY algorithms [DNSKEY-IANA]
+
+   *  Delegation Signer Digest Algorithms [DS-IANA]
+
+   Adding a "Recommended" parameter (i.e., "Y") to a registry or
+   updating a parameter to "Recommended" status requires Standards
+   Action.  Not all parameters defined in Standards Track documents need
+   to be marked as "Recommended".  If an item is not marked as
+   "Recommended" (i.e., "N"), it does not necessarily mean that it is
+   flawed; rather, it indicates that the item either has not been
+   through the IETF consensus process, has limited applicability, or is
+   intended only for specific use cases.
+
+4.  Security Considerations
 
    The security of cryptographic systems depends on both the strength of
    the cryptographic algorithms chosen and the strength of the keys used
    with those algorithms.  The security also depends on the engineering
    of the protocol used by the system to ensure that there are no non-
    cryptographic ways to bypass the security of the overall system.
+
+
+
+
+
+Hardaker & Kumari        Expires 11 August 2024                 [Page 8]
+
+Internet-Draft                    title                    February 2024
+
 
    This document concerns itself with the selection of cryptographic
    algorithms for the use of DNSSEC, specifically with the selection of
@@ -438,19 +465,7 @@ Internet-Draft                    title                    November 2023
    zone.  Therefore, algorithm deprecation must be done very slowly and
    only after careful consideration and measurement of its use.
 
-
-
-
-
-
-
-
-Hardaker & Kumari          Expires 1 June 2024                  [Page 8]
-
-Internet-Draft                    title                    November 2023
-
-
-4.  Operational Considerations
+5.  Operational Considerations
 
    DNSKEY algorithm rollover in a live zone is a complex process.  See
    [RFC6781] and [RFC7583] for guidelines on how to perform algorithm
@@ -461,9 +476,9 @@ Internet-Draft                    title                    November 2023
    lead to DNSSEC validation failures, and users MUST upgrade the DS
    algorithm first before rolling the Key Signing Key.
 
-5.  Implementation Report
+6.  Implementation Report
 
-5.1.  DNSKEY Algorithms
+6.1.  DNSKEY Algorithms
 
    TODO: this needs updating, and current practice is to have this
    deleted at publication too.
@@ -486,24 +501,9 @@ Internet-Draft                    title                    November 2023
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Hardaker & Kumari          Expires 1 June 2024                  [Page 9]
+Hardaker & Kumari        Expires 11 August 2024                 [Page 9]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
    +====================+======+======+=========+==========+=========+
@@ -537,11 +537,11 @@ Internet-Draft                    title                    November 2023
 
                                  Table 3
 
-6.  IANA Considerations
+7.  IANA Considerations
 
    This document makes no requests of IANA.
 
-7.  Acknowledgements
+8.  Acknowledgements
 
    This document borrows text from RFC 4307 by Jeffrey I.  Schiller of
    the Massachusetts Institute of Technology (MIT) and the 4307bis
@@ -557,14 +557,14 @@ Internet-Draft                    title                    November 2023
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                 [Page 10]
+Hardaker & Kumari        Expires 11 August 2024                [Page 10]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
-8.  References
+9.  References
 
-8.1.  Normative References
+9.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -580,7 +580,7 @@ Internet-Draft                    title                    November 2023
               DOI 10.17487/RFC8624, June 2019,
               <https://www.rfc-editor.org/rfc/rfc8624>.
 
-8.2.  Informative References
+9.2.  Informative References
 
    [RFC4034]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
               Rose, "Resource Records for the DNS Security Extensions",
@@ -613,9 +613,9 @@ Internet-Draft                    title                    November 2023
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                 [Page 11]
+Hardaker & Kumari        Expires 11 August 2024                [Page 11]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
    [RFC6781]  Kolkman, O., Mekking, W., and R. Gieben, "DNSSEC
@@ -669,9 +669,9 @@ Appendix A.  ChangeLog
 
 
 
-Hardaker & Kumari          Expires 1 June 2024                 [Page 12]
+Hardaker & Kumari        Expires 11 August 2024                [Page 12]
 
-Internet-Draft                    title                    November 2023
+Internet-Draft                    title                    February 2024
 
 
 A.1.  Changes since RFC8624
@@ -690,11 +690,13 @@ Authors' Addresses
 
    Wes Hardaker
    USC/ISI
+
    Email: ietf@hardakers.net
 
 
    Warren Kumari
    Google
+
    Email: warren@kumari.net
 
 
@@ -723,6 +725,4 @@ Authors' Addresses
 
 
 
-
-
-Hardaker & Kumari          Expires 1 June 2024                 [Page 13]
+Hardaker & Kumari        Expires 11 August 2024                [Page 13]
