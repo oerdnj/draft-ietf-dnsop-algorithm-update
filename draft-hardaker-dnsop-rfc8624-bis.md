@@ -44,7 +44,7 @@ informative:
 --- abstract
 
    [EDITOR NOTE: This document does not change the status (MUST, MAY,
-   RECOMMENDED, etc) of any of the algorithsm listed in RFC8624; that is
+   RECOMMENDED, etc) of any of the algorithms listed in RFC8624; that is
    the work of future documents.  Instead, this document simply moves
    the canonical list of algorithms from RFC8624 to an IANA registry.
    This is done for two reasons: 1) to allow the list to be updated more
@@ -167,14 +167,14 @@ informative:
 
    Per this document, "Recommended" columns have been added to the
    following DNSSEC algorithm tables registered with IANA:
-   
-    |-------------------------------------------------------------------------|
-    | Table                               | Column added                      |
-    |-------------------------------------------------------------------------|
-    | DNSKEY algorithms                   | Recommended for DNSSSEC Signing   |
-    | DNSKEY algorithms                   | Recommended for DNSSSEC Validation|
-    | Delegation Signer Digest Algorithms | Recommended                       |
-    |-------------------------------------------------------------------------|
+
+   |-------------------------------------------------------------------------|
+   | Table                               | Column added                      |
+   |-------------------------------------------------------------------------|
+   | DNSKEY algorithms                   | Recommended for DNSSSEC Signing   |
+   | DNSKEY algorithms                   | Recommended for DNSSSEC Validation|
+   | Delegation Signer Digest Algorithms | Recommended                       |
+   |-------------------------------------------------------------------------|
 
    Adding a Recommended parameter of "Y" to a registry or updating a
    parameter to "Recommended" status requires Standards Action.  Not
@@ -184,10 +184,10 @@ informative:
    rather, it indicates that the item either has not been through the
    IETF consensus process, has limited applicability, or is intended
    only for specific use cases.
-   
+
    The following sections state the initial values to be populated
    into these rows, with values transcribed from [RFC8624].
-   
+
 #  DNSKEY Algorithm Recommendation Column Values
 
    Initial recommendation columns of implementation recommendations
@@ -228,19 +228,70 @@ informative:
    Initial recommendation columns of implementation recommendations
    for DNSKEY algorithms.
 
-    |--------|-----------------|-------------------|-------------------|
-    | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
-    |--------|-----------------|-------------------|-------------------|
-    | 0      | NULL (CDS only) | MUST NOT [*]      | MUST NOT [*]      |
-    |--------|-----------------|-------------------|-------------------|
-    | 1      | SHA-1           | MUST NOT          | SHOULD NOT        |
-    |--------|-----------------|-------------------|-------------------|
-    | 2      | SHA-256         | MUST              | MUST              |
-    |--------|-----------------|-------------------|-------------------|
-    | 3      | GOST R 34.11-94 | MUST NOT          | MUST NOT          |
-    |--------|-----------------|-------------------|-------------------|
-    | 4      | SHA-384         | MAY               | RECOMMENDED       |
-    |--------|-----------------|-------------------|-------------------|
+   |--------|-----------------|-------------------|-------------------|
+   | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
+   |--------|-----------------|-------------------|-------------------|
+   | 0      | NULL (CDS only) | MUST NOT [*]      | MUST NOT [*]      |
+   |--------|-----------------|-------------------|-------------------|
+   | 1      | SHA-1           | MUST NOT          | SHOULD NOT        |
+   |--------|-----------------|-------------------|-------------------|
+   | 2      | SHA-256         | MUST              | MUST              |
+   |--------|-----------------|-------------------|-------------------|
+   | 3      | GOST R 34.11-94 | MUST NOT          | MUST NOT          |
+   |--------|-----------------|-------------------|-------------------|
+   | 4      | SHA-384         | MAY               | RECOMMENDED       |
+   +--------+-----------------+-------------------+-------------------+
+
+                                 Table 2
+
+   [*] - This is a special type of CDS record signaling removal of DS at
+   the parent in [RFC8078]
+
+   NULL is a special case, see [RFC8078]
+
+   SHA-1 is in declining use for DS records, so it is NOT RECOMMENDED
+   for validators to implement SHA-1 validation.  SHA-1 MUST NOT be used
+   in generating new DS and CDS records.  (See Operational
+   Considerations for caveats when upgrading from SHA-1 to SHA-256 DS
+   Algorithm.)
+
+   SHA-256 is in wide use and considered strong.
+
+   GOST R 34.11-94 has been superseded by GOST R 34.11-2012 in
+   [RFC6986].  The GOST R 34.11-2012 hasn't been standardized for use in
+   DNSSEC.
+
+   SHA-384 shares the same properties as SHA-256, but offers a modest
+   security advantage over SHA-384 (384-bits of strength versus
+   256-bits).  For most applications of DNSSEC, SHA-256 should be
+   satisfactory and robust for the foreseeable future, and is therefore
+   recommended for DS and CDS records.  While it is unlikely for a
+   DNSSEC use case requiring 384-bit security strength to arise, SHA-384
+   is provided for such applications and it MAY be used for generating
+   DS and CDS records in these cases.
+
+##  DS and CDS Algorithm Recommendation
+
+   Operation recommendation for new and existing deployments.
+
+   The SHA-256 is RECOMMENDED for the DS and CDS algorithms.
+
+# Adding "Recommended" Column
+
+   Per this document, a "Recommended" column has been added to
+   the following DNSSEC algorithm tables registered with IANA:
+
+   * DNSKEY algorithms [DNSKEY-IANA]
+   * Delegation Signer Digest Algorithms [DS-IANA]
+
+   Adding a "Recommended" parameter (i.e., "Y") to a registry or
+   updating a parameter to "Recommended" status requires Standards
+   Action.  Not all parameters defined in Standards Track documents
+   need to be marked as "Recommended".  If an item is not marked as
+   "Recommended" (i.e., "N"), it does not necessarily mean that it is
+   flawed; rather, it indicates that the item either has not been
+   through the IETF consensus process, has limited applicability, or
+   is intended only for specific use cases.
 
 #  Security Considerations
 
