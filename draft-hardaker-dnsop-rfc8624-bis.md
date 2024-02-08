@@ -251,11 +251,11 @@ informative:
 
    SHA-1 is in declining use for DS records, so it is NOT RECOMMENDED
    for validators to implement SHA-1 validation.  SHA-1 MUST NOT be used
-   in generating new DS and CDS records.  (See Operational
+   to generate new DS and CDS records.  (See Operational
    Considerations for caveats when upgrading from SHA-1 to SHA-256 DS
    Algorithm.)
 
-   SHA-256 is in wide use and considered strong.
+   SHA-256 is in wide use and is considered strong.
 
    GOST R 34.11-94 has been superseded by GOST R 34.11-2012 in
    [RFC6986].  The GOST R 34.11-2012 hasn't been standardized for use in
@@ -330,9 +330,6 @@ informative:
 #  Implementation Report
 
 ##  DNSKEY Algorithms
-
-   TODO: this needs updating, and current practice is to have this
-   deleted at publication too.
 
    The following table contains the status of support in the open-source
    DNS signers and validators in the current released versions as of the
