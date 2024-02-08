@@ -318,6 +318,23 @@ informative:
 
    The SHA-256 is RECOMMENDED for the DS and CDS algorithms.
 
+# Adding "Recommended" Column
+
+   Per this document, a "Recommended" column has been added to 
+   the following DNSSEC algorithm tables registered with IANA:
+   
+   * DNSKEY algorithms [DNSKEY-IANA]
+   * Delegation Signer Digest Algorithms [DS-IANA]
+
+   Adding a "Recommended" parameter (i.e., "Y") to a registry or
+   updating a parameter to "Recommended" status requires Standards
+   Action.  Not all parameters defined in Standards Track documents
+   need to be marked as "Recommended".  If an item is not marked as
+   "Recommended" (i.e., "N"), it does not necessarily mean that it is
+   flawed; rather, it indicates that the item either has not been
+   through the IETF consensus process, has limited applicability, or
+   is intended only for specific use cases.
+
 #  Security Considerations
 
    The security of cryptographic systems depends on both the strength of
