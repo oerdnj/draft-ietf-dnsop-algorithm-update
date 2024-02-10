@@ -24,6 +24,21 @@ normative:
   RFC2119:
   RFC8174:
   RFC8624:
+  DNSKEY-IANA:
+    author:
+      name: IANA
+    target: "https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml"
+    title: Domain Name System Security (DNSSEC) Algorithm Numbers
+  DS-IANA:
+    author:
+      name: IANA
+    target: "http://www.iana.org/assignments/ds-rr-types"
+    title: Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms
+  TLS-ciphersuites:
+    author:
+      name: IANA
+    target: "https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4"
+    title: Transport Layer Security (TLS) Parameters
 
 informative:
   RFC4034:
@@ -32,32 +47,27 @@ informative:
   RFC5933:
   RFC6605:
   RFC6781:
-  RFC6979:
-  RFC6986:
-  RFC7091:
-  RFC7344:
   RFC7583:
-  RFC8032:
-  RFC8078:
   RFC8080:
 
 --- abstract
 
    [EDITOR NOTE: This document does not change the status (MUST, MAY,
-   RECOMMENDED, etc) of any of the algorithms listed in RFC8624; that is
+   RECOMMENDED, etc) of any of the algorithms listed in [RFC8624]; that is
    the work of future documents.  Instead, this document moves
-   the canonical list of algorithms from RFC8624 to an IANA registry.
+   the canonical list of algorithms from [RFC8624] to an IANA registry.
    This is done for two reasons: 1) to allow the list to be updated more
    easily, and, much more importantly, 2) to allow the list to be more
-   easily referenced.]  The DNSSEC protocol makes use of various
-   cryptographic algorithms to provide authentication of DNS
-   data and proof of non-existence.  To ensure interoperability between
-   DNS resolvers and DNS authoritative servers, it is necessary to
-   specify a set of algorithm implementation requirements and usage
-   guidelines to ensure that there is at least one algorithm that all
-   implementations support.  This document updates RFC8624 by moving the
-   canonical source of algorithm implementation requirements and usage
-   guidance for DNSSEC from RFC8624 to an IANA registry.
+   easily referenced.]
+
+   The DNSSEC protocol makes use of various cryptographic algorithms to provide
+   authentication of DNS data and proof of non-existence.  To ensure
+   interoperability between DNS resolvers and DNS authoritative servers, it is
+   necessary to specify a set of algorithm implementation requirements and
+   usage guidelines to ensure that there is at least one algorithm that all
+   implementations support.  This document updates [RFC8624] by moving the
+   canonical source of algorithm implementation requirements and usage guidance
+   for DNSSEC from [RFC8624] to an IANA registry.
 
 --- middle
 
@@ -70,10 +80,11 @@ informative:
    of "mandatory-to-implement" DNSKEY algorithms are defined in
    [RFC8624].  To make the current status of the algorithms
    more easily accessible and understandable, this document moves the
-   canonical status of the algorithms from RFC8624 to the IANA DNSSEC
+   canonical status of the algorithms from [RFC8624] to the IANA DNSSEC
    algorithm registries.  [ Editor: This is similar to the process used
-   for the TLS ciphersuites - https://www.iana.org/assignments/tls-
-   parameters/tls-parameters.xhtml#tls-parameters-4 ]
+   for the [TLS-ciphersuites] registry, where the canonical list of
+   ciphersuites is in the IANA registry, and the RFCs reference the IANA
+  registry. ]
 
 ##  Terminology
 
@@ -90,31 +101,18 @@ informative:
 
 ##  Updating Algorithm Requirement Levels
 
-   The mandatory-to-implement algorithm of tomorrow should already be
-   available in most implementations of DNSSEC by the time it is made
-   mandatory.  This document attempts to identify and introduce those
-   algorithms for future mandatory-to-implement status.  There is no
-   guarantee that algorithms in use today will become mandatory to implement
-   in the future.  Published algorithms are continuously subjected to
-   cryptographic attack and may become too weak, or even be completely
-   broken, before this document is updated.
+   By the time a cryptographic algorithm is made mandatory-to-implement, it
+   should already be available in most implementations of DNSSEC. This document
+   attempts to identify and introduce those algorithms for future
+   mandatory-to-implement status.  There is no guarantee that algorithms in use
+   today will become mandatory to implement in the future.  Published
+   algorithms are continuously subjected to cryptographic attack and may become
+   too weak, or even be completely broken, before this document is updated.
 
-   [ [TODO (WK): This section needs to be updated. ]] This document
-   provides recommendations with respect to mandatory-to-implement
-   algorithms, algorithms so weak that they cannot be recommended, and
-   algorithms defined in RFCs that are not on the standards track.  Any
-   algorithm listed in the [DNSKEY-IANA] and [DS-IANA] registries that
-   are not mentioned in this document MAY be implemented.  For
-   clarification and consistency, an algorithm will be specified as MAY
-   in this document only when it has been downgraded from a MUST or a
-   RECOMMENDED to a MAY.
-
-   [TODO (WK): Ditto! ] Although this document's primary purpose is to
-   update algorithm recommendations to keep DNSSEC authentication secure
-   over time, it also aims to do so in such a way that DNSSEC
-   implementations remain interoperable.  DNSSEC interoperability is
-   addressed by an incremental introduction or deprecation of
-   algorithms.
+   This document simply moves the canonical list of algorithms from [RFC8624] to
+   the IANA registry, and defines the registry policies. It does not change the
+    status of any of the algorithms listed in [RFC8624]; that is the work of
+    future documents.
 
    [RFC2119] considers the term SHOULD equivalent to RECOMMENDED, and
    SHOULD NOT equivalent to NOT RECOMMENDED.  The authors of this
@@ -223,6 +221,8 @@ informative:
     | 16     | ED448              | MAY             | RECOMMENDED       |
     |--------|--------------------|-----------------|-------------------|
 
+                                    Table 1
+
 #  DS and CDS Algorithms
 
    Initial recommendation columns of implementation recommendations
@@ -231,7 +231,7 @@ informative:
    |--------|-----------------|-------------------|-------------------|
    | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
    |--------|-----------------|-------------------|-------------------|
-   | 0      | NULL (CDS only) | MUST NOT [*]      | MUST NOT [*]      |
+   | 0      | NULL (CDS only) | MUST NOT \[*\]    | MUST NOT \[*\]    |
    |--------|-----------------|-------------------|-------------------|
    | 1      | SHA-1           | MUST NOT          | SHOULD NOT        |
    |--------|-----------------|-------------------|-------------------|
@@ -241,6 +241,9 @@ informative:
    |--------|-----------------|-------------------|-------------------|
    | 4      | SHA-384         | MAY               | RECOMMENDED       |
    +--------+-----------------+-------------------+-------------------+
+
+                                    Table 2
+
 
 #  Security Considerations
 
@@ -319,20 +322,38 @@ informative:
 
 #  IANA Considerations
 
-   This document makes no requests of IANA.
+   TODO: That's the whole point of this document, right? :-P
+
+  The IANA is requested to update the [DNSKEY-IANA] and [DS-IANA] registries
+  as follows:
+
+  * Add "Recommended for DNSSSEC Signing" and "Recommended for DNSSSEC
+    Validation" columns to the DNS Security Algorithm Numbers registry
+    ([DNSKEY-IANA]) and populate these columens with the values from Table 1.
+
+  * Add a "Recommended" column to the DS and CDS Algorithms registry ([DS-IANA])
+    and populate this column with the values from Table 2.
+
+  * Update the registration policy for the [DNSKEY-IANA] registry to be
+    "Standards Action or IESG Approval". {Ed: I'm not sure if this is the right
+    policy, and this requires a good discussion with the WG. The purpose of
+    much of this document is so that we can introduce TheNextBestAlgorithm by
+    documenting TheNextBestAlgorithm in a new RFC and having it updating the
+    IANA registry, instead of having to update RFC8624-bis-bis-bis-bis. We
+    also, obviously, don't want someone to do something silly and mark an
+    algorithm as "Recommended" without a good reason. This implies Standards
+    Track. On the other hand we want to allow the ISE to add new algorithms
+    (like the latest GOST algorithm), and, rightly or wrongly, the ISE doesn't
+    publishes Std Track RFCs. Standards Action or IESG Approval seems like a
+    reasonable compromise, but I'm not sure if it's the right one. We hope to
+    present this to the WG at IEFT119 and get feedback.}
+
 
 #  Acknowledgements
 
-   This document borrows text from RFC 4307 by Jeffrey I.  Schiller of
-   the Massachusetts Institute of Technology (MIT) and the 4307bis
-   document by Yoav Nir, Tero Kivinen, Paul Wouters and Daniel Migault.
-   Much of the original text has been copied verbatim.
+  This document is based on, and extends, RFC 8624, which was authored by
+  Paul Wouters, and Ondrej Sury.
 
-   We wish to thank Michael Sinatra, Roland van Rijswijk-Deij, Olafur
-   Gudmundsson, Paul Hoffman and Evan Hunt for their imminent feedback.
-
-   Kudos to Roy Arends for bringing the DS rollover issue to the
-   daylight.
 
 --- back
 
@@ -348,4 +369,4 @@ informative:
 
    *  Merged in RFC9157 updates.
 
-   *  Added Wes Hardaker as an author
+   *  Added Wes Hardaker, Warren Kumari as authors.
