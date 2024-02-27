@@ -93,6 +93,18 @@ informative:
    status of any of the algorithms listed in [RFC8624]; this is left to
    future documents.
 
+##  Document Audience
+
+   The recommendations of this document mostly target DNSSEC
+   implementers, as implementations need to meet both high security
+   expectations as well as high interoperability between various vendors
+   and with different versions.  Interoperability requires a smooth
+   transition to more secure algorithms.  This perspective may differ
+   from that of a user who wishes to deploy and configure DNSSEC
+   with only the safest algorithm.  On the other hand, the comments and
+   recommendations in this document are also expected to be useful for
+   such users.
+
 ##  Terminology
 
    TBD
@@ -144,18 +156,6 @@ informative:
 
    Validating recursive resolvers are encouraged to retain support for all
    algorithms not marked as MUST NOT.
-
-##  Document Audience
-
-   The recommendations of this document mostly target DNSSEC
-   implementers, as implementations need to meet both high security
-   expectations as well as high interoperability between various vendors
-   and with different versions.  Interoperability requires a smooth
-   transition to more secure algorithms.  This perspective may differ
-   from that of a user who wishes to deploy and configure DNSSEC
-   with only the safest algorithm.  On the other hand, the comments and
-   recommendations in this document are also expected to be useful for
-   such users.
 
 ##  Conventions Used in This Document
 
