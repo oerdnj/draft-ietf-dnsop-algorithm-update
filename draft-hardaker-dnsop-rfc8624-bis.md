@@ -63,11 +63,12 @@ informative:
    The DNSSEC protocol makes use of various cryptographic algorithms to provide
    authentication of DNS data and proof of non-existence.  To ensure
    interoperability between DNS resolvers and DNS authoritative servers, it is
-   necessary to specify a set of algorithm implementation requirements and
+   necessary to specify both a set of algorithm implementation requirements and
    usage guidelines to ensure that there is at least one algorithm that all
    implementations support.  This document updates [RFC8624] by moving the
    canonical source of algorithm implementation requirements and usage guidance
-   for DNSSEC from [RFC8624] to an IANA registry.
+   for DNSSEC from [RFC8624] to an IANA registry.  Future extensions
+   to this registry can be made under new, incremental update RFCs.
 
 --- middle
 
@@ -93,11 +94,13 @@ informative:
 ##  Updating Algorithm Implementation Requirements and Usage Guidance
 
    The field of cryptography evolves continuously.  New, stronger
-   algorithms appear, and existing algorithms are found to be less secure
-   then originally thought.  Therefore, algorithm implementation
-   requirements and usage guidance need to be updated from time to time
-   to reflect the new reality.  The algorithm choices must be
-   conservative to minimize the risk of algorithm compromise.
+   algorithms appear, and existing algorithms may be found to be less
+   secure then originally thought.  Therefore, algorithm
+   implementation requirements and usage guidance need to be updated
+   from time to time in order to reflect the new reality.
+   Cryptographic algorithm choices implemented in and required by
+   software must be conservative to minimize the risk of algorithm
+   compromise.
 
 ##  Updating Algorithm Requirement Levels
 
