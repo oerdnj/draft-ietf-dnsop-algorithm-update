@@ -283,47 +283,6 @@ informative:
    lead to DNSSEC validation failures, and users MUST upgrade the DS
    algorithm first before rolling the Key Signing Key.
 
-#  Implementation Report
-
-##  DNSKEY Algorithms
-
-   The following table contains the status of support in the open-source
-   DNS signers and validators in the current released versions as of the
-   time writing this document.  Usually, the support for specific
-   algorithm has to be also included in the cryptographic libraries that
-   the software use.
-
-    |--------------------|------|------|---------|----------|---------|
-    | Mnemonics          | BIND | Knot | OpenDNS | PowerDNS | Unbound |
-    |                    |      | DNS  |         |          |         |
-    |--------------------|------|------|---------|----------|---------|
-    | RSAMD5             | Y    | N    | Y       | N        | N       |
-    |--------------------|------|------|---------|----------|---------|
-    | DSA                | Y    | N    | Y       | N        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | RSASHA1            | Y    | Y    | Y       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | DSA-NSEC3-SHA1     | Y    | N    | Y       | N        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | RSASHA1-NSEC3-SHA1 | Y    | Y    | Y       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | RSASHA256          | Y    | Y    | Y       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | RSASHA512          | Y    | Y    | Y       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | ECC-GOST           | N    | N    | Y       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | ECDSAP256SHA256    | Y    | Y    | Y       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | ECDSAP384SHA384    | Y    | Y    | Y       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | ED25519            | Y    | Y    | N       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-    | ED448              | N    | N    | N       | Y        | Y       |
-    |--------------------|------|------|---------|----------|---------|
-
-                                  Table 3
-
 #  IANA Considerations
 
    TODO: That's the whole point of this document, right? :-P
