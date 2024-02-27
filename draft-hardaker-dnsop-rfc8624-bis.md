@@ -87,11 +87,11 @@ informative:
    ciphersuites is in the IANA registry, and the RFCs reference the IANA
    registry. ]
 
-   This document simply moves the canonical list of algorithms from [RFC8624] to
-   the IANA registry, and defines the registry policies for updating
-   the registry. It does not change the
-   status of any of the algorithms listed in [RFC8624]; this is left to
-   future documents.
+   This document simply moves the canonical list of algorithms from
+   [RFC8624] to the IANA registry, and defines the registry policies
+   for updating the registry. It does not change the status of any of
+   the algorithms listed in [RFC8624]; this is left to future
+   documents.
 
 ##  Document Audience
 
@@ -186,11 +186,11 @@ informative:
    for DNSSSEC Validation" columns other than MAY requires a Standards
    Action.
 
-   Adding a new entry to, or changing existing values in the "Digest
-   Algorithms" registry with a recommended value of MAY in the
-   "Recommended" column requires RFC publication.  Adding a new entry
-   to the "Digest Aloggorithms" registry with a value in the
-   "Recommended" column other than MAY requires a Standards Action.
+   Adding a new entry to the "Digest Algorithms" registry with a
+   recommended value of MAY in the "Recommended" column requires RFC
+   publication.  Adding a new entry to the "Digest Algorithms"
+   registry with a value in the "Recommended" column other than MAY
+   requires a Standards Action.
    
    If an item is not marked as "RECOMMENDED", it does not necessarily
    mean that it is flawed; rather, it indicates that the item either
@@ -249,11 +249,11 @@ informative:
     |--------|-----------------|-------------------|-------------------|
     | 0      | NULL (CDS only) | MUST NOT \[*\]    | MUST NOT \[*\]    |
     |--------|-----------------|-------------------|-------------------|
-    | 1      | SHA-1           | MUST NOT          | SHOULD NOT        |
+    | 1      | SHA-1           | MUST NOT          | MUST              |
     |--------|-----------------|-------------------|-------------------|
     | 2      | SHA-256         | MUST              | MUST              |
     |--------|-----------------|-------------------|-------------------|
-    | 3      | GOST R 34.11-94 | MUST NOT          | MUST NOT          |
+    | 3      | GOST R 34.11-94 | MUST NOT          | MAY               |
     |--------|-----------------|-------------------|-------------------|
     | 4      | SHA-384         | MAY               | RECOMMENDED       |
     +--------+-----------------+-------------------+-------------------+
@@ -325,7 +325,6 @@ informative:
     reasonable compromise, but I'm not sure if it's the right one. We
     hope to present this to the WG at IEFT119 and get feedback.}
 
-
 #  Acknowledgments
 
   This document is based on, and extends, RFC 8624, which was authored by
@@ -338,11 +337,8 @@ informative:
 ## Changes since RFC8624
 
    * The primary purpose of this revision is to introduce the new
-     columns and the corresponding values.
-
-   * Deprecated validation of all SHA-1 algorithms to SHOULD NOT.
-
-   * Deprecated validation all listed GOST algorithms to MUST NOT.
+     columns to existing registries.  It makes no changes to the
+     previously defined values.
 
    * Merged in RFC9157 updates.
 
