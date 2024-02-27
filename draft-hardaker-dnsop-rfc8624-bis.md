@@ -161,10 +161,11 @@ informative:
    RECOMMENDED, as this more clearly expresses the recommendations to
    implementers.
 
-# Adding "Recommended" Column to IANA tables
+# Adding "Recommended" Columns to existing IANA tables
 
-   Per this document, "Recommended" columns have been added to the
-   following DNSSEC algorithm tables registered with IANA:
+   Per this document, the following "Recommended" columns have been
+   added to the following DNSSEC algorithm tables registered with
+   IANA:
 
    |-------------------------------------------------------------------------|
    | Table                               | Column added                      |
@@ -174,14 +175,28 @@ informative:
    | Delegation Signer Digest Algorithms | Recommended                       |
    |-------------------------------------------------------------------------|
 
-   Adding a Recommended parameter of "Y" to a registry or updating a
-   parameter to "Recommended" status requires Standards Action.  Not
-   all parameters defined in Standards Track documents need to be
-   marked as "Recommended".  If an item is not marked as "Recommended"
-   (i.e., "N"), it does not necessarily mean that it is flawed;
-   rather, it indicates that the item either has not been through the
-   IETF consensus process, has limited applicability, or is intended
-   only for specific use cases.
+   Adding, changing or deleting an entry in one of the tables requires
+   Standards Action.
+   
+   Alternatively part 1: Adding a new entry to the DNSKEY algorithms
+   table with a recommended value of MAY in both the "Recommended for
+   DNSSSEC Signing" and "Recommended for DNSSSEC Validation" columns
+   requires RFC publication.  Adding a new entry to, or changing
+   existing values in the DNSKEY algorithms table with a value in the
+   "Recommended for DNSSSEC Signing" or "Recommended for DNSSSEC
+   Validation" columns other than MAY requires a Standards Action.
+
+   Alternatively part 2: Adding a new entry to, or changing existing
+   values in the "Delegation Signer Digest Algorithms" table with a
+   recommended value of MAY in the "Recommended" column requires RFC
+   publication.  Adding a new entry to the Delegation Signer Digest
+   Algorithms table with a value in the "Recommended" column other
+   than MAY requires a Standards Action.
+   
+   If an item is not marked as "RECOMMENDED", it does not necessarily
+   mean that it is flawed; rather, it indicates that the item either
+   has not been through the IETF consensus process, has limited
+   applicability, or is intended only for specific use cases.
 
    The following sections state the initial values to be populated
    into these rows, with values transcribed from [RFC8624].
