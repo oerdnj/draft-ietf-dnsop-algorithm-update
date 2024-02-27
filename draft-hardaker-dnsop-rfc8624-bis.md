@@ -85,11 +85,23 @@ informative:
    algorithm registries.  [ Editor: This is similar to the process used
    for the [TLS-ciphersuites] registry, where the canonical list of
    ciphersuites is in the IANA registry, and the RFCs reference the IANA
-  registry. ]
+   registry. ]
+
+   This document simply moves the canonical list of algorithms from [RFC8624] to
+   the IANA registry, and defines the registry policies for updating
+   the registry. It does not change the
+   status of any of the algorithms listed in [RFC8624]; this is left to
+   future documents.
 
 ##  Terminology
 
    TBD
+
+   [RFC2119] considers the term SHOULD equivalent to RECOMMENDED, and
+   SHOULD NOT equivalent to NOT RECOMMENDED.  The authors of this
+   document have chosen to use the terms RECOMMENDED and NOT
+   RECOMMENDED, as this more clearly expresses the recommendations to
+   implementers.
 
 ##  Updating Algorithm Implementation Requirements and Usage Guidance
 
@@ -104,44 +116,33 @@ informative:
 
 ##  Updating Algorithm Requirement Levels
 
-   By the time a cryptographic algorithm is made mandatory-to-implement, it
-   should already be available in most implementations of DNSSEC. This document
+   By the time a DNSSEC cryptographic algorithm is made mandatory-to-implement,
+   it should already be available in most implementations. This document
    attempts to identify and introduce those algorithms for future
    mandatory-to-implement status.  There is no guarantee that algorithms in use
    today will become mandatory to implement in the future.  Published
    algorithms are continuously subjected to cryptographic attack and may become
    too weak, or even be completely broken, before this document is updated.
 
-   This document simply moves the canonical list of algorithms from [RFC8624] to
-   the IANA registry, and defines the registry policies. It does not change the
-    status of any of the algorithms listed in [RFC8624]; that is the work of
-    future documents.
-
-   [RFC2119] considers the term SHOULD equivalent to RECOMMENDED, and
-   SHOULD NOT equivalent to NOT RECOMMENDED.  The authors of this
-   document have chosen to use the terms RECOMMENDED and NOT
-   RECOMMENDED, as this more clearly expresses the recommendations to
-   implementers.
-
    It is expected that the deprecation of an algorithm will be performed
-   gradually.  This provides time for various implementations to update
+   gradually.  This provides time for implementations to update
    their implemented algorithms while remaining interoperable.  Unless
    there are strong security reasons, an algorithm is expected to be
-   downgraded from MUST to NOT RECOMMENDED or MAY, instead of to MUST
-   NOT.  Similarly, an algorithm that has not been mentioned as
-   mandatory-to-implement is expected to be introduced with a
-   RECOMMENDED instead of a MUST.
+   downgraded from MUST to NOT RECOMMENDED or MAY, instead of directly
+   from MUST to MUST NOT.  Similarly, an algorithm that has not been
+   mentioned as mandatory-to-implement is expected to be first introduced
+   as RECOMMENDED instead of a MUST.
 
    Since the effect of using an unknown DNSKEY algorithm is that the
    zone is treated as insecure, it is recommended that algorithms
    downgraded to NOT RECOMMENDED or lower not be used by authoritative
    nameservers and DNSSEC signers to create new DNSKEY's.  This will
-   allow for deprecated algorithms to become less and less common over
+   allow for deprecated algorithms to become used less and less over
    time.  Once an algorithm has reached a sufficiently low level of
    deployment, it can be marked as MUST NOT, so that recursive resolvers
    can remove support for validating it.
 
-   Recursive nameservers are encouraged to retain support for all
+   Validating recursive resolvers are encouraged to retain support for all
    algorithms not marked as MUST NOT.
 
 ##  Document Audience
