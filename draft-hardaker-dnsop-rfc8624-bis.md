@@ -105,20 +105,6 @@ informative:
    recommendations in this document are also expected to be useful for
    such users.
 
-## Requirements notation
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY",
-   and "OPTIONAL" in this document are to be interpreted as described
-   in BCP 14 {{RFC2119}} {{?RFC8174}} when, and only when, they appear
-   in all capitals, as shown here.
-
-   [RFC2119] considers the term SHOULD equivalent to RECOMMENDED, and
-   SHOULD NOT equivalent to NOT RECOMMENDED.  The authors of this
-   document have chosen to use the terms RECOMMENDED and NOT
-   RECOMMENDED, as this more clearly expresses the recommendations to
-   implementers.
-
 ##  Updating Algorithm Implementation Requirements and Usage Guidance
 
    The field of cryptography evolves continuously.  New, stronger
@@ -161,13 +147,19 @@ informative:
    Validating recursive resolvers are encouraged to retain support for all
    algorithms not marked as MUST NOT.
 
-##  Conventions Used in This Document
+## Requirements notation
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in [RFC2119] [RFC2119]
-   [RFC8174] when, and only when, they appear in all capitals, as shown
-   here.
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY",
+   and "OPTIONAL" in this document are to be interpreted as described
+   in BCP 14 {{RFC2119}} {{?RFC8174}} when, and only when, they appear
+   in all capitals, as shown here.
+
+   [RFC2119] considers the term SHOULD equivalent to RECOMMENDED, and
+   SHOULD NOT equivalent to NOT RECOMMENDED.  The authors of this
+   document have chosen to use the terms RECOMMENDED and NOT
+   RECOMMENDED, as this more clearly expresses the recommendations to
+   implementers.
 
 # Adding "Recommended" Column to IANA tables
 
