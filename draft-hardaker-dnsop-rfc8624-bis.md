@@ -175,23 +175,20 @@ informative:
    | Delegation Signer Digest Algorithms | Recommended                       |
    |-------------------------------------------------------------------------|
 
-   Adding, changing or deleting an entry in one of the tables requires
-   Standards Action.
-   
-   Alternatively part 1: Adding a new entry to the DNSKEY algorithms
-   table with a recommended value of MAY in both the "Recommended for
-   DNSSSEC Signing" and "Recommended for DNSSSEC Validation" columns
-   requires RFC publication.  Adding a new entry to, or changing
-   existing values in the DNSKEY algorithms table with a value in the
+   Adding a new entry to the DNSKEY algorithms table with a
+   recommended value of MAY in both the "Recommended for DNSSSEC
+   Signing" and "Recommended for DNSSSEC Validation" columns requires
+   RFC publication.  Adding a new entry to, or changing existing
+   values in the DNSKEY algorithms table with a value in the
    "Recommended for DNSSSEC Signing" or "Recommended for DNSSSEC
    Validation" columns other than MAY requires a Standards Action.
 
-   Alternatively part 2: Adding a new entry to, or changing existing
-   values in the "Delegation Signer Digest Algorithms" table with a
-   recommended value of MAY in the "Recommended" column requires RFC
-   publication.  Adding a new entry to the Delegation Signer Digest
-   Algorithms table with a value in the "Recommended" column other
-   than MAY requires a Standards Action.
+   Adding a new entry to, or changing existing values in the
+   "Delegation Signer Digest Algorithms" table with a recommended
+   value of MAY in the "Recommended" column requires RFC publication.
+   Adding a new entry to the Delegation Signer Digest Algorithms table
+   with a value in the "Recommended" column other than MAY requires a
+   Standards Action.
    
    If an item is not marked as "RECOMMENDED", it does not necessarily
    mean that it is flawed; rather, it indicates that the item either
