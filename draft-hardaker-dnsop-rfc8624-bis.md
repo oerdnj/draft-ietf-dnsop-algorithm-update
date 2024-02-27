@@ -170,33 +170,27 @@ informative:
    |-------------------------------------------------------------------------|
    | Table                               | Column added                      |
    |-------------------------------------------------------------------------|
-   | Domain Name System Security         | Recommended for DNSSSEC Signing   |
-   | (DNSSEC) Algorithm Numbers          |                                   |
+   | Domain Security Algorithm Numbers   | Recommended for DNSSSEC Signing   |
    |-------------------------------------------------------------------------|
-   | Domain Name System Security         | Recommended for DNSSSEC Validation|
-   | (DNSSEC) Algorithm Numbers          |                                   |
+   | Domain sSecurity Algorithm Numbers  | Recommended for DNSSSEC Validation|
    |-------------------------------------------------------------------------|
-   | DNSSEC Delegation Signer (DS)       | Recommended                       |
-   | Resource Record (RR) Type           |                                   |
    | Digest Algorithms                   |                                   |
    |-------------------------------------------------------------------------|
 
-   Adding a new entry to the "Domain Name System Security (DNSSEC)
-   Algorithm Numbers" registry with a recommended value of MAY in both
-   the "Recommended for DNSSSEC Signing" and "Recommended for DNSSSEC
-   Validation" columns requires RFC publication.  Adding a new entry
-   to, or changing existing values in the "Domain Name System Security
-   (DNSSEC) Algorithm Numbers" registry with a value in the
-   "Recommended for DNSSSEC Signing" or "Recommended for DNSSSEC
-   Validation" columns other than MAY requires a Standards Action.
+   Adding a new entry to the "DNS System Algorithm Numbers" registry
+   with a recommended value of MAY in both the "Recommended for
+   DNSSSEC Signing" and "Recommended for DNSSSEC Validation" columns
+   requires RFC publication.  Adding a new entry to, or changing
+   existing values in the "DNS System Algorithm Numbers" registry with
+   a value in the "Recommended for DNSSSEC Signing" or "Recommended
+   for DNSSSEC Validation" columns other than MAY requires a Standards
+   Action.
 
-   Adding a new entry to, or changing existing values in the "DNSSEC
-   Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms"
-   registry with a recommended value of MAY in the "Recommended"
-   column requires RFC publication.  Adding a new entry to the "DNSSEC
-   Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms"
-   registry with a value in the "Recommended" column other than MAY
-   requires a Standards Action.
+   Adding a new entry to, or changing existing values in the "Digest
+   Algorithms" registry with a recommended value of MAY in the
+   "Recommended" column requires RFC publication.  Adding a new entry
+   to the "Digest Aloggorithms" registry with a value in the
+   "Recommended" column other than MAY requires a Standards Action.
    
    If an item is not marked as "RECOMMENDED", it does not necessarily
    mean that it is flawed; rather, it indicates that the item either
@@ -206,10 +200,11 @@ informative:
    The following sections state the initial values to be populated
    into these rows, with values transcribed from [RFC8624].
 
-#  DNSKEY Algorithm Recommendation Column Values
+#  DNS System Algorithm Numbers Column Values
 
    Initial recommendation columns of implementation recommendations
-   for DNSKEY algorithms.
+   for the "Domain Name System Security (DNSSEC) Algorithm Numbers"
+   are show in Table 1.
 
     |--------|--------------------|-----------------|-------------------|
     |        |                    | Recommended for | Recommended for   |
@@ -243,10 +238,11 @@ informative:
 
                                     Table 1
 
-#  DS and CDS Algorithms
+#  DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms Column Values
 
    Initial recommendation columns of implementation recommendations
-   for DS/CDS algorithms.
+   for the "DNSSEC Delegation Signer (DS) Resource Record (RR) Type
+   Digest Algorithms" registry are shown in Table 2.
 
     |--------|-----------------|-------------------|-------------------|
     | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
@@ -305,8 +301,9 @@ informative:
   as follows:
 
   * Add "Recommended for DNSSSEC Signing" and "Recommended for DNSSSEC
-    Validation" columns to the "DNS Security Algorithm Numbers" registry
-    ([DNSKEY-IANA]) and populate these columens with the values from Table 1.
+    Validation" columns to the "Domain Name System Security (DNSSEC)
+    Algorithm Numbers" registry ([DNSKEY-IANA]) and populate these
+    columens with the values from Table 1.
 
   * Add a "Recommended" column to the "DS and CDS Algorithms" registry
     ([DS-IANA]) and populate this column with the values from Table 2.
