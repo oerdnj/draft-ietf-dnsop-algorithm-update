@@ -301,33 +301,35 @@ informative:
   as follows:
 
   * Add "Recommended for DNSSSEC Signing" and "Recommended for DNSSSEC
-    Validation" columns to the "Domain Name System Security (DNSSEC)
-    Algorithm Numbers" registry ([DNSKEY-IANA]) and populate these
-    columens with the values from Table 1.
+    Validation" columns to the "DNS Security Algorithm Numbers"
+    registry ([DNSKEY-IANA]) and populate these columens with the
+    values from Table 1.
 
-  * Add a "Recommended" column to the "DS and CDS Algorithms" registry
+  * Add a "Recommended" column to the "Digest Algorithms" registry
     ([DS-IANA]) and populate this column with the values from Table 2.
 
-  * Update the registration policy for the [DNSKEY-IANA] registry to be
-    "Standards Action or IESG Approval". {Ed: I'm not sure if this is the right
-    policy, and this requires a good discussion with the WG. The purpose of
-    much of this document is so that we can introduce TheNextBestAlgorithm by
-    documenting TheNextBestAlgorithm in a new RFC and having it updating the
-    IANA registry, instead of having to update RFC8624-bis-bis-bis-bis. We
-    also, obviously, don't want someone to do something silly and mark an
-    algorithm as "Recommended" without a good reason. This implies Standards
-    Track. On the other hand we want to allow the ISE to add new algorithms
-    (like the latest GOST algorithm), and, rightly or wrongly, the ISE doesn't
-    publishes Std Track RFCs. Standards Action or IESG Approval seems like a
-    reasonable compromise, but I'm not sure if it's the right one. We hope to
-    present this to the WG at IEFT119 and get feedback.}
+  * Update the registration policy for the [DNSKEY-IANA] registry to
+    match the text describing update requirements above. 
+
+    {Ed: We're not sure if this is the right policy, and this requires
+    a good discussion with the WG. The purpose of much of this
+    document is so that we can introduce TheNextBestAlgorithm by
+    documenting TheNextBestAlgorithm in a new RFC and having it
+    updating the IANA registry, instead of having to update
+    RFC8624-bis-bis-bis-bis. We also, obviously, don't want someone to
+    do something silly and mark an algorithm as "Recommended" without
+    a good reason. This implies Standards Track. On the other hand we
+    want to allow the ISE to add new algorithms (like the latest GOST
+    algorithm), and, rightly or wrongly, the ISE doesn't publishes Std
+    Track RFCs. Standards Action or IESG Approval seems like a
+    reasonable compromise, but I'm not sure if it's the right one. We
+    hope to present this to the WG at IEFT119 and get feedback.}
 
 
-#  Acknowledgements
+#  Acknowledgments
 
   This document is based on, and extends, RFC 8624, which was authored by
   Paul Wouters, and Ondrej Sury.
-
 
 --- back
 
@@ -335,12 +337,13 @@ informative:
 
 ## Changes since RFC8624
 
-   The following changes were made since RFC8624:
+   * The primary purpose of this revision is to introduce the new
+     columns and the corresponding values.
 
-   *  Deprecated validation of all SHA-1 algorithms to SHOULD NOT.
+   * Deprecated validation of all SHA-1 algorithms to SHOULD NOT.
 
-   *  Deprecated validation all listed GOST algorithms to MUST NOT.
+   * Deprecated validation all listed GOST algorithms to MUST NOT.
 
-   *  Merged in RFC9157 updates.
+   * Merged in RFC9157 updates.
 
-   *  Added Wes Hardaker, Warren Kumari as authors.
+   * Set authors as Wes Hardaker, Warren Kumari.
