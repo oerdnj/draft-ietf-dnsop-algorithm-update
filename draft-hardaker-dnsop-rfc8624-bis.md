@@ -34,11 +34,6 @@ normative:
       name: IANA
     target: "http://www.iana.org/assignments/ds-rr-types"
     title: Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms
-  TLS-ciphersuites:
-    author:
-      name: IANA
-    target: "https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4"
-    title: Transport Layer Security (TLS) Parameters
 
 informative:
   RFC4034:
@@ -49,6 +44,11 @@ informative:
   RFC6781:
   RFC7583:
   RFC8080:
+  TLS-ciphersuites:
+    author:
+      name: IANA
+    target: "https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4"
+    title: Transport Layer Security (TLS) Parameters
 
 --- abstract
 
