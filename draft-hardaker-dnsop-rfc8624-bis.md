@@ -170,25 +170,33 @@ informative:
    |-------------------------------------------------------------------------|
    | Table                               | Column added                      |
    |-------------------------------------------------------------------------|
-   | DNSKEY algorithms                   | Recommended for DNSSSEC Signing   |
-   | DNSKEY algorithms                   | Recommended for DNSSSEC Validation|
-   | Delegation Signer Digest Algorithms | Recommended                       |
+   | Domain Name System Security         | Recommended for DNSSSEC Signing   |
+   | (DNSSEC) Algorithm Numbers          |                                   |
+   |-------------------------------------------------------------------------|
+   | Domain Name System Security         | Recommended for DNSSSEC Validation|
+   | (DNSSEC) Algorithm Numbers          |                                   |
+   |-------------------------------------------------------------------------|
+   | DNSSEC Delegation Signer (DS)       | Recommended                       |
+   | Resource Record (RR) Type           |                                   |
+   | Digest Algorithms                   |                                   |
    |-------------------------------------------------------------------------|
 
-   Adding a new entry to the DNSKEY algorithms table with a
-   recommended value of MAY in both the "Recommended for DNSSSEC
-   Signing" and "Recommended for DNSSSEC Validation" columns requires
-   RFC publication.  Adding a new entry to, or changing existing
-   values in the DNSKEY algorithms table with a value in the
+   Adding a new entry to the "Domain Name System Security (DNSSEC)
+   Algorithm Numbers" registry with a recommended value of MAY in both
+   the "Recommended for DNSSSEC Signing" and "Recommended for DNSSSEC
+   Validation" columns requires RFC publication.  Adding a new entry
+   to, or changing existing values in the "Domain Name System Security
+   (DNSSEC) Algorithm Numbers" registry with a value in the
    "Recommended for DNSSSEC Signing" or "Recommended for DNSSSEC
    Validation" columns other than MAY requires a Standards Action.
 
-   Adding a new entry to, or changing existing values in the
-   "Delegation Signer Digest Algorithms" table with a recommended
-   value of MAY in the "Recommended" column requires RFC publication.
-   Adding a new entry to the Delegation Signer Digest Algorithms table
-   with a value in the "Recommended" column other than MAY requires a
-   Standards Action.
+   Adding a new entry to, or changing existing values in the "DNSSEC
+   Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms"
+   registry with a recommended value of MAY in the "Recommended"
+   column requires RFC publication.  Adding a new entry to the "DNSSEC
+   Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms"
+   registry with a value in the "Recommended" column other than MAY
+   requires a Standards Action.
    
    If an item is not marked as "RECOMMENDED", it does not necessarily
    mean that it is flawed; rather, it indicates that the item either
@@ -293,17 +301,15 @@ informative:
 
 #  IANA Considerations
 
-   TODO: That's the whole point of this document, right? :-P
-
   The IANA is requested to update the [DNSKEY-IANA] and [DS-IANA] registries
   as follows:
 
   * Add "Recommended for DNSSSEC Signing" and "Recommended for DNSSSEC
-    Validation" columns to the DNS Security Algorithm Numbers registry
+    Validation" columns to the "DNS Security Algorithm Numbers" registry
     ([DNSKEY-IANA]) and populate these columens with the values from Table 1.
 
-  * Add a "Recommended" column to the DS and CDS Algorithms registry ([DS-IANA])
-    and populate this column with the values from Table 2.
+  * Add a "Recommended" column to the "DS and CDS Algorithms" registry
+    ([DS-IANA]) and populate this column with the values from Table 2.
 
   * Update the registration policy for the [DNSKEY-IANA] registry to be
     "Standards Action or IESG Approval". {Ed: I'm not sure if this is the right
