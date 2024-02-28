@@ -1,9 +1,10 @@
 ---
 title: "DNSSEC Cryptographic Algorithms"
 abbrev: title
-docname: draft-hardaker-dnsop-rfc8624-bis-01
+docname: draft-hardaker-dnsop-rfc8624-bis-02
 category: info
 ipr: trust200902
+stream: IETF
 
 stand_alone: yes
 pi: [toc, sortrefs, symrefs, docmapping]
@@ -191,7 +192,7 @@ informative:
    publication.  Adding a new entry to the "Digest Algorithms"
    registry with a value in the "Recommended" column other than MAY
    requires a Standards Action.
-   
+
    If an item is not marked as "RECOMMENDED", it does not necessarily
    mean that it is flawed; rather, it indicates that the item either
    has not been through the IETF consensus process, has limited
@@ -309,7 +310,7 @@ informative:
     ([DS-IANA]) and populate this column with the values from Table 2.
 
   * Update the registration policy for the [DNSKEY-IANA] registry to
-    match the text describing update requirements above. 
+    match the text describing update requirements above.
 
     {Ed: We're not sure if this is the right policy, and this requires
     a good discussion with the WG. The purpose of much of this
