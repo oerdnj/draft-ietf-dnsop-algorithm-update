@@ -175,7 +175,7 @@ informative:
    |-------------------------------------------------------------------------|
    | Domain sSecurity Algorithm Numbers  | Recommended for DNSSSEC Validation|
    |-------------------------------------------------------------------------|
-   | Digest Algorithms                   |                                   |
+   | Digest Algorithms                   | Recommended                       |
    |-------------------------------------------------------------------------|
 
    Adding a new entry to the "DNS System Algorithm Numbers" registry
