@@ -173,7 +173,7 @@ informative:
    |-------------------------------------------------------------------------|
    | Domain Security Algorithm Numbers   | Recommended for DNSSSEC Signing   |
    |-------------------------------------------------------------------------|
-   | Domain sSecurity Algorithm Numbers  | Recommended for DNSSSEC Validation|
+   | Domain Security Algorithm Numbers   | Recommended for DNSSSEC Validation|
    |-------------------------------------------------------------------------|
    | Digest Algorithms                   | Recommended                       |
    |-------------------------------------------------------------------------|
