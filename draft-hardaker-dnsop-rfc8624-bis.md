@@ -96,15 +96,14 @@ informative:
 
 ##  Document Audience
 
-   The recommendations of this document mostly target DNSSEC
+   The recommendations columns added to the "DNS Security Algorithm
+   Numbers" and "Digest Algorithms" IANA tables target DNSSEC
    implementers, as implementations need to meet both high security
-   expectations as well as high interoperability between various vendors
-   and with different versions.  Interoperability requires a smooth
-   transition to more secure algorithms.  This perspective may differ
-   from that of a user who wishes to deploy and configure DNSSEC
-   with only the safest algorithm.  On the other hand, the comments and
-   recommendations in this document are also expected to be useful for
-   such users.
+   expectations as well as high interoperability between various
+   vendors and with different versions.  Interoperability requires a
+   smooth transition to more secure algorithms.  This perspective may
+   differ from that of a user who wishes to deploy and configure
+   DNSSEC with only the safest algorithm.
 
 ##  Updating Algorithm Implementation Requirements and Usage Guidance
 
@@ -121,6 +120,7 @@ informative:
 
    By the time a DNSSEC cryptographic algorithm is made mandatory-to-implement,
    it should already be available in most implementations. This document
+   
    attempts to identify and introduce those algorithms for future
    mandatory-to-implement status.  There is no guarantee that algorithms in use
    today will become mandatory to implement in the future.  Published
@@ -178,6 +178,8 @@ informative:
    | Digest Algorithms                   | Recommended                       |
    |-------------------------------------------------------------------------|
 
+                                    Table 1
+
    Adding a new entry to the "DNS System Algorithm Numbers" registry
    with a recommended value of MAY in both the "Recommended for
    DNSSSEC Signing" and "Recommended for DNSSSEC Validation" columns
@@ -205,7 +207,7 @@ informative:
 
    Initial recommendation columns of implementation recommendations
    for the "Domain Name System Security (DNSSEC) Algorithm Numbers"
-   are show in Table 1.
+   are show in Table 2.
 
    |--------|--------------------|-----------------|-------------------|
    |        |                    | Recommended for | Recommended for   |
@@ -237,13 +239,13 @@ informative:
    | 16     | ED448              | MAY             | RECOMMENDED       |
    |--------|--------------------|-----------------|-------------------|
 
-                                    Table 1
+                                    Table 2
 
 #  DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms Column Values
 
    Initial recommendation columns of implementation recommendations
    for the "DNSSEC Delegation Signer (DS) Resource Record (RR) Type
-   Digest Algorithms" registry are shown in Table 2.
+   Digest Algorithms" registry are shown in Table 3.
 
    |--------|-----------------|-------------------|-------------------|
    | Number | Mnemonics       | DNSSEC Delegation | DNSSEC Validation |
@@ -259,7 +261,7 @@ informative:
    | 4      | SHA-384         | MAY               | RECOMMENDED       |
    |--------|-----------------|-------------------|-------------------|
 
-                                    Table 2
+                                    Table 3
 
 
 #  Security Considerations
