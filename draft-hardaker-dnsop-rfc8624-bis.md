@@ -1,6 +1,6 @@
 ---
-title: "DNSSEC Cryptographic Algorithms"
-abbrev: title
+title: "DNSSEC Cryptographic Algorithm Recommendation Update Process"
+abbrev: "DNSSEC Algorithms Update Process"
 docname: draft-hardaker-dnsop-rfc8624-bis-02
 category: info
 ipr: trust200902
@@ -118,14 +118,17 @@ informative:
 
 ##  Updating Algorithm Requirement Levels
 
-   By the time a DNSSEC cryptographic algorithm is made mandatory-to-implement,
-   it should already be available in most implementations. This document
-   
-   attempts to identify and introduce those algorithms for future
-   mandatory-to-implement status.  There is no guarantee that algorithms in use
-   today will become mandatory to implement in the future.  Published
-   algorithms are continuously subjected to cryptographic attack and may become
-   too weak, or even be completely broken, before this document is updated.
+   By the time a DNSSEC cryptographic algorithm is made
+   mandatory-to-implement, it should already be available in most
+   implementations. This document defines an IANA registration
+   modification to allow future documents to specify the
+   implementation recommendations for each algorithm as the
+   recommendation status of each DNSSEC cryptographic algorithm is
+   expected to change over time.  For example, there is no guarantee
+   that newly introduced algorithms will become mandatory to implement
+   in the future.  Likewise, published algorithms are continuously
+   subjected to cryptographic attack and may become too weak, or even
+   be completely broken, and will require deprecation in the future.
 
    It is expected that the deprecation of an algorithm will be performed
    gradually.  This provides time for implementations to update
@@ -273,14 +276,14 @@ informative:
    cryptographic ways to bypass the security of the overall system.
 
    This document concerns itself with the selection of cryptographic
-   algorithms for the use of DNSSEC, specifically with the selection of
-   "mandatory-to-implement" algorithms.  The algorithms identified in
-   this document as MUST or RECOMMENDED to implement are not known to be
-   broken at the current time, and cryptographic research so far leads
-   us to believe that they are likely to remain secure into the
-   foreseeable future.  However, this isn't necessarily forever, and it
-   is expected that new revisions of this document will be issued from
-   time to time to reflect the current best practices in this area.
+   algorithms for the use of DNSSEC, specifically with the selection
+   of "mandatory-to-implement" algorithms.  The algorithms identified
+   in this document as MUST or RECOMMENDED to implement are not known
+   to be broken at the current time, and cryptographic research so far
+   leads us to believe that they are likely to remain secure into the
+   foreseeable future.  However, this isn't necessarily forever, and
+   it is expected that future documents will be issued from time to
+   time to reflect the current best practices in this area.
 
    Retiring an algorithm too soon would result in a zone signed with the
    retired algorithm being downgraded to the equivalent of an unsigned
