@@ -25,6 +25,7 @@ normative:
   RFC2119:
   RFC8174:
   RFC8624:
+  RFC9364:
   DNSKEY-IANA:
     author:
       name: IANA
@@ -75,7 +76,7 @@ informative:
 
 # Introduction
 
-   DNS Security Extensions (DNSSEC) [RFC4034] is used to provide
+   DNS Security Extensions (DNSSEC) [RFC9364] is used to provide
    authentication of DNS data.  The DNSSEC signing algorithms are
    defined by various RFCs, including [RFC4034], [RFC5155], [RFC5702],
    [RFC5933], [RFC6605], [RFC8080].  To ensure interoperability, a set
