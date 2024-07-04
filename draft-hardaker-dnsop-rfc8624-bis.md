@@ -102,13 +102,21 @@ informative:
 ##  Document Audience
 
    The recommendations columns added to the "DNS Security Algorithm
-   Numbers" and "Digest Algorithms" IANA tables target DNSSEC
-   implementers, as implementations need to meet both high security
-   expectations as well as high interoperability between various
-   vendors and with different versions.  Interoperability requires a
-   smooth transition to more secure algorithms.  This perspective may
-   differ from that of a user who wishes to deploy and configure
-   DNSSEC with only the safest algorithm.
+   Numbers" and "Digest Algorithms" IANA tables that target DNSSEC
+   operators and implementers.
+   
+   Implementations need to meet both high security expectations as
+   well as high interoperability between various vendors and with
+   different versions.  Interoperability requires a smooth transition
+   to more secure algorithms.
+   
+   The perspective of implementers may differ from that of an operator
+   who wishes to deploy and configure DNSSEC with only the safest
+   algorithm.  As such this document also adds new recommendations
+   about which algorithms should be deploy regardless of
+   implementation status.  In general it is expected that deployment
+   of aging algorithms should generally be reduced before
+   implementations stop supporting them.
 
 ##  Updating Algorithm Implementation Requirements and Usage Guidance
 
