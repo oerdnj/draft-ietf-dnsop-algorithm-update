@@ -81,19 +81,23 @@ informative:
    defined by various RFCs, including [RFC4034], [RFC5155], [RFC5702],
    [RFC5933], [RFC6605], [RFC8080].  To ensure interoperability, a set
    of "mandatory-to-implement" DNSKEY algorithms are defined in
-   [RFC8624].  To make the current status of the algorithms
-   more easily accessible and understandable, this document moves the
-   canonical status of the algorithms from [RFC8624] to the IANA DNSSEC
-   algorithm registries.  [ Editor: This is similar to the process used
-   for the [TLS-ciphersuites] registry, where the canonical list of
-   ciphersuites is in the IANA registry, and the RFCs reference the IANA
-   registry. ]
+   [RFC8624].  To make the current status of the algorithms more
+   easily accessible and understandable, this document moves the
+   canonical status of the algorithms from [RFC8624] to the IANA
+   DNSSEC algorithm registries.  Additionally it adds recommendations
+   for usage of the algorithms as advice to operators about deploying
+   certain algorithms.
+   
+   [ Editor: This is similar to the process used for the
+   [TLS-ciphersuites] registry, where the canonical list of
+   ciphersuites is in the IANA registry, and the RFCs reference the
+   IANA registry. ]
 
-   This document simply moves the canonical list of algorithms from
-   [RFC8624] to the IANA registry, and defines the registry policies
-   for updating the registry. It does not change the status of any of
-   the algorithms listed in [RFC8624]; this is left to future
-   documents.
+   This document moves the canonical list of algorithms from [RFC8624]
+   to the IANA registry, adds operational deployment guidance, and
+   defines the registry policies for updating the registry. It does
+   not change the status of any of the algorithms listed in [RFC8624];
+   this is left to future documents.
 
 ##  Document Audience
 
