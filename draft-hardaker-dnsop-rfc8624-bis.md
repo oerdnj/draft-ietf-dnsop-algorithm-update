@@ -54,13 +54,13 @@ informative:
 
 --- abstract
 
-   [EDITOR NOTE: This document does not change the status (MUST, MAY,
+   <EDITOR NOTE: This document does not change the status (MUST, MAY,
    RECOMMENDED, etc) of any of the algorithms listed in [RFC8624]; that is
    the work of future documents.  Instead, this document moves
    the canonical list of algorithms from [RFC8624] to an IANA registry.
    This is done for two reasons: 1) to allow the list to be updated more
    easily, and, much more importantly, 2) to allow the list to be more
-   easily referenced.]
+   easily referenced.>
 
    The DNSSEC protocol makes use of various cryptographic algorithms to provide
    authentication of DNS data and proof of non-existence.  To ensure
@@ -90,10 +90,10 @@ informative:
    Additionally, as advice to operators, it adds recommendations for
    deploying and the usage of these algorithms.
    
-   [ Editor: This is similar to the process used for the
+   <Editor: This is similar to the process used for the
    [TLS-ciphersuites] registry, where the canonical list of
    ciphersuites is in the IANA registry, and the RFCs reference the
-   IANA registry. ]
+   IANA registry.>
 
    This document moves the canonical list of algorithms from [RFC8624]
    to the IANA registry, adds operational deployment guidance, and
@@ -243,10 +243,10 @@ informative:
    recommendations for the "Domain Name System Security (DNSSEC)
    Algorithm Numbers" are show in Table 2.
    
-   [Editor's note: A space was deliberately added to "RSASHA1-NSEC3-
+   <Editor's note: A space was deliberately added to "RSASHA1-NSEC3-
    SHA1" to make the table fit within the standard internet draft text
    width.  Additionally the algorithm number column was abbreviated to
-   'N'.]
+   'N'.>
 
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
    | N  | Mnemonics           | Use for DNSSEC Signing | Use for DNSSEC Validation | Implement for DNSSEC Signing | Implement for DNSSEC Validation |
