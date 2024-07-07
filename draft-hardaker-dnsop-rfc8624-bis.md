@@ -382,6 +382,11 @@ informative:
 
 # ChangeLog
 
+## Changes since -03
+
+   * Changed the columns being added from 2 per table to 4, based on
+     discussion within the dnsop working group mailing list.
+
 ## Changes since RFC8624
 
    * The primary purpose of this revision is to introduce the new
