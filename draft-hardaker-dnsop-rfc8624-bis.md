@@ -178,38 +178,52 @@ informative:
    RECOMMENDED, as this more clearly expresses the recommendations to
    implementers.
 
-# Adding "Recommended" Columns to existing IANA tables
+# Adding usage and implementation recommendations to IANA DNSSEC tables
 
-   Per this document, the following "Recommended" columns have been
-   added to the following DNSSEC algorithm tables registered with
-   IANA:
+   Per this document, the following columns are being added to the
+   following DNSSEC algorithm tables registered with IANA:
 
-   |-------------------------------------------------------------------------|
-   | Table                               | Column added                      |
-   |-------------------------------------------------------------------------|
-   | Domain Security Algorithm Numbers   | Recommended for DNSSSEC Signing   |
-   |-------------------------------------------------------------------------|
-   | Domain Security Algorithm Numbers   | Recommended for DNSSSEC Validation|
-   |-------------------------------------------------------------------------|
-   | Digest Algorithms                   | Recommended                       |
-   |-------------------------------------------------------------------------|
+   |-----------------------------------|----------------------------------|
+   | Table                             | Column added                     |
+   |-----------------------------------|----------------------------------|
+   | Domain Security Algorithm Numbers | Use for DNSSSEC Signing          |
+   |-----------------------------------|----------------------------------|
+   | Domain Security Algorithm Numbers | Use for DNSSSEC Validation       |
+   |-----------------------------------|----------------------------------|
+   | Domain Security Algorithm Numbers | Implement for DNSSSEC Signing    |
+   |-----------------------------------|----------------------------------|
+   | Domain Security Algorithm Numbers | Implement for DNSSSEC Validation |
+   |-----------------------------------|----------------------------------|
+   | Digest Algorithsm                 | Use for DNSSSEC Delegation       |
+   |-----------------------------------|----------------------------------|
+   | Digest Algorithsm                 | Use for DNSSSEC Validation       |
+   |-----------------------------------|----------------------------------|
+   | Digest Algorithsm                 | Implement for DNSSSEC Delegation |
+   |-----------------------------------|----------------------------------|
+   | Digest Algorithsm                 | Implement for DNSSSEC Validation |
+   |-----------------------------------|----------------------------------|
 
                                     Table 1
 
    Adding a new entry to the "DNS System Algorithm Numbers" registry
-   with a recommended value of MAY in both the "Recommended for
-   DNSSSEC Signing" and "Recommended for DNSSSEC Validation" columns
-   requires RFC publication.  Adding a new entry to, or changing
-   existing values in the "DNS System Algorithm Numbers" registry with
-   a value in the "Recommended for DNSSSEC Signing" or "Recommended
-   for DNSSSEC Validation" columns other than MAY requires a Standards
-   Action.
+   with a recommended value of MAY in the "Use for DNSSSEC Signing",
+   "Use for DNSSSEC Validation", "Implement for DNSSSEC Signing", or
+   "Implement for DNSSSEC Validation" columns requires RFC
+   publication.  Adding a new entry to, or changing existing values in
+   the "DNS System Algorithm Numbers" registry for the "Use for
+   DNSSSEC Signing", "Use for DNSSSEC Validation", "Implement for
+   DNSSSEC Signing", or "Implement for DNSSSEC Validation" columns to
+   any other value than MAY requires a Standards Action.
 
    Adding a new entry to the "Digest Algorithms" registry with a
-   recommended value of MAY in the "Recommended" column requires RFC
-   publication.  Adding a new entry to the "Digest Algorithms"
-   registry with a value in the "Recommended" column other than MAY
-   requires a Standards Action.
+   recommended value of MAY in the "Use for DNSSSEC Delegation", "Use
+   for DNSSSEC Validation", "Implement for DNSSSEC Delegation", or
+   "Implement for DNSSSEC Validation" columns requires RFC
+   publication.  Adding a new entry to, or changing existing values in
+   the "DNS System Algorithm Numbers" registry for the "Use for
+   DNSSSEC Delegation", "Use for DNSSSEC Validation", "Implement for
+   DNSSSEC Delegation", or "Implement for DNSSSEC Validation" columns
+   to any other value than MAY requires a Standards Action.
 
    If an item is not marked as "RECOMMENDED", it does not necessarily
    mean that it is flawed; rather, it indicates that the item either
@@ -217,13 +231,17 @@ informative:
    applicability, or is intended only for specific use cases.
 
    The following sections state the initial values to be populated
-   into these rows, with values transcribed from [RFC8624].
+   into these rows, with Implementation values transcribed from
+   [RFC8624].  Use for columns were also set to the same values from
+   [RFC8624], as there is no existing documented values and general
+   interpretation of the tables to date indicate they should be the
+   same, although may differ in the future.
 
 #  DNS System Algorithm Numbers Column Values
 
-   Initial recommendation columns of implementation recommendations
-   for the "Domain Name System Security (DNSSEC) Algorithm Numbers"
-   are show in Table 2.
+   Initial recommendation columns of use and implementation
+   recommendations for the "Domain Name System Security (DNSSEC)
+   Algorithm Numbers" are show in Table 2.
    
    [Editor's note: A space was deliberately added to "RSASHA1-NSEC3-
    SHA1" to make the table fit within the standard internet draft text
@@ -262,9 +280,9 @@ informative:
 
 #  DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms Column Values
 
-   Initial recommendation columns of implementation recommendations
-   for the "DNSSEC Delegation Signer (DS) Resource Record (RR) Type
-   Digest Algorithms" registry are shown in Table 3.
+   Initial recommendation columns of use and implementation
+   recommendations for the "DNSSEC Delegation Signer (DS) Resource
+   Record (RR) Type Digest Algorithms" registry are shown in Table 3.
 
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
    | Number | Mnemonics       | Use for DNSSEC Delegation | Use for DNSSEC Validation | Implement for DNSSEC Delegation | Implement for DNSSEC Validation |
