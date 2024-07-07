@@ -112,16 +112,6 @@ informative:
    different versions.  Interoperability requires a smooth transition
    to more secure algorithms.
    
-   The perspective of implementers may differ from that of an operator
-   who wishes to deploy and configure DNSSEC with only the safest
-   algorithm.  As such this document also adds new recommendations
-   about which algorithms should be deploy regardless of
-   implementation status.  In general it is expected that deployment
-   of aging algorithms should generally be reduced before
-   implementations stop supporting them.
-
-##  Updating Algorithm Implementation Requirements and Usage Guidance
-
    The field of cryptography evolves continuously.  New, stronger
    algorithms appear, and existing algorithms may be found to be less
    secure then originally thought.  Therefore, algorithm
@@ -130,6 +120,14 @@ informative:
    Cryptographic algorithm choices implemented in and required by
    software must be conservative to minimize the risk of algorithm
    compromise.
+
+   The perspective of implementers may differ from that of an operator
+   who wishes to deploy and configure DNSSEC with only the safest
+   algorithm.  As such this document also adds new recommendations
+   about which algorithms should be deploy regardless of
+   implementation status.  In general it is expected that deployment
+   of aging algorithms should generally be reduced before
+   implementations stop supporting them.
 
 ##  Updating Algorithm Requirement Levels
 
