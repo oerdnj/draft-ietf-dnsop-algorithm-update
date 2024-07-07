@@ -78,15 +78,17 @@ informative:
 
    DNS Security Extensions (DNSSEC) [RFC9364] is used to provide
    authentication of DNS data.  The DNSSEC signing algorithms are
-   defined by various RFCs, including [RFC4034], [RFC5155], [RFC5702],
-   [RFC5933], [RFC6605], [RFC8080].  To ensure interoperability, a set
-   of "mandatory-to-implement" DNSKEY algorithms are defined in
-   [RFC8624].  To make the current status of the algorithms more
-   easily accessible and understandable, this document moves the
-   canonical status of the algorithms from [RFC8624] to the IANA
-   DNSSEC algorithm registries.  Additionally it adds recommendations
-   for usage of the algorithms as advice to operators about deploying
-   certain algorithms.
+   defined by various RFCs, including [RFC4034], [RFC4509], [RFC5155],
+   [RFC5702], [RFC5933], [RFC6605], [RFC8080].
+   
+   To ensure interoperability, a set of "mandatory-to-implement"
+   DNSKEY algorithms are defined in [RFC8624].  To make the current
+   status of the algorithms more easily accessible and understandable,
+   and to make future changes to these recommendations easier to
+   publish, this document moves the canonical status of the algorithms
+   from [RFC8624] to the IANA DNSSEC algorithm registries.
+   Additionally, as advice to operators, it adds recommendations for
+   deploying and the usage of these algorithms.
    
    [ Editor: This is similar to the process used for the
    [TLS-ciphersuites] registry, where the canonical list of
