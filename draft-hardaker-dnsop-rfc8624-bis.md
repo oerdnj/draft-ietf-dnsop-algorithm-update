@@ -77,7 +77,7 @@ informative:
 # Introduction
 
    DNS Security Extensions (DNSSEC) [RFC9364] is used to provide
-   authentication of DNS data.  The DNSSEC signing algorithms are
+   authentication of DNS data. The DNSSEC signing algorithms are
    defined by various RFCs, including [RFC4034], [RFC4509], [RFC5155],
    [RFC5702], [RFC5933], [RFC6605], [RFC8080].
 
@@ -110,7 +110,7 @@ informative:
    secure then originally thought.  Therefore, algorithm
    implementation requirements and usage guidance need to be updated
    from time to time in order to reflect the new reality, and to allow for a
-   smooth transition to more secure algorithms, as well as deprecation of algorithms deemed to be no longer secure.
+   smooth transition to more secure algorithms, as well as deprecation of algorithms deemed to no longer be secure.
 
    Cryptographic algorithm choices implemented in and required by
    software must be conservative to minimize the risk of algorithm
@@ -130,7 +130,7 @@ informative:
    mandatory-to-implement, it should already be available in most
    implementations.  This document defines an IANA registration
    modification to allow future documents to specify the
-   implementation recommendations for each algorithm as the
+   implementation recommendations for each algorithm, as the
    recommendation status of each DNSSEC cryptographic algorithm is
    expected to change over time.  For example, there is no guarantee
    that newly introduced algorithms will become mandatory-to-implement
@@ -203,7 +203,7 @@ informative:
    with a recommended value of MAY in the "Use for DNSSSEC Signing",
    "Use for DNSSSEC Validation", "Implement for DNSSSEC Signing", or
    "Implement for DNSSSEC Validation" columns requires RFC
-   publication.  Adding a new entry to, or changing existing values in
+   publication.  Adding a new entry to, or changing existing values in,
    the "DNS System Algorithm Numbers" registry for the "Use for
    DNSSSEC Signing", "Use for DNSSSEC Validation", "Implement for
    DNSSSEC Signing", or "Implement for DNSSSEC Validation" columns to
@@ -213,7 +213,7 @@ informative:
    recommended value of MAY in the "Use for DNSSSEC Delegation", "Use
    for DNSSSEC Validation", "Implement for DNSSSEC Delegation", or
    "Implement for DNSSSEC Validation" columns requires RFC
-   publication.  Adding a new entry to, or changing existing values in
+   publication.  Adding a new entry to, or changing existing values in,
    the "DNS System Algorithm Numbers" registry for the "Use for
    DNSSSEC Delegation", "Use for DNSSSEC Validation", "Implement for
    DNSSSEC Delegation", or "Implement for DNSSSEC Validation" columns
@@ -226,7 +226,7 @@ informative:
 
    The following sections state the initial values to be populated
    into these rows, with Implementation values transcribed from
-   [RFC8624].  Use for columns were also set to the same values from
+   [RFC8624].  Use for columns was also set to the same values from
    [RFC8624], as there is no existing documented values and general
    interpretation of the tables to date indicate they should be the
    same, although may differ in the future.
