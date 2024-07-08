@@ -1,7 +1,7 @@
 ---
 title: "DNSSEC Cryptographic Algorithm Recommendation Update Process"
 abbrev: "DNSSEC Algorithms Update Process"
-docname: draft-hardaker-dnsop-rfc8624-bis-03
+docname: draft-hardaker-dnsop-rfc8624-bis-04
 category: info
 ipr: trust200902
 stream: IETF
@@ -391,10 +391,11 @@ informative:
 
 # ChangeLog
 
-## Changes since -03
+## Changes from -03 to -04
 
    * Changed the columns being added from 2 per table to 4, based on
-     discussion within the dnsop working group mailing list.
+     discussion within the dnsop working group mailing list.  This was
+     a fairly major set of changes.
 
 ## Changes since RFC8624
 
