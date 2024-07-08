@@ -1,7 +1,7 @@
 ---
 title: "DNSSEC Cryptographic Algorithm Recommendation Update Process"
 abbrev: "DNSSEC Algorithms Update Process"
-docname: draft-hardaker-dnsop-rfc8624-bis-04
+docname: draft-ietf-dnsop-rfc8624-bis-00
 category: info
 ipr: trust200902
 stream: IETF
@@ -385,6 +385,10 @@ informative:
 --- back
 
 # ChangeLog
+
+## Changes from hardaker-04 to ietf-00
+
+   * Just a draft name and number change.
 
 ## Changes from -03 to -04
 
