@@ -77,10 +77,10 @@ informative:
 # Introduction
 
    DNS Security Extensions (DNSSEC) [RFC9364] is used to provide
-   authentication of DNS data.  The DNSSEC signing algorithms are
+   authentication of DNS data. The DNSSEC signing algorithms are
    defined by various RFCs, including [RFC4034], [RFC4509], [RFC5155],
    [RFC5702], [RFC5933], [RFC6605], [RFC8080].
-   
+
    To ensure interoperability, a set of "mandatory-to-implement"
    DNSKEY algorithms are defined in [RFC8624].  To make the current
    status of the algorithms more easily accessible and understandable,
@@ -89,34 +89,29 @@ informative:
    from [RFC8624] to the IANA DNSSEC algorithm registries.
    Additionally, as advice to operators, it adds recommendations for
    deploying and the usage of these algorithms.
-   
+
    <Editor: This is similar to the process used for the
    [TLS-ciphersuites] registry, where the canonical list of
    ciphersuites is in the IANA registry, and the RFCs reference the
    IANA registry.>
 
-   This document moves the canonical list of algorithms from [RFC8624]
-   to the IANA registry, adds operational deployment guidance, and
-   defines the registry policies for updating the registry. It does
-   not change the status of any of the algorithms listed in [RFC8624];
-   this is left to future documents.
-
 ##  Document Audience
 
    The recommendations columns added to the "DNS Security Algorithm
-   Numbers" and "Digest Algorithms" IANA tables that target DNSSEC
+   Numbers" and "Digest Algorithms" IANA tables target DNSSEC
    operators and implementers.
-   
+
    Implementations need to meet both high security expectations as
-   well as high interoperability between various vendors and with
-   different versions.  Interoperability requires a smooth transition
-   to more secure algorithms.
-   
+   well as provide interoperability between various vendors and with
+   different versions.
+
    The field of cryptography evolves continuously.  New, stronger
    algorithms appear, and existing algorithms may be found to be less
    secure then originally thought.  Therefore, algorithm
    implementation requirements and usage guidance need to be updated
-   from time to time in order to reflect the new reality.
+   from time to time in order to reflect the new reality, and to allow for a
+   smooth transition to more secure algorithms, as well as deprecation of algorithms deemed to no longer be secure.
+
    Cryptographic algorithm choices implemented in and required by
    software must be conservative to minimize the risk of algorithm
    compromise.
@@ -125,7 +120,7 @@ informative:
    who wishes to deploy and configure DNSSEC with only the safest
    algorithm.  As such this document also adds new recommendations
    about which algorithms should be deploy regardless of
-   implementation status.  In general it is expected that deployment
+   implementation status. In general it is expected that deployment
    of aging algorithms should generally be reduced before
    implementations stop supporting them.
 
@@ -133,12 +128,12 @@ informative:
 
    By the time a DNSSEC cryptographic algorithm is made
    mandatory-to-implement, it should already be available in most
-   implementations. This document defines an IANA registration
+   implementations.  This document defines an IANA registration
    modification to allow future documents to specify the
-   implementation recommendations for each algorithm as the
+   implementation recommendations for each algorithm, as the
    recommendation status of each DNSSEC cryptographic algorithm is
    expected to change over time.  For example, there is no guarantee
-   that newly introduced algorithms will become mandatory to implement
+   that newly introduced algorithms will become mandatory-to-implement
    in the future.  Likewise, published algorithms are continuously
    subjected to cryptographic attack and may become too weak, or even
    be completely broken, and will require deprecation in the future.
@@ -153,8 +148,7 @@ informative:
    as RECOMMENDED instead of a MUST.
 
    Since the effect of using an unknown DNSKEY algorithm is that the
-   zone is treated as insecure, it is recommended that algorithms
-   downgraded to NOT RECOMMENDED or lower not be used by authoritative
+   zone is treated as insecure, it is recommended that algorithms which have been downgraded to NOT RECOMMENDED or lower not be used by authoritative
    nameservers and DNSSEC signers to create new DNSKEY's.  This will
    allow for deprecated algorithms to become used less and less over
    time.  Once an algorithm has reached a sufficiently low level of
@@ -178,7 +172,7 @@ informative:
    RECOMMENDED, as this more clearly expresses the recommendations to
    implementers.
 
-# Adding usage and implementation recommendations to IANA DNSSEC tables
+# Adding usage and implementation recommendations to the IANA DNSSEC tables
 
    Per this document, the following columns are being added to the
    following DNSSEC algorithm tables registered with IANA:
@@ -209,7 +203,7 @@ informative:
    with a recommended value of MAY in the "Use for DNSSSEC Signing",
    "Use for DNSSSEC Validation", "Implement for DNSSSEC Signing", or
    "Implement for DNSSSEC Validation" columns requires RFC
-   publication.  Adding a new entry to, or changing existing values in
+   publication.  Adding a new entry to, or changing existing values in,
    the "DNS System Algorithm Numbers" registry for the "Use for
    DNSSSEC Signing", "Use for DNSSSEC Validation", "Implement for
    DNSSSEC Signing", or "Implement for DNSSSEC Validation" columns to
@@ -219,7 +213,7 @@ informative:
    recommended value of MAY in the "Use for DNSSSEC Delegation", "Use
    for DNSSSEC Validation", "Implement for DNSSSEC Delegation", or
    "Implement for DNSSSEC Validation" columns requires RFC
-   publication.  Adding a new entry to, or changing existing values in
+   publication.  Adding a new entry to, or changing existing values in,
    the "DNS System Algorithm Numbers" registry for the "Use for
    DNSSSEC Delegation", "Use for DNSSSEC Validation", "Implement for
    DNSSSEC Delegation", or "Implement for DNSSSEC Validation" columns
@@ -232,7 +226,7 @@ informative:
 
    The following sections state the initial values to be populated
    into these rows, with Implementation values transcribed from
-   [RFC8624].  Use for columns were also set to the same values from
+   [RFC8624].  Use for columns was also set to the same values from
    [RFC8624], as there is no existing documented values and general
    interpretation of the tables to date indicate they should be the
    same, although may differ in the future.
@@ -242,7 +236,7 @@ informative:
    Initial recommendation columns of use and implementation
    recommendations for the "Domain Name System Security (DNSSEC)
    Algorithm Numbers" are show in Table 2.
-   
+
    <Editor's note: A space was deliberately added to "RSASHA1-NSEC3-
    SHA1" to make the table fit within the standard internet draft text
    width.  Additionally the algorithm number column was abbreviated to
@@ -343,13 +337,13 @@ informative:
 
   The IANA is requested to update the [DNSKEY-IANA] and [DS-IANA] registries
   according the following sections.
-  
+
 ## Update to the "DNS Security Algorithm Numbers" table
 
   This document requests IANA update the "DNS Security Algorithm
   Numbers" registry ([DNSKEY-IANA]) table with the following
   additional columns:
-  
+
   * "Use for DNSSEC Signing"
   * "Use for DNSSEC Validation"
   * "Implement for DNSSEC Signing"
@@ -357,7 +351,7 @@ informative:
 
   These values should be populated using values from Table 2 of this
   document.
-  
+
   Additional, the registration policy for the [DNSKEY-IANA] registy
   should match the text describing the requirements in this document.
 
@@ -381,7 +375,7 @@ informative:
 
   This document is based on, and extends, RFC 8624, which was authored by
   Paul Wouters, and Ondrej Sury.
-  
+
   The contents of this document was heavily discussed by participants
   of the DNSOP working group.  We appreciate the thoughtfulness of the
   many opinions expressed by working group participants that all
