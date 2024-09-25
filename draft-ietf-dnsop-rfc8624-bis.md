@@ -189,13 +189,13 @@ informative:
    |-----------------------------------|----------------------------------|
    | Domain Security Algorithm Numbers | Implement for DNSSSEC Validation |
    |-----------------------------------|----------------------------------|
-   | Digest Algorithsm                 | Use for DNSSSEC Delegation       |
+   | Digest Algorithm                  | Use for DNSSSEC Delegation       |
    |-----------------------------------|----------------------------------|
-   | Digest Algorithsm                 | Use for DNSSSEC Validation       |
+   | Digest Algorithm                  | Use for DNSSSEC Validation       |
    |-----------------------------------|----------------------------------|
-   | Digest Algorithsm                 | Implement for DNSSSEC Delegation |
+   | Digest Algorithm                  | Implement for DNSSSEC Delegation |
    |-----------------------------------|----------------------------------|
-   | Digest Algorithsm                 | Implement for DNSSSEC Validation |
+   | Digest Algorithm                  | Implement for DNSSSEC Validation |
    |-----------------------------------|----------------------------------|
 
                                     Table 1
@@ -236,7 +236,7 @@ informative:
 
    Initial recommendation columns of use and implementation
    recommendations for the "Domain Name System Security (DNSSEC)
-   Algorithm Numbers" are show in Table 2.
+   Algorithm Numbers" are shown in Table 2.
 
    <Editor's note: A space was deliberately added to "RSASHA1-NSEC3-
    SHA1" to make the table fit within the standard internet draft text
@@ -337,7 +337,7 @@ informative:
 #  IANA Considerations
 
   The IANA is requested to update the [DNSKEY-IANA] and [DS-IANA] registries
-  according the following sections.
+  according to the following sections.
 
 ## Update to the "DNS Security Algorithm Numbers" table
 
@@ -353,7 +353,7 @@ informative:
   These values should be populated using values from Table 2 of this
   document.
 
-  Additional, the registration policy for the [DNSKEY-IANA] registy
+  Additional, the registration policy for the [DNSKEY-IANA] registry
   should match the text describing the requirements in this document.
 
 ## Update to the "Digest Algorithms" table
