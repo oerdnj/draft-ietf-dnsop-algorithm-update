@@ -386,6 +386,10 @@ informative:
 
 # ChangeLog
 
+## Changes from ietf-00 to ietf-01
+
+   * Only NIT fixing 
+
 ## Changes from hardaker-04 to ietf-00
 
    * Just a draft name and number change.
