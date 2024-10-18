@@ -235,7 +235,7 @@ informative:
    Initial recommendation columns of use and implementation
    recommendations for the "Domain Name System Security (DNSSEC)
    Algorithm Numbers" are shown in Table 2.  When there are multiple
-   recommended algorithms in the "use" column, operators should choose
+   RECOMMENDED algorithms in the "use" column, operators should choose
    the best algorithm according to local policy.
 
    <Editor's note: A space was deliberately added to "RSASHA1-NSEC3-
@@ -277,7 +277,7 @@ informative:
    Initial recommendation columns of use and implementation
    recommendations for the "DNSSEC Delegation Signer (DS) Resource
    Record (RR) Type Digest Algorithms" registry are shown in Table 3.
-   When there are multiple recommended algorithms in the "use" column,
+   When there are multiple RECOMMENDED algorithms in the "use" column,
    operators should choose the best algorithm according to local
    policy.
 
