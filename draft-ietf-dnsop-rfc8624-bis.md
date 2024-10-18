@@ -198,8 +198,6 @@ informative:
    | Digest Algorithm                  | Implement for DNSSSEC Validation |
    |-----------------------------------|----------------------------------|
 
-                                    Table 1
-
    Adding a new entry to the "DNS System Algorithm Numbers" registry
    with a recommended value of MAY in the "Use for DNSSSEC Signing",
    "Use for DNSSSEC Validation", "Implement for DNSSSEC Signing", or
@@ -273,8 +271,6 @@ informative:
    | 16 | ED448               | MAY                    | RECOMMENDED               | MAY                          | RECOMMENDED                     |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
 
-                                    Table 2
-
 
 #  DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms Column Values
 
@@ -298,8 +294,6 @@ informative:
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
    | 4      | SHA-384         | MAY                       | RECOMMENDED               | MAY                             | RECOMMENDED                     |
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
-
-                                    Table 3
 
 
 #  Security Considerations
@@ -386,7 +380,8 @@ informative:
   The contents of this document was heavily discussed by participants
   of the DNSOP working group.  We appreciate the thoughtfulness of the
   many opinions expressed by working group participants that all
-  helped shaped this document.
+  helped shaped this document.  We thank Paul Hoffman for his
+  contributed text.
 
 --- back
 
