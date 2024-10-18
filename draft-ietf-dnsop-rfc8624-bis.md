@@ -236,7 +236,9 @@ informative:
 
    Initial recommendation columns of use and implementation
    recommendations for the "Domain Name System Security (DNSSEC)
-   Algorithm Numbers" are shown in Table 2.
+   Algorithm Numbers" are shown in Table 2.  When there are multiple
+   recommended algorithms in the "use" column, operators should choose
+   the best algorithm according to local policy.
 
    <Editor's note: A space was deliberately added to "RSASHA1-NSEC3-
    SHA1" to make the table fit within the standard internet draft text
@@ -250,19 +252,19 @@ informative:
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
    | 3  | DSA                 | MUST NOT               | MUST NOT                  | MUST NOT                     | MUST NOT                        |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
-   | 5  | RSASHA1             | NOT RECOMMENDED        | MUST                      | NOT RECOMMENDED              | MUST                            |
+   | 5  | RSASHA1             | NOT RECOMMENDED        | RECOMMENDED               | NOT RECOMMENDED              | MUST                            |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
    | 6  | DSA-NSEC3-SHA1      | MUST NOT               | MUST NOT                  | MUST NOT                     | MUST NOT                        |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
-   | 7  | RSASHA1-NSEC3- SHA1 | NOT RECOMMENDED        | MUST                      | NOT RECOMMENDED              | MUST                            |
+   | 7  | RSASHA1-NSEC3- SHA1 | NOT RECOMMENDED        | RECOMMENDED               | NOT RECOMMENDED              | MUST                            |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
-   | 8  | RSASHA256           | MUST                   | MUST                      | MUST                         | MUST                            |
+   | 8  | RSASHA256           | RECOMMENDED            | RECOMMENDED               | MUST                         | MUST                            |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
-   | 10 | RSASHA512           | NOT RECOMMENDED        | MUST                      | NOT RECOMMENDED              | MUST                            |
+   | 10 | RSASHA512           | NOT RECOMMENDED        | RECOMMENDED               | NOT RECOMMENDED              | MUST                            |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
    | 12 | ECC-GOST            | MUST NOT               | MAY                       | MUST NOT                     | MAY                             |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
-   | 13 | ECDSAP256SHA256     | MUST                   | MUST                      | MUST                         | MUST                            |
+   | 13 | ECDSAP256SHA256     | RECOMMENDED            | RECOMMENDED               | MUST                         | MUST                            |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
    | 14 | ECDSAP384SHA384     | MAY                    | RECOMMENDED               | MAY                          | RECOMMENDED                     |
    |----|---------------------|------------------------|---------------------------|------------------------------|---------------------------------|
@@ -273,20 +275,24 @@ informative:
 
                                     Table 2
 
+
 #  DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms Column Values
 
    Initial recommendation columns of use and implementation
    recommendations for the "DNSSEC Delegation Signer (DS) Resource
    Record (RR) Type Digest Algorithms" registry are shown in Table 3.
+   When there are multiple recommended algorithms in the "use" column,
+   operators should choose the best algorithm according to local
+   policy.
 
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
    | Number | Mnemonics       | Use for DNSSEC Delegation | Use for DNSSEC Validation | Implement for DNSSEC Delegation | Implement for DNSSEC Validation |
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
    | 0      | NULL (CDS only) | MUST NOT \[*\]            | MUST NOT \[*\]            | MUST NOT \[*\]                  | MUST NOT \[*\]                  |
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
-   | 1      | SHA-1           | MUST NOT                  | MUST                      | MUST NOT                        | MUST                            |
+   | 1      | SHA-1           | MUST NOT                  | RECOMMENDED               | MUST NOT                        | MUST                            |
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
-   | 2      | SHA-256         | MUST                      | MUST                      | MUST                            | MUST                            |
+   | 2      | SHA-256         | RECOMMENDED               | RECOMMENDED               | MUST                            | MUST                            |
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
    | 3      | GOST R 34.11-94 | MUST NOT                  | MAY                       | MUST NOT                        | MAY                             |
    |--------|-----------------|---------------------------|---------------------------|---------------------------------|---------------------------------|
