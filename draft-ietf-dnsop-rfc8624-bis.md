@@ -380,8 +380,8 @@ informative:
   The contents of this document was heavily discussed by participants
   of the DNSOP working group.  We appreciate the thoughtfulness of the
   many opinions expressed by working group participants that all
-  helped shaped this document.  We thank Paul Hoffman for his
-  contributed text.
+  helped shaped this document.  We thank Paul Hoffman and Paul Wouters
+  for their contributed text.
 
 --- back
 
