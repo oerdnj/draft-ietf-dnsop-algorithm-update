@@ -387,6 +387,13 @@ informative:
 
 # ChangeLog
 
+## Changes from ietf-01 to ietf-02
+
+   * Changed the MUST values in the tables for the Use columns to
+     RECOMMENDED based on discussions no the dnsop mailing list.
+
+   * Other minor wording and formatting changes
+
 ## Changes from ietf-00 to ietf-01
 
    * Only NIT fixing 
